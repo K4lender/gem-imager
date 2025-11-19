@@ -25,6 +25,7 @@
 
 class QQmlApplicationEngine;
 class DownloadThread;
+class DfuThread;
 class QNetworkReply;
 class QTranslator;
 
@@ -54,6 +55,9 @@ public:
 
     /* Start writing */
     Q_INVOKABLE void startWrite();
+
+    /* Start DFU operation */
+    Q_INVOKABLE void startDfu();
 
     /* Cancel write */
     Q_INVOKABLE void cancelWrite();
@@ -162,6 +166,7 @@ signals:
     void downloadProgress(QVariant dlnow, QVariant dltotal);
     void sendProgress(QVariant pos);
     void verifyProgress(QVariant now, QVariant total);
+    void dfuProgress(QVariant percentage, QVariant statusMsg);
     void error(QVariant msg);
     void success();
     void fileSelected(QVariant filename);
@@ -187,6 +192,7 @@ protected slots:
     void onFinalizing();
     void onTimeSyncReply(QNetworkReply *reply);
     void onPreparationStatusUpdate(QString msg);
+    void onDfuProgress(int percentage, QString statusMsg);
     void handleNetworkRequestFinished(QNetworkReply *data);
     void onSTPdetected();
 
@@ -211,6 +217,7 @@ protected:
     QTimer _polltimer, _networkchecktimer;
     PowerSaveBlocker _powersave;
     DownloadThread *_thread;
+    DfuThread *_dfuthread;
     bool _verifyEnabled, _multipleFilesInZip, _cachingEnabled, _embeddedMode, _online;
     QSettings _settings;
     QMap<QString,QString> _translations;

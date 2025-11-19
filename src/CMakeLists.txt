@@ -168,7 +168,7 @@ set(CURL_INCLUDE_DIRS ${CMAKE_CURRENT_LIST_DIR}/dependencies/curl-8.11.0/include
 # Adding headers explicity so they are displayed in Qt Creator
 set(HEADERS config.h imagewriter.h networkaccessmanagerfactory.h nan.h drivelistitem.h drivelistmodel.h drivelistmodelpollthread.h driveformatthread.h powersaveblocker.h cli.h
     devicewrapper.h devicewrapperblockcacheentry.h devicewrapperpartition.h devicewrapperstructs.h devicewrapperfatpartition.h wlancredentials.h
-    downloadthread.h downloadextractthread.h localfileextractthread.h downloadstatstelemetry.h dependencies/mountutils/src/mountutils.hpp 
+    downloadthread.h downloadextractthread.h localfileextractthread.h downloadstatstelemetry.h dfuthread.h dependencies/mountutils/src/mountutils.hpp 
     dependencies/crypt/sha256crypt.h dependencies/crypt/des.h dependencies/crypt/sha512crypt.h dependencies/crypt/shacrypt.h
     dependencies/qtxmodem/crc16-xmodem.h dependencies/qtxmodem/transfer.h)
 
@@ -245,7 +245,7 @@ endif( IS_BIG_ENDIAN )
 set(SOURCES ${PLATFORM_SOURCES} "main.cpp" "imagewriter.cpp" "networkaccessmanagerfactory.cpp"
     "drivelistitem.cpp" "drivelistmodel.cpp" "drivelistmodelpollthread.cpp" "downloadthread.cpp" "downloadextractthread.cpp"
     "devicewrapper.cpp" "devicewrapperblockcacheentry.cpp" "devicewrapperpartition.cpp" "devicewrapperfatpartition.cpp"
-    "driveformatthread.cpp" "localfileextractthread.cpp" "powersaveblocker.cpp" "downloadstatstelemetry.cpp" "qml.qrc" 
+    "driveformatthread.cpp" "localfileextractthread.cpp" "powersaveblocker.cpp" "downloadstatstelemetry.cpp" "dfuthread.cpp" "qml.qrc" 
     "dependencies/crypt/sha256crypt.c" "dependencies/crypt/des.cpp" "dependencies/crypt/sha512crypt.c" "cli.cpp"
     "dependencies/qtxmodem/crc16-xmodem.cpp" "dependencies/qtxmodem/transfer.cpp")
 

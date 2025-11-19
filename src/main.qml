@@ -300,10 +300,15 @@ ApplicationWindow {
                         Accessible.description: qsTr("Select this button to start writing the image")
                         enabled: false
                         onClicked: {
-                            optionspopup.openPopup()
-                            
-                            if (!imageWriter.readyToWrite()) {
-                                return
+                            // Check if DFU mode is selected
+                            if (dstbutton.text === "DFU Mode") {
+                                startDfuOperation()
+                            } else {
+                                optionspopup.openPopup()
+                                
+                                if (!imageWriter.readyToWrite()) {
+                                    return
+                                }
                             }
                         }
                     }
@@ -993,7 +998,17 @@ ApplicationWindow {
             id: dstlist
             model: driveListModel
             delegate: dstdelegate
-            header: uniflashComponent
+            header: Column {
+                width: parent.width
+                Loader {
+                    sourceComponent: uniflashComponent
+                    width: parent.width
+                }
+                Loader {
+                    sourceComponent: dfuComponent
+                    width: parent.width
+                }
+            }
             anchors.top: dstpopup_title_separator.bottom
             anchors.left: parent.left
             anchors.right: parent.right
@@ -1140,6 +1155,104 @@ ApplicationWindow {
 
                     onClicked: {
                         selectUniflash()
+                    }
+            }
+        }
+    }
+
+    Component{
+        id: dfuComponent
+
+        Item {
+                id: dfuItem
+                visible: showHeader
+                anchors.left: parent.left
+                anchors.right: parent.right
+                Layout.topMargin: 1
+                height: showHeader ? 61 : 0;
+                Accessible.name: "DFU"
+
+                Rectangle {
+                    id: dfubgrect
+                    anchors.top: parent.top
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    height: 60
+
+                    color: mouseOver ? "#f5f5f5" : "#ffffff"
+                    property bool mouseOver: false
+
+                    RowLayout {
+                        anchors.fill: parent
+
+                        Item {
+                            width: 25
+                        }
+
+                        Item{
+                            width: 45
+                            height: 35
+                            Image {
+                                id: dfuitem_image
+                                source: "icons/ic_usb_40px.svg"
+                                verticalAlignment: Image.AlignVCenter
+                                fillMode: Image.PreserveAspectFit
+                                width: 45
+                                height: 35
+                            }
+                        }
+
+                        Item {
+                            width: 25
+                        }
+
+                        ColumnLayout {
+                            Text {
+                                textFormat: Text.StyledText
+                                verticalAlignment: Text.AlignVCenter
+                                Layout.fillWidth: true
+                                font.family: notosans.name
+                                font.pointSize: 16
+                                text: qsTr("DFU Mode")
+
+                            }
+                            Text {
+                                textFormat: Text.StyledText
+                                height: parent.height
+                                verticalAlignment: Text.AlignVCenter
+                                Layout.fillWidth: true
+                                font.family: notosans.name
+                                font.pointSize: 12
+                                text: qsTr("Program the device via USB DFU (Device Firmware Update)")
+                            }
+                        }
+                    }
+
+                }
+                Rectangle {
+                    id: dfuborderrect
+                    anchors.top: dfubgrect.bottom
+                    anchors.left: parent.left
+                    anchors.right: parent.right
+                    height: 1
+                    color: "#dcdcdc"
+                }
+
+                MouseArea {
+                    anchors.fill: parent
+                    cursorShape: Qt.PointingHandCursor
+                    hoverEnabled: true
+
+                    onEntered: {
+                        dfubgrect.mouseOver = true
+                    }
+
+                    onExited: {
+                        dfubgrect.mouseOver = false
+                    }
+
+                    onClicked: {
+                        selectDfu()
                     }
             }
         }
@@ -1423,6 +1536,12 @@ ApplicationWindow {
         progressText.text = qsTr("Preparing to write... (%1)").arg(msg)
     }
 
+    function onDfuProgress(percentage, statusMsg) {
+        progressBar.indeterminate = false
+        progressBar.value = percentage / 100.0
+        progressText.text = statusMsg
+    }
+
     function onOsListPrepared() {
         fetchOSlist()
     }
@@ -1457,7 +1576,11 @@ ApplicationWindow {
         }
         else
         {
-            if(dstbutton.text === "Onboard emmc")
+            if(dstbutton.text === "DFU Mode")
+            {
+                msgpopup.text = qsTr("DFU programming completed successfully!<br><br>The device has been programmed and should now boot automatically.")
+            }
+            else if(dstbutton.text === "Onboard emmc")
             {
                 msgpopup.text = qsTr("<b>%1</b> has been written to <b>%2</b><br><br>The process is complete. You can connect to the board via the serial port.").arg(osbutton.text).arg(dstbutton.text)
             }
@@ -1901,6 +2024,32 @@ ApplicationWindow {
         if (imageWriter.readyToWrite()) {
             writebutton.enabled = true
         }
+    }
+
+    function selectDfu() {
+        dstpopup.close()
+        imageWriter.setDst("dfu", "0")
+        dstbutton.text = "DFU Mode"
+        writebutton.text = qsTr("Start DFU")
+        writebutton.enabled = true
+    }
+
+    function startDfuOperation() {
+        langbarRect.visible = false
+        writebutton.visible = false
+        writebutton.enabled = false
+        cancelwritebutton.enabled = false
+        cancelwritebutton.visible = false
+        cancelverifybutton.enabled = false
+        progressText.text = qsTr("Starting DFU operation...");
+        progressText.visible = true
+        progressBar.visible = true
+        progressBar.indeterminate = true
+        progressBar.Material.accent = "#ffffff"
+        osbutton.enabled = false
+        dstbutton.enabled = false
+        hwbutton.enabled = false
+        imageWriter.startDfu()
     }
 
     function selectDstItem(d) {

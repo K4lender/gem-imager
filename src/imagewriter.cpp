@@ -16,6 +16,7 @@
 #include "simpdhcp.h"
 #include "wlancredentials.h"
 #include "writeinplacethread.h"
+#include "dfuthread.h"
 #include <archive.h>
 #include <archive_entry.h>
 #include <lzma.h>
@@ -65,7 +66,7 @@ namespace {
 
 ImageWriter::ImageWriter(QObject *parent)
     : QObject(parent), _repo(QUrl(QString(OSLIST_URL))), _dlnow(0), _verifynow(0),
-      _engine(nullptr), _thread(nullptr), _verifyEnabled(false), _cachingEnabled(false),
+      _engine(nullptr), _thread(nullptr), _dfuthread(nullptr), _verifyEnabled(false), _cachingEnabled(false),
       _embeddedMode(false), _online(false), _customCacheFile(false), _trans(nullptr),
       _networkManager(this)
 {
@@ -858,6 +859,75 @@ void ImageWriter::onFinalizing()
 void ImageWriter::onPreparationStatusUpdate(QString msg)
 {
     emit preparationStatusUpdate(msg);
+}
+
+void ImageWriter::onDfuProgress(int percentage, QString statusMsg)
+{
+    emit dfuProgress(percentage, statusMsg);
+}
+
+/* Start DFU operation */
+void ImageWriter::startDfu()
+{
+    if (_dst != "dfu")
+    {
+        emit error(tr("DFU mode not selected"));
+        return;
+    }
+
+    // Try multiple possible locations for tests directory
+    QString testsPath;
+    QStringList possiblePaths;
+    
+    // 1. Development environment - relative to executable
+    QString appDir = QCoreApplication::applicationDirPath();
+    possiblePaths << appDir + "/../tests";
+    possiblePaths << appDir + "/../../tests";
+    possiblePaths << appDir + "/../../../tests";
+    
+    // 2. Installed location
+    possiblePaths << "/usr/share/gem-imager/tests";
+    
+    // 3. Current working directory
+    possiblePaths << QDir::currentPath() + "/tests";
+    
+    // 4. Same directory as executable
+    possiblePaths << appDir + "/tests";
+    
+    // Find first existing path
+    for (const QString &path : possiblePaths)
+    {
+        QDir testDir(path);
+        QString canonicalPath = testDir.canonicalPath();
+        
+        if (!canonicalPath.isEmpty() && testDir.exists())
+        {
+            // Verify that required files exist
+            if (QFile::exists(canonicalPath + "/tiboot3.bin") &&
+                QFile::exists(canonicalPath + "/tispl.bin") &&
+                QFile::exists(canonicalPath + "/u-boot.img"))
+            {
+                testsPath = canonicalPath;
+                break;
+            }
+        }
+    }
+    
+    if (testsPath.isEmpty())
+    {
+        emit error(tr("Tests directory not found. Please ensure tiboot3.bin, tispl.bin, and u-boot.img are in one of these locations:\n%1").arg(possiblePaths.join("\n")));
+        return;
+    }
+
+    _dfuthread = new DfuThread(this);
+    _dfuthread->setTestFilesPath(testsPath);
+    
+    connect(_dfuthread, SIGNAL(success()), SLOT(onSuccess()));
+    connect(_dfuthread, SIGNAL(error(QString)), SLOT(onError(QString)));
+    connect(_dfuthread, SIGNAL(preparationStatusUpdate(QString)), SLOT(onPreparationStatusUpdate(QString)));
+    connect(_dfuthread, SIGNAL(progressUpdate(int, QString)), SLOT(onDfuProgress(int, QString)));
+    
+    _dfuthread->start();
 }
 
 void ImageWriter::openFileDialog()
