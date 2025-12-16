@@ -58,6 +58,9 @@ public:
 
     /* Start DFU operation */
     Q_INVOKABLE void startDfu();
+    
+    /* Set DFU image parameters */
+    Q_INVOKABLE void setDfuImageParams(const QString &board, const QString &imageType, const QString &distro);
 
     /* Cancel write */
     Q_INVOKABLE void cancelWrite();
@@ -210,6 +213,7 @@ protected:
     QString _dst, _cacheFileName, _parentCategory, _osName, _currentLang, _currentLangcode, _currentKeyboard;
     QString _selSerPort, _selEthPort;
     QString _imageTargetBoard;
+    QString _dfuBoard, _dfuImageType, _dfuDistro;  // DFU image parameters
     QByteArray _expectedHash, _cachedFileHash, _cmdline, _config, _firstrun, _cloudinit, _cloudinitNetwork, _geminit, _initFormat;
     quint64 _downloadLen, _extrLen, _devLen, _dlnow, _verifynow;
     DriveListModel _drivelist;

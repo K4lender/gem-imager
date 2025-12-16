@@ -38,6 +38,9 @@ set(BUILD_TESTING OFF)
 set(BUILD_STATIC_LIBS ON)
 set(BUILD_SHARED_LIBS OFF)
 
+# Build dfu-util from source
+add_subdirectory(dfu-util)
+
 # Bundled liblzma
 set(XZ_MICROLZMA_DECODER OFF)
 set(XZ_MICROLZMA_ENCODER OFF)
@@ -245,7 +248,7 @@ endif( IS_BIG_ENDIAN )
 set(SOURCES ${PLATFORM_SOURCES} "main.cpp" "imagewriter.cpp" "networkaccessmanagerfactory.cpp"
     "drivelistitem.cpp" "drivelistmodel.cpp" "drivelistmodelpollthread.cpp" "downloadthread.cpp" "downloadextractthread.cpp"
     "devicewrapper.cpp" "devicewrapperblockcacheentry.cpp" "devicewrapperpartition.cpp" "devicewrapperfatpartition.cpp"
-    "driveformatthread.cpp" "localfileextractthread.cpp" "powersaveblocker.cpp" "downloadstatstelemetry.cpp" "dfuthread.cpp" "qml.qrc" 
+    "driveformatthread.cpp" "localfileextractthread.cpp" "powersaveblocker.cpp" "downloadstatstelemetry.cpp" "dfuthread.cpp" "dfuwrapper.cpp" "qml.qrc"
     "dependencies/crypt/sha256crypt.c" "dependencies/crypt/des.cpp" "dependencies/crypt/sha512crypt.c" "cli.cpp"
     "dependencies/qtxmodem/crc16-xmodem.cpp" "dependencies/qtxmodem/transfer.cpp")
 
@@ -396,7 +399,7 @@ if (WIN32)
             "${CMAKE_BINARY_DIR}/${PROJECT_NAME}.exe" "${CMAKE_BINARY_DIR}/dependencies/fat32format/fat32format.exe"
             "${CMAKE_SOURCE_DIR}/../license.txt" "${CMAKE_SOURCE_DIR}/windows/gem-imager-cli.cmd"
             "${CMAKE_BINARY_DIR}/deploy")
-
+    
     configure_file(
         "${CMAKE_CURRENT_SOURCE_DIR}/windows/gem-imager.nsi.in"
         "${CMAKE_CURRENT_BINARY_DIR}/gem-imager.nsi"
@@ -446,6 +449,7 @@ elseif(APPLE)
             add_custom_command(TARGET ${PROJECT_NAME}
                 POST_BUILD
                 COMMAND mv "${CMAKE_BINARY_DIR}/${PROJECT_NAME}.app" "${CMAKE_BINARY_DIR}/GemstoneImager.app")
+            
             # Sign the .app.
             add_custom_command(TARGET ${PROJECT_NAME}
                 POST_BUILD
@@ -509,6 +513,6 @@ else()
     install(FILES "${CMAKE_CURRENT_LIST_DIR}/../debian/gem-imager.metainfo.xml" DESTINATION share/metainfo)
 endif()
 
-include_directories(${CURL_INCLUDE_DIR} ${LibArchive_INCLUDE_DIR} ${LIBLZMA_INCLUDE_DIRS} ${LIBDRM_INCLUDE_DIRS} ${ZLIB_INCLUDE_DIRS} ${ZSTD_INCLUDE_DIR})
-target_link_libraries(${PROJECT_NAME} PRIVATE ${QT}::Core ${QT}::Quick ${QT}::Svg ${QT}::SerialPort ${CURL_LIBRARIES} ${LibArchive_LIBRARIES} ${ZSTD_LIBRARIES} ${ZLIB_LIBRARIES} ${LIBLZMA_LIBRARIES} ${LIBDRM_LIBRARIES} ${ATOMIC_LIBRARY} ${EXTRALIBS})
+include_directories(${CURL_INCLUDE_DIR} ${LibArchive_INCLUDE_DIR} ${LIBLZMA_INCLUDE_DIRS} ${LIBDRM_INCLUDE_DIRS} ${ZLIB_INCLUDE_DIRS} ${ZSTD_INCLUDE_DIR} ${DFU_UTIL_INCLUDE_DIR})
+target_link_libraries(${PROJECT_NAME} PRIVATE ${QT}::Core ${QT}::Quick ${QT}::Svg ${QT}::SerialPort ${CURL_LIBRARIES} ${LibArchive_LIBRARIES} ${ZSTD_LIBRARIES} ${ZLIB_LIBRARIES} ${LIBLZMA_LIBRARIES} ${LIBDRM_LIBRARIES} ${ATOMIC_LIBRARY} ${EXTRALIBS} ${DFU_UTIL_LIBRARY})
 target_link_libraries(simpbootp PRIVATE ${QT}::Core ${QT}::Network)

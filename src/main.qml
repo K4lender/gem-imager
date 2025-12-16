@@ -2007,6 +2007,31 @@ ApplicationWindow {
                 }
             }
         } else {
+            // Parse DFU image parameters from URL or JSON
+            // Expected format: https://packages.t3gemstone.org/images/{distro}/{imageType}/{board}/...
+            var board = typeof(d.board) != "undefined" ? d.board : "";
+            var imageType = typeof(d.imageType) != "undefined" ? d.imageType : "";
+            var distro = typeof(d.distro) != "undefined" ? d.distro : "";
+            var variant = typeof(d.variant) != "undefined" ? d.variant : "";  // minimal, desktop, kiosk
+            
+            // If not in JSON, try to parse from URL
+            if (board === "" || imageType === "" || distro === "") {
+                var urlParts = d.url.toString().split('/');
+                if (urlParts.length >= 6 && urlParts[3] === "images") {
+                    if (distro === "") distro = urlParts[4];      // ubuntu, debian, pardus
+                    if (imageType === "") imageType = urlParts[5]; // jammy, bookworm, etc.
+                    if (board === "") board = urlParts[6];         // t3-gem-o1, etc.
+                }
+            }
+            
+            // Set DFU image parameters if we extracted them
+            // For DFU, we need: distro, imageType (version like jammy/bookworm), board, variant (minimal/desktop/kiosk)
+            if (board !== "" && imageType !== "" && distro !== "") {
+                // If variant is specified, append it to imageType
+                var fullImageType = variant !== "" ? imageType + "/" + variant : imageType;
+                imageWriter.setDfuImageParams(board, fullImageType, distro);
+            }
+            
             imageWriter.setSrc(d.url, d.image_download_size, d.extract_size, typeof(d.extract_sha256) != "undefined" ? d.extract_sha256 : "", typeof(d.contains_multiple_files) != "undefined" ? d.contains_multiple_files : false, ospopup.categorySelected, d.name, typeof(d.init_format) != "undefined" ? d.init_format : "")
             osbutton.text = d.name
             ospopup.close()

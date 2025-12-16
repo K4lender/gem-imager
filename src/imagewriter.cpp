@@ -919,8 +919,19 @@ void ImageWriter::startDfu()
         return;
     }
 
+    qDebug() << "Using tests directory:" << testsPath;
+    qDebug() << "tiboot3.bin:" << QFileInfo(testsPath + "/tiboot3.bin").size() << "bytes";
+    qDebug() << "tispl.bin:" << QFileInfo(testsPath + "/tispl.bin").size() << "bytes";
+    qDebug() << "u-boot.img:" << QFileInfo(testsPath + "/u-boot.img").size() << "bytes";
+
     _dfuthread = new DfuThread(this);
     _dfuthread->setTestFilesPath(testsPath);
+    
+    // Set image parameters if they were specified
+    if (!_dfuBoard.isEmpty() && !_dfuImageType.isEmpty() && !_dfuDistro.isEmpty())
+    {
+        _dfuthread->setImageInfo(_dfuBoard, _dfuImageType, _dfuDistro);
+    }
     
     connect(_dfuthread, SIGNAL(success()), SLOT(onSuccess()));
     connect(_dfuthread, SIGNAL(error(QString)), SLOT(onError(QString)));
@@ -928,6 +939,18 @@ void ImageWriter::startDfu()
     connect(_dfuthread, SIGNAL(progressUpdate(int, QString)), SLOT(onDfuProgress(int, QString)));
     
     _dfuthread->start();
+}
+
+void ImageWriter::setDfuImageParams(const QString &board, const QString &imageType, const QString &distro)
+{
+    _dfuBoard = board;
+    _dfuImageType = imageType;
+    _dfuDistro = distro;
+    
+    qDebug() << "DFU image parameters set:";
+    qDebug() << "  Board:" << board;
+    qDebug() << "  Image type:" << imageType;
+    qDebug() << "  Distro:" << distro;
 }
 
 void ImageWriter::openFileDialog()

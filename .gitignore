@@ -19,3 +19,8 @@ debian/tmp
 *.AppImage*
 *.appimagecraft*
 .cache
+
+# DFU utilities (downloaded at build time)
+src/build/dfu-util/
+*.tar.gz
+*.zip

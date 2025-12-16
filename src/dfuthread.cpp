@@ -4,15 +4,27 @@
  */
 
 #include "dfuthread.h"
+#include "dfuwrapper.h"
 #include <QProcess>
 #include <QFile>
 #include <QDir>
 #include <QDebug>
 #include <QThread>
 #include <QTextStream>
+#include <QCoreApplication>
+#include <QStandardPaths>
+#include <QNetworkAccessManager>
+#include <QNetworkRequest>
+#include <QNetworkReply>
+#include <QEventLoop>
+#include <QDate>
+
+#ifdef Q_OS_LINUX
+#include <unistd.h>  // For geteuid()
+#endif
 
 DfuThread::DfuThread(QObject *parent)
-    : QThread(parent), _process(nullptr)
+    : QThread(parent)
 {
 }
 
@@ -21,37 +33,113 @@ void DfuThread::setTestFilesPath(const QString &path)
     _testFilesPath = path;
 }
 
+void DfuThread::setImageInfo(const QString &board, const QString &imageType, const QString &distro)
+{
+    _board = board;
+    _imageType = imageType;
+    _distro = distro;
+}
+
 void DfuThread::run()
 {
-    emit preparationStatusUpdate(tr("Checking dfu-util availability..."));
+    emit preparationStatusUpdate(tr("Initializing DFU..."));
     
-    // Check if dfu-util is installed
-    if (!checkDfuUtil())
+    // TI J7 device USB ID
+    const int TI_VENDOR_ID = 0x0451;
+    const int TI_PRODUCT_ID = 0x6165;
+    
+    // Step 1: Download system image if image info is set
+    QString extractedImagePath;
+    if (!_board.isEmpty() && !_imageType.isEmpty() && !_distro.isEmpty())
     {
-        emit preparationStatusUpdate(tr("Installing dfu-util..."));
-        if (!installDfuUtil())
+        emit progressUpdate(5, tr("Preparing to download system image..."));
+        
+        // Extract variant from imageType
+        QString imageType = _imageType;
+        QString variant = "";
+        
+        if (imageType.contains('/')) {
+            QStringList parts = imageType.split('/');
+            imageType = parts[0];
+            variant = parts[1];
+        }
+        
+        if (variant.isEmpty()) {
+            variant = "minimal";
+        }
+        
+        // Get current date for filename (format: v2025.12)
+        QDate currentDate = QDate::currentDate();
+        QString release = QString("v%1.%2")
+                         .arg(currentDate.year())
+                         .arg(currentDate.month(), 2, 10, QChar('0'));
+        
+        // Construct filename: gemstone-{variant}-{release}-{distro}-{suite}-{machine}.img.xz
+        QString filename = QString("gemstone-%1-%2-%3-%4-%5.img.xz")
+                          .arg(variant)
+                          .arg(release)
+                          .arg(_distro)
+                          .arg(imageType)
+                          .arg(_board);
+        
+        QString imageUrl = QString("https://packages.t3gemstone.org/images/%1/%2/%3/%4")
+                          .arg(_distro)
+                          .arg(imageType)
+                          .arg(_board)
+                          .arg(filename);
+        
+        qDebug() << "DFU image URL:" << imageUrl;
+        emit preparationStatusUpdate(tr("Downloading system image: %1").arg(filename));
+        
+        // Create gem-imager directory in user's home (even when running with sudo)
+        QString homeDir = qEnvironmentVariable("HOME");
+        if (homeDir.isEmpty() || homeDir == "/root") {
+            // If running as sudo, try to get the original user's home
+            QString sudoUser = qEnvironmentVariable("SUDO_USER");
+            if (!sudoUser.isEmpty()) {
+                homeDir = "/home/" + sudoUser;
+            } else {
+                // Fallback to current directory
+                homeDir = QDir::currentPath();
+            }
+        }
+        QString gemImagerDir = homeDir + "/gem-imager";
+        QDir().mkpath(gemImagerDir);
+        
+        QString compressedImagePath = gemImagerDir + "/" + filename;
+        
+        // Download image (5-40% progress)
+        if (!downloadImage(imageUrl, compressedImagePath))
         {
-            emit error(tr("Failed to install dfu-util. Please install it manually."));
+            emit error(tr("Failed to download system image from: %1").arg(imageUrl));
             return;
         }
         
-        // Check again after installation
-        if (!checkDfuUtil())
+        emit progressUpdate(40, tr("Extracting image from archive..."));
+        
+        // Extract .xz file
+        extractedImagePath = gemImagerDir + "/" + filename.replace(".img.xz", ".img");
+        if (!extractXzFile(compressedImagePath, extractedImagePath))
         {
-            emit error(tr("dfu-util installation failed. Please install it manually using: sudo apt-get install dfu-util"));
+            emit error(tr("Failed to extract image from archive"));
+            QFile::remove(compressedImagePath);
             return;
         }
+        
+        // Remove compressed file to save space
+        QFile::remove(compressedImagePath);
+        
+        emit progressUpdate(50, tr("Image extracted successfully"));
     }
     
-    emit progressUpdate(10, tr("DFU utility found"));
-    QThread::msleep(500);
+    // Step 2: Send bootloader files
+    emit progressUpdate(52, tr("Preparing bootloader files..."));
     
     // List of files to send in order
     QStringList files;
     files << "tiboot3.bin" << "tispl.bin" << "u-boot.img";
     
     // For TI J7 devices, map files to their alt setting names
-    // Based on dfu-util -l output
     QStringList altSettingNames;
     altSettingNames << "bootloader" << "tispl.bin" << "u-boot.img";
     
@@ -61,332 +149,301 @@ void DfuThread::run()
         QString filePath = _testFilesPath + "/" + file;
         if (!QFile::exists(filePath))
         {
-            emit error(tr("File not found: %1").arg(filePath));
+            emit error(tr("Bootloader file not found: %1").arg(filePath));
+            if (!extractedImagePath.isEmpty()) {
+                QFile::remove(extractedImagePath);
+            }
             return;
         }
     }
     
-    emit progressUpdate(15, tr("Creating DFU script..."));
+    emit progressUpdate(55, tr("Sending bootloader files..."));
     
-    // Create a temporary script that will do all DFU operations
-    QString scriptPath = QDir::temp().filePath("gem-imager-dfu.sh");
-    QFile scriptFile(scriptPath);
-    
-    if (!scriptFile.open(QIODevice::WriteOnly | QIODevice::Text))
-    {
-        emit error(tr("Failed to create temporary script"));
-        return;
-    }
-    
-    QTextStream out(&scriptFile);
-    out << "#!/bin/bash\n";
-    out << "\n";
-    out << "# Find dfu-util path\n";
-    out << "DFU_UTIL=$(which dfu-util 2>/dev/null || echo '/usr/bin/dfu-util')\n";
-    out << "\n";
-    out << "# Debug: List USB devices\n";
-    out << "echo 'Listing all USB devices...'\n";
-    out << "lsusb 2>&1 || echo 'lsusb not found'\n";
-    out << "\n";
-    out << "# Debug: List DFU devices\n";
-    out << "echo 'Searching for DFU devices...'\n";
-    out << "\"$DFU_UTIL\" -l 2>&1 || echo 'dfu-util failed'\n";
-    out << "\n";
-    out << "# Check if DFU device is available\n";
-    out << "if ! \"$DFU_UTIL\" -l 2>&1 | grep -q 'Found DFU\\|Device ID'; then\n";
-    out << "  echo 'ERROR: No DFU device found.'\n";
-    out << "  echo 'Please ensure:'\n";
-    out << "  echo '1. Device is connected via USB'\n";
-    out << "  echo '2. Device is in DFU mode (boot button pressed during power-on)'\n";
-    out << "  echo '3. USB cable supports data transfer (not just charging)'\n";
-    out << "  exit 1\n";
-    out << "fi\n";
-    out << "\n";
+    int currentProgress = 55;
+    int progressPerFile = 20 / files.size(); // 55-75% range
     
     for (int i = 0; i < files.size(); ++i)
     {
         QString filePath = _testFilesPath + "/" + files[i];
-        out << "echo 'Sending " << files[i] << "...'\n";
-        out << "\"$DFU_UTIL\" -R -a " << altSettingNames[i] << " -D " << filePath << " 2>&1 | tee /tmp/dfu-output.log\n";
-        out << "# Check if download was successful (exit code 0 or 74, and 'Download done' in output)\n";
-        out << "EXIT_CODE=${PIPESTATUS[0]}\n";
-        out << "if grep -q 'Download done' /tmp/dfu-output.log; then\n";
-        out << "  echo 'Transfer successful'\n";
-        out << "elif [ $EXIT_CODE -ne 0 ]; then\n";
-        out << "  echo 'Transfer failed with exit code '$EXIT_CODE\n";
-        out << "  exit 1\n";
-        out << "fi\n";
-        out << "\n";
         
-        // Wait for device to reconnect between files (except after last file)
+        emit progressUpdate(currentProgress, tr("Sending %1...").arg(files[i]));
+        
+        // Create new DFU wrapper for each file (device reconnects between files)
+        DfuWrapper *dfu = new DfuWrapper(nullptr);
+        
+        if (!dfu->initialize()) {
+            emit error(tr("Failed to initialize DFU for %1").arg(files[i]));
+            delete dfu;
+            if (!extractedImagePath.isEmpty()) {
+                QFile::remove(extractedImagePath);
+            }
+            return;
+        }
+        
+        // Find DFU device with specific alt setting
+        if (!dfu->findDevice(TI_VENDOR_ID, TI_PRODUCT_ID, altSettingNames[i])) {
+            emit error(tr("Failed to find DFU device for %1 (alt: %2)").arg(files[i]).arg(altSettingNames[i]));
+            delete dfu;
+            if (!extractedImagePath.isEmpty()) {
+                QFile::remove(extractedImagePath);
+            }
+            return;
+        }
+        
+        // Download file
+        // Reset after EVERY file transfer (matching dfu-util -R behavior)
+        bool resetAfter = true;
+        if (!dfu->downloadFile(filePath, altSettingNames[i], resetAfter)) {
+            emit error(tr("Failed to download %1").arg(files[i]));
+            delete dfu;
+            if (!extractedImagePath.isEmpty()) {
+                QFile::remove(extractedImagePath);
+            }
+            return;
+        }
+        
+        // Cleanup this DFU instance
+        dfu->cleanup();
+        delete dfu;
+        
+        currentProgress += progressPerFile;
+        emit progressUpdate(currentProgress, tr("%1 sent successfully").arg(files[i]));
+        
+        // Wait for device reconnect (except after last file)
         if (i < files.size() - 1)
         {
-            out << "echo 'Waiting for device to reconnect...'\n";
-            out << "sleep 2\n";
+            emit progressUpdate(currentProgress, tr("Waiting for device to reconnect..."));
             
-            // Wait for DFU device to reappear
-            out << "for i in {1..20}; do\n";
-            out << "  if \"$DFU_UTIL\" -l 2>/dev/null | grep -q 'Found DFU\\|Device ID'; then\n";
-            out << "    echo 'Device reconnected'\n";
-            out << "    sleep 1\n";
-            out << "    break\n";
-            out << "  fi\n";
-            out << "  if [ $i -eq 20 ]; then\n";
-            out << "    echo 'Device did not reconnect'\n";
-            out << "    exit 1\n";
-            out << "  fi\n";
-            out << "  sleep 0.5\n";
-            out << "done\n";
-            out << "\n";
+            // Wait for device to re-enumerate in DFU mode
+            // With proper dfu_detach, device transitions quickly
+            QThread::sleep(5);
         }
     }
     
-    out << "echo 'All files sent successfully'\n";
-    scriptFile.close();
+    emit progressUpdate(75, tr("Bootloader files sent successfully"));
     
-    // Make script executable
-    QFile::setPermissions(scriptPath, QFile::ReadOwner | QFile::WriteOwner | QFile::ExeOwner);
-    
-    emit progressUpdate(20, tr("Requesting permissions for USB access..."));
-    
-    // Execute the script with pkexec (GUI password prompt)
-    // Create QProcess in the thread it will be used in
-    QProcess process;
-    
-    // Use pkexec for GUI password prompt
-    QString command = "pkexec";
-    QStringList arguments;
-    arguments << "bash" << scriptPath;
-    
-    qDebug() << "Running:" << command << arguments.join(" ");
-    
-    int currentProgress = 20;
-    
-    connect(&process, &QProcess::readyReadStandardOutput, this, [&]() {
-        QString output = process.readAllStandardOutput();
-        QStringList lines = output.split('\n', Qt::SkipEmptyParts);
+    // Step 3: Send system image to rawemmc if we downloaded one
+    if (!extractedImagePath.isEmpty())
+    {
+        emit progressUpdate(78, tr("Waiting for device to enter image transfer mode..."));
+        QThread::sleep(10);  // Wait for rawemmc to appear
         
-        for (const QString &line : lines)
+        emit progressUpdate(80, tr("Sending system image to device (this may take several minutes)..."));
+        
+        // Send image to rawemmc partition
+        if (!sendImageToRawemmc(extractedImagePath))
         {
-            qDebug() << "Script output:" << line;
-            
-            if (line.contains("Sending tiboot3.bin"))
-            {
-                currentProgress = 30;
-                emit progressUpdate(30, tr("Sending tiboot3.bin..."));
-            }
-            else if (line.contains("Sending tispl.bin"))
-            {
-                currentProgress = 50;
-                emit progressUpdate(50, tr("Sending tispl.bin..."));
-            }
-            else if (line.contains("Sending u-boot.img"))
-            {
-                currentProgress = 70;
-                emit progressUpdate(70, tr("Sending u-boot.img..."));
-            }
-            else if (line.contains("Waiting for device"))
-            {
-                emit progressUpdate(currentProgress + 5, tr("Waiting for device to reconnect..."));
-            }
-            else if (line.contains("Device reconnected"))
-            {
-                currentProgress += 10;
-                emit progressUpdate(currentProgress, tr("Device reconnected"));
-            }
+            emit error(tr("Failed to send image to device"));
+            QFile::remove(extractedImagePath);
+            return;
         }
-    });
-    
-    process.start(command, arguments);
-    
-    if (!process.waitForStarted(5000))
-    {
-        emit error(tr("Failed to start DFU process"));
-        scriptFile.remove();
-        return;
-    }
-    
-    // Wait for the process to finish (max 120 seconds for all files)
-    if (!process.waitForFinished(120000))
-    {
-        emit error(tr("DFU process timed out"));
-        process.kill();
-        scriptFile.remove();
-        return;
-    }
-    
-    int exitCode = process.exitCode();
-    QString output = process.readAllStandardOutput();
-    QString errorOutput = process.readAllStandardError();
-    
-    qDebug() << "Script exit code:" << exitCode;
-    qDebug() << "Output:" << output;
-    qDebug() << "Error output:" << errorOutput;
-    
-    // Clean up
-    scriptFile.remove();
-    
-    if (exitCode == 0)
-    {
-        emit progressUpdate(100, tr("All files sent successfully. Device should boot now."));
-        QThread::msleep(1000);
-        emit success();
+        
+        // Clean up extracted file
+        QFile::remove(extractedImagePath);
+        
+        emit progressUpdate(100, tr("System image sent successfully!"));
     }
     else
     {
-        emit error(tr("DFU operation failed. Exit code: %1. Check console for details.").arg(exitCode));
+        emit progressUpdate(100, tr("All bootloader files sent successfully. Device should boot now."));
     }
+    
+    QThread::msleep(1000);
+    emit success();
 }
 
 bool DfuThread::checkDfuUtil()
 {
-    QProcess process;
-    process.start("which", QStringList() << "dfu-util");
-    process.waitForFinished(3000);
-    
-    return process.exitCode() == 0;
+    // DFU functionality is now built into the application
+    return true;
 }
 
 bool DfuThread::installDfuUtil()
 {
-    // Try to install dfu-util using apt-get (for Debian/Ubuntu based systems)
-    QProcess process;
-    
-    emit preparationStatusUpdate(tr("Installing dfu-util (this may take a moment)..."));
-    
-    // First, try with pkexec for GUI authentication
-    process.start("pkexec", QStringList() << "apt-get" << "install" << "-y" << "dfu-util");
-    process.waitForFinished(60000); // Wait up to 60 seconds
-    
-    if (process.exitCode() == 0)
-    {
-        return true;
-    }
-    
-    // If pkexec failed, try with sudo
-    process.start("sudo", QStringList() << "apt-get" << "install" << "-y" << "dfu-util");
-    process.waitForFinished(60000);
-    
-    return process.exitCode() == 0;
+    // DFU functionality is built into the application
+    // No installation needed
+    return true;
 }
 
-bool DfuThread::sendFile(const QString &filePath, const QString &altSettingName)
+bool DfuThread::downloadImage(const QString &url, const QString &outputPath)
 {
-    _process = new QProcess(this);
+    emit preparationStatusUpdate(tr("Downloading from: %1").arg(url));
+    qDebug() << "Downloading image from:" << url;
+    qDebug() << "Output path:" << outputPath;
     
-    QStringList arguments;
+    QNetworkAccessManager manager;
+    QNetworkRequest request(url);
     
-    // Check if we can use pkexec (for GUI), otherwise try sudo
-    QString command;
-    QProcess testProcess;
-    testProcess.start("which", QStringList() << "pkexec");
-    testProcess.waitForFinished(1000);
+    // Start download
+    QNetworkReply *reply = manager.get(request);
     
-    if (testProcess.exitCode() == 0)
+    // Open output file
+    QFile outputFile(outputPath);
+    if (!outputFile.open(QIODevice::WriteOnly))
     {
-        // Use pkexec for GUI elevation
-        command = "pkexec";
-        arguments << "dfu-util";
-    }
-    else
-    {
-        // Fallback to sudo
-        command = "sudo";
-        arguments << "dfu-util";
-    }
-    
-    arguments << "-R";  // Reset device after download
-    arguments << "-a" << altSettingName;
-    arguments << "-D" << filePath;
-    
-    qDebug() << "Running:" << command << arguments.join(" ");
-    
-    _process->start(command, arguments);
-    
-    if (!_process->waitForStarted(5000))
-    {
-        qDebug() << "Failed to start dfu-util";
-        cleanupProcess();
+        qDebug() << "Failed to open output file:" << outputPath;
+        reply->deleteLater();
         return false;
     }
     
-    // Wait for the process to finish (max 30 seconds per file)
-    if (!_process->waitForFinished(30000))
-    {
-        qDebug() << "dfu-util timed out";
-        _process->kill();
-        cleanupProcess();
-        return false;
-    }
+    qint64 totalBytes = 0;
+    qint64 downloadedBytes = 0;
     
-    int exitCode = _process->exitCode();
-    QString output = _process->readAllStandardOutput();
-    QString errorOutput = _process->readAllStandardError();
-    
-    qDebug() << "dfu-util exit code:" << exitCode;
-    qDebug() << "Output:" << output;
-    qDebug() << "Error output:" << errorOutput;
-    
-    cleanupProcess();
-    
-    // Check if download was successful by looking at the output
-    // Exit code 0 = perfect success
-    // Exit code 74 (LIBUSB_ERROR_IO) = transfer completed but device disconnected (normal for bootloader)
-    bool downloadComplete = output.contains("Download done.") || output.contains("Download\t[=========================] 100%");
-    
-    if (exitCode == 0 || (exitCode == 74 && downloadComplete))
-    {
-        return true;
-    }
-    
-    return false;
-}
-
-bool DfuThread::waitForDfuDevice(int timeoutSeconds)
-{
-    // Determine whether to use pkexec or sudo
-    QString command;
-    QProcess testProcess;
-    testProcess.start("which", QStringList() << "pkexec");
-    testProcess.waitForFinished(1000);
-    
-    if (testProcess.exitCode() == 0)
-    {
-        command = "pkexec";
-    }
-    else
-    {
-        command = "sudo";
-    }
-    
-    // Wait for device to reconnect in DFU mode
-    for (int i = 0; i < timeoutSeconds * 2; ++i) // Check every 500ms
-    {
-        QProcess checkProcess;
-        QStringList args;
-        args << "dfu-util" << "-l";
-        checkProcess.start(command, args);
-        checkProcess.waitForFinished(2000);
-        
-        QString output = checkProcess.readAllStandardOutput();
-        
-        // Check if a DFU device is found
-        if (output.contains("Found DFU") || output.contains("Device ID"))
-        {
-            return true;
+    // Connect to progress signal
+    connect(reply, &QNetworkReply::downloadProgress, this, 
+            [this, &downloadedBytes, &totalBytes](qint64 received, qint64 total) {
+        downloadedBytes = received;
+        if (total > 0) {
+            totalBytes = total;
+            int percentage = 5 + (received * 35 / total); // 5-40% range for download
+            emit progressUpdate(percentage, 
+                tr("Downloading: %1 MB / %2 MB")
+                    .arg(received / 1024 / 1024)
+                    .arg(total / 1024 / 1024));
         }
-        
-        QThread::msleep(500);
+    });
+    
+    // Event loop to wait for download
+    QEventLoop loop;
+    connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
+    
+    // Write data as it arrives
+    connect(reply, &QNetworkReply::readyRead, [&]() {
+        outputFile.write(reply->readAll());
+    });
+    
+    loop.exec();
+    
+    // Check for errors
+    if (reply->error() != QNetworkReply::NoError)
+    {
+        qDebug() << "Download failed:" << reply->errorString();
+        emit error(tr("Download failed: %1").arg(reply->errorString()));
+        outputFile.close();
+        reply->deleteLater();
+        return false;
     }
     
-    return false;
+    // Write any remaining data
+    outputFile.write(reply->readAll());
+    outputFile.close();
+    reply->deleteLater();
+    
+    qDebug() << "Download completed:" << downloadedBytes << "bytes";
+    return true;
 }
 
-void DfuThread::cleanupProcess()
+bool DfuThread::extractXzFile(const QString &xzFilePath, const QString &outputPath)
 {
-    if (_process)
+    emit preparationStatusUpdate(tr("Extracting image from archive..."));
+    qDebug() << "Extracting XZ file:" << xzFilePath << "to:" << outputPath;
+    
+    // Use QProcess to run xz command
+    QProcess xzProcess;
+    
+    // Check if xz is available
+    QProcess::execute("which", QStringList() << "xz");
+    
+    // Prepare xz command: xz -dc input.xz > output
+    // Using -d (decompress), -c (stdout), -k (keep original)
+    xzProcess.start("xz", QStringList() << "-dc" << xzFilePath);
+    
+    if (!xzProcess.waitForStarted())
     {
-        _process->deleteLater();
-        _process = nullptr;
+        qDebug() << "Failed to start xz process";
+        emit error(tr("Failed to start decompression (xz not found?)"));
+        return false;
     }
+    
+    // Open output file
+    QFile outputFile(outputPath);
+    if (!outputFile.open(QIODevice::WriteOnly))
+    {
+        qDebug() << "Failed to open output file:" << outputPath;
+        xzProcess.kill();
+        xzProcess.waitForFinished();
+        return false;
+    }
+    
+    qint64 totalWritten = 0;
+    int lastProgress = 40;
+    
+    // Read decompressed data and write to file
+    while (xzProcess.state() != QProcess::NotRunning || xzProcess.bytesAvailable() > 0)
+    {
+        if (xzProcess.waitForReadyRead(1000))
+        {
+            QByteArray data = xzProcess.readAll();
+            qint64 written = outputFile.write(data);
+            totalWritten += written;
+            
+            // Update progress (40-50% range)
+            // Typical image is ~4GB decompressed
+            int newProgress = 40 + (totalWritten * 10 / (4LL * 1024 * 1024 * 1024));
+            if (newProgress > lastProgress && newProgress <= 50)
+            {
+                lastProgress = newProgress;
+                emit progressUpdate(newProgress, 
+                    tr("Extracted: %1 MB").arg(totalWritten / 1024 / 1024));
+            }
+        }
+    }
+    
+    outputFile.close();
+    
+    // Wait for process to finish
+    xzProcess.waitForFinished(-1);
+    
+    if (xzProcess.exitCode() != 0)
+    {
+        QString errorOutput = xzProcess.readAllStandardError();
+        qDebug() << "xz extraction failed:" << errorOutput;
+        emit error(tr("Decompression failed: %1").arg(errorOutput));
+        QFile::remove(outputPath);
+        return false;
+    }
+    
+    qDebug() << "Extraction completed:" << totalWritten << "bytes";
+    return true;
+}
+
+bool DfuThread::sendImageToRawemmc(const QString &imagePath)
+{
+    // Send image file to rawemmc alt setting via DFU
+    const int TI_VENDOR_ID = 0x0451;
+    const int TI_PRODUCT_ID = 0x6165;
+    const QString altSettingName = "rawemmc";
+    
+    emit preparationStatusUpdate(tr("Preparing to send image to device..."));
+    
+    // Create DFU wrapper
+    DfuWrapper *dfu = new DfuWrapper(nullptr);
+    
+    if (!dfu->initialize()) {
+        emit error(tr("Failed to initialize DFU for image transfer"));
+        delete dfu;
+        return false;
+    }
+    
+    // Find device with rawemmc alt setting
+    if (!dfu->findDevice(TI_VENDOR_ID, TI_PRODUCT_ID, altSettingName)) {
+        emit error(tr("Failed to find rawemmc partition on device"));
+        delete dfu;
+        return false;
+    }
+    
+    emit progressUpdate(80, tr("Sending image to device (this may take several minutes)..."));
+    
+    // Download image file (no reset after - device will handle it)
+    if (!dfu->downloadFile(imagePath, altSettingName, false)) {
+        emit error(tr("Failed to transfer image to device"));
+        delete dfu;
+        return false;
+    }
+    
+    // Cleanup
+    dfu->cleanup();
+    delete dfu;
+    
+    return true;
 }

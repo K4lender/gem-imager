@@ -7,9 +7,7 @@
 #define DFUTHREAD_H
 
 #include <QThread>
-#include <QProcess>
 #include <QString>
-#include <QStringList>
 
 class DfuThread : public QThread
 {
@@ -17,25 +15,29 @@ class DfuThread : public QThread
 public:
     explicit DfuThread(QObject *parent = nullptr);
     void setTestFilesPath(const QString &path);
+    void setImageInfo(const QString &board, const QString &imageType, const QString &distro);
     
 signals:
     void success();
     void error(QString msg);
     void progressUpdate(int percentage, QString statusMsg);
     void preparationStatusUpdate(QString msg);
+    void downloadProgress(qint64 downloaded, qint64 total);
 
 protected:
     void run() override;
 
 private:
     QString _testFilesPath;
-    QProcess *_process;
+    QString _board;
+    QString _imageType;  // minimal, kiosk, desktop
+    QString _distro;     // debian, ubuntu, pardus
     
     bool checkDfuUtil();
     bool installDfuUtil();
-    bool sendFile(const QString &filePath, const QString &altSettingName);
-    bool waitForDfuDevice(int timeoutSeconds);
-    void cleanupProcess();
+    bool downloadImage(const QString &url, const QString &outputPath);
+    bool extractXzFile(const QString &xzFilePath, const QString &outputPath);
+    bool sendImageToRawemmc(const QString &imagePath);
 };
 
 #endif // DFUTHREAD_H

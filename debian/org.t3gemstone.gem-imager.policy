@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE policyconfig PUBLIC
+ "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN"
+ "http://www.freedesktop.org/standards/PolicyKit/1/policyconfig.dtd">
+<policyconfig>
+
+  <vendor>T3 Gemstone</vendor>
+  <vendor_url>https://github.com/t3gemstone/gem-imager</vendor_url>
+
+  <action id="org.t3gemstone.gem-imager.run-elevated">
+    <description>Run Gemstone Imager with elevated privileges</description>
+    <message>Authentication is required to run Gemstone Imager with administrative privileges</message>
+    <icon_name>gem-imager</icon_name>
+    <defaults>
+      <allow_any>auth_admin</allow_any>
+      <allow_inactive>auth_admin</allow_inactive>
+      <allow_active>auth_admin_keep</allow_active>
+    </defaults>
+    <annotate key="org.freedesktop.policykit.exec.path">/usr/bin/gem-imager</annotate>
+    <annotate key="org.freedesktop.policykit.exec.allow_gui">true</annotate>
+  </action>
+
+</policyconfig>
