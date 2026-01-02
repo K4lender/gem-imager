@@ -68,11 +68,8 @@ void DfuThread::run()
             variant = "minimal";
         }
         
-        // Get current date for filename (format: v2025.12)
-        QDate currentDate = QDate::currentDate();
-        QString release = QString("v%1.%2")
-                         .arg(currentDate.year())
-                         .arg(currentDate.month(), 2, 10, QChar('0'));
+        // Fixed release version
+        QString release = "v2025.12";
         
         // Construct filename: gemstone-{variant}-{release}-{distro}-{suite}-{machine}.img.xz
         QString filename = QString("gemstone-%1-%2-%3-%4-%5.img.xz")
@@ -434,8 +431,8 @@ bool DfuThread::sendImageToRawemmc(const QString &imagePath)
     
     emit progressUpdate(80, tr("Sending image to device (this may take several minutes)..."));
     
-    // Download image file (no reset after - device will handle it)
-    if (!dfu->downloadFile(imagePath, altSettingName, false)) {
+    // Download image file and reset device to boot into u-boot
+    if (!dfu->downloadFile(imagePath, altSettingName, true)) {
         emit error(tr("Failed to transfer image to device"));
         delete dfu;
         return false;
