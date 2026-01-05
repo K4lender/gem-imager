@@ -2008,30 +2008,68 @@ ApplicationWindow {
             }
         } else {
             // Parse DFU image parameters from URL or JSON
-            // Expected format: https://packages.t3gemstone.org/images/{distro}/{imageType}/{board}/...
             var board = typeof(d.board) != "undefined" ? d.board : "";
             var imageType = typeof(d.imageType) != "undefined" ? d.imageType : "";
             var distro = typeof(d.distro) != "undefined" ? d.distro : "";
-            var variant = typeof(d.variant) != "undefined" ? d.variant : "";  // minimal, desktop, kiosk
+            var variant = typeof(d.variant) != "undefined" ? d.variant : "";
             
-            // If not in JSON, try to parse from URL
+            console.log("DEBUG 1: d.variant =", d.variant)
+            console.log("DEBUG 2: d.url =", d.url)
+            console.log("DEBUG 3: variant (initial) =", variant)
+            
+            // ========== URL'DEN EKSIK PARAMETRELERİ ÇEK ==========
             if (board === "" || imageType === "" || distro === "") {
                 var urlParts = d.url.toString().split('/');
                 if (urlParts.length >= 6 && urlParts[3] === "images") {
-                    if (distro === "") distro = urlParts[4];      // ubuntu, debian, pardus
-                    if (imageType === "") imageType = urlParts[5]; // jammy, bookworm, etc.
-                    if (board === "") board = urlParts[6];         // t3-gem-o1, etc.
+                    if (distro === "") distro = urlParts[4];      // ubuntu
+                    if (imageType === "") imageType = urlParts[5]; // jammy
+                    if (board === "") board = urlParts[6];         // t3-gem-o1
+                }
+            }
+            // ======================================================
+            
+            // imageType içinde "/" varsa ayır
+            if (imageType.indexOf('/') !== -1) {
+                var parts = imageType.split('/')
+                imageType = parts[0]
+                variant = parts[1]
+                console.log("DEBUG 4: Split imageType, variant =", variant)
+            }
+            
+            // URL'den variant çıkar
+            if (variant === "") {
+                var urlFileName = d.url.toString().split('/').pop();
+                console.log("DEBUG 5: urlFileName =", urlFileName)
+                
+                if (urlFileName.includes("gemstone-")) {
+                    var nameParts = urlFileName.split('-');
+                    console.log("DEBUG 6: nameParts =", nameParts)
+                    
+                    if (nameParts.length >= 2) {
+                        var possibleVariant = nameParts[1];
+                        console.log("DEBUG 7: possibleVariant =", possibleVariant)
+                        
+                        if (possibleVariant === "minimal" || possibleVariant === "desktop" || possibleVariant === "kiosk") {
+                            variant = possibleVariant;
+                            console.log("DEBUG 8: variant from URL =", variant)
+                        }
+                    }
                 }
             }
             
-            // Set DFU image parameters if we extracted them
-            // For DFU, we need: distro, imageType (version like jammy/bookworm), board, variant (minimal/desktop/kiosk)
-            if (board !== "" && imageType !== "" && distro !== "") {
-                // If variant is specified, append it to imageType
-                var fullImageType = variant !== "" ? imageType + "/" + variant : imageType;
-                imageWriter.setDfuImageParams(board, fullImageType, distro);
+            // Hâlâ boşsa varsayılan
+            if (variant === "") {
+                variant = "minimal";
+                console.log("DEBUG 9: variant default = minimal")
             }
             
+            console.log("FINAL: board=", board, "imageType=", imageType, "distro=", distro, "variant=", variant)
+            
+            // Set DFU parameters
+            if (board !== "" && imageType !== "" && distro !== "") {
+                imageWriter.setDfuImageParams(board, imageType, distro, variant)
+            }
+
             imageWriter.setSrc(d.url, d.image_download_size, d.extract_size, typeof(d.extract_sha256) != "undefined" ? d.extract_sha256 : "", typeof(d.contains_multiple_files) != "undefined" ? d.contains_multiple_files : false, ospopup.categorySelected, d.name, typeof(d.init_format) != "undefined" ? d.init_format : "")
             osbutton.text = d.name
             ospopup.close()
