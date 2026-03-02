@@ -1011,7 +1011,6 @@ void ImageWriter::_startDfuThread()
 
     _thread->setVerifyEnabled(_verifyEnabled);
     _thread->setUserAgent(QString("Mozilla/5.0 gem-imager/%1").arg(constantVersion()).toUtf8());
-    _thread->setImageCustomization(_config, _cmdline, _firstrun, _cloudinit, _cloudinitNetwork, _geminit, _initFormat, _dst.toLatin1());
 
     // Setup caching
     if (!_expectedHash.isEmpty() && _cachedFileHash != _expectedHash && _cachingEnabled)

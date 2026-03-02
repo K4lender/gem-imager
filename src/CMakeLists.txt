@@ -402,7 +402,7 @@ if (WIN32)
             "${CMAKE_SOURCE_DIR}/../license.txt" "${CMAKE_SOURCE_DIR}/windows/gem-imager-cli.cmd"
             "${CMAKE_SOURCE_DIR}/windows/gem-imager-dfu.inf"
             "${CMAKE_BINARY_DIR}/deploy")
-
+ board: t3-gem-o1: Add DFU support, TR locale, fix OS customization 
     # Copy signed driver package (gem-imager-dfu.cat + t3-dfu.cer).
     # Generate these once by running src/windows/sign-driver.ps1 on the build machine,
     # then commit the output files to the repository.
