@@ -77,6 +77,18 @@ void DfuThread::run()
     waitForExtractThread();
     if (!_successful) return;
 
+    if (!_geminit.isEmpty() || !_config.isEmpty() || !_cmdline.isEmpty() || !_firstrun.isEmpty() || !_cloudinit.isEmpty()) {
+        emit dfuProgress(35, tr("Customizing image..."));
+        if (_file.isOpen()) _file.close();
+        _file.setFileName(_tempImagePath);
+        if (!_file.open(QIODevice::ReadWrite | QIODevice::Unbuffered)) {
+            emit error(tr("Failed to reopen image for customization: %1").arg(_file.errorString()));
+            return;
+        }
+        if (!_customizeImage()) return;
+        _file.close();
+    }
+
     emit dfuProgress(38, tr("Extracting bootloader files from image..."));
     if (!extractBootloaderFromImage()) return;
 

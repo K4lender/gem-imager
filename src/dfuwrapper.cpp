@@ -231,6 +231,12 @@ bool DfuWrapper::downloadFileStreaming(const QString &filePath)
     }
 
     qint64 fileSize = file.size();
+    if (fileSize == 0) {
+        setError("Image file is empty, cannot transfer");
+        libusb_release_interface(dfuDevice->dev_handle, dfuDevice->interface);
+        return false;
+    }
+
     int xfer_size = getTransferSize();
     if (xfer_size <= 0)
         xfer_size = 4096;
@@ -294,6 +300,14 @@ bool DfuWrapper::downloadFileStreaming(const QString &filePath)
 
     file.close();
 
+    // Verify all bytes were actually sent before signalling end of transfer.
+    // If bytesSent < fileSize the loop exited early due to an error (ok == false).
+    if (ok && bytesSent != fileSize) {
+        setError(QString("Transfer incomplete: sent %1 of %2 bytes")
+                 .arg(bytesSent).arg(fileSize));
+        ok = false;
+    }
+
     if (ok) {
         // Zero-length packet signals end of transfer
         dfu_download(dfuDevice->dev_handle, dfuDevice->interface, 0, transaction, nullptr);
@@ -301,17 +315,33 @@ bool DfuWrapper::downloadFileStreaming(const QString &filePath)
         // Wait for manifest phase (final eMMC flush)
         emit statusMessage("Waiting for device to complete writing...");
         struct dfu_status finalStatus;
+        bool manifestOk = false;
         for (;;) {
             memset(&finalStatus, 0, sizeof(finalStatus));
             int ret = dfu_get_status(dfuDevice, &finalStatus);
-            if (ret < 0)
-                break; // device may have disconnected after manifest
-
-            if (finalStatus.bState == DFU_STATE_dfuIDLE)
+            if (ret < 0) {
+                // Device disconnected. This is expected only after a successful
+                // manifest (MANIFEST_WAIT_RST or IDLE was seen before disconnect).
+                // If we never saw a terminal state, treat as error.
+                if (!manifestOk) {
+                    setError("Device disconnected unexpectedly during manifest phase");
+                    ok = false;
+                }
                 break;
+            }
+
+            if (finalStatus.bState == DFU_STATE_dfuIDLE) {
+                manifestOk = true;
+                break;
+            }
             if (finalStatus.bState == DFU_STATE_dfuMANIFEST_WAIT_RST) {
+                manifestOk = true;
                 libusb_reset_device(dfuDevice->dev_handle);
                 break;
+            }
+            if (finalStatus.bState == DFU_STATE_dfuMANIFEST) {
+                // Still writing — keep polling
+                manifestOk = false;
             }
             if (finalStatus.bState == DFU_STATE_dfuERROR) {
                 setError(QString("DFU error in manifest phase: status=%1").arg(finalStatus.bStatus));

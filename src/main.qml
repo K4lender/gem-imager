@@ -1498,7 +1498,7 @@ ApplicationWindow {
             confirmwritepopup.askForConfirmation()
         }
         onNo: {
-            imageWriter.setImageCustomization("", "", "", "", "")
+            imageWriter.setImageCustomization("", "", "", "", "", "")
             confirmwritepopup.askForConfirmation()
         }
         onNoClearSettings: {
@@ -1668,6 +1668,7 @@ ApplicationWindow {
 
     function onFinalizing() {
         progressText.text = qsTr("Finalizing...")
+        progressBar.indeterminate = true
     }
 
     function onNetworkInfo(msg) {
