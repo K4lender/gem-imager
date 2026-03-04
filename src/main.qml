@@ -79,7 +79,7 @@ ApplicationWindow {
                 // image content: align left so all this padding is on the
                 // right.
                 fillMode: Image.PreserveAspectFit
-                horizontalAlignment: Image.AlignCenter
+                horizontalAlignment: Image.AlignHCenter
 
                 anchors.centerIn: logoContainer
 
@@ -511,7 +511,6 @@ ApplicationWindow {
             boundsBehavior: Flickable.StopAtBounds
             highlight: Rectangle { color: "lightsteelblue"; radius: 5 }
             ScrollBar.vertical: ScrollBar {
-                position: headerScroll
                 anchors.right: parent.right
                 width: 10
                 policy: hwlist.contentHeight > hwlist.height ? ScrollBar.AlwaysOn : ScrollBar.AsNeeded
