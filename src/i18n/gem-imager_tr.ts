@@ -134,7 +134,7 @@
     </message>
     <message>
         <source>Error writing to storage</source>
-        <translation type="vanished">Depolama birimine yazma hatası</translation>
+        <translation>Depolama birimine yazma hatası</translation>
     </message>
 </context>
 <context>
@@ -142,12 +142,12 @@
     <message>
         <location filename="../downloadthread.cpp" line="118"/>
         <source>unmounting drive</source>
-        <translation type="unfinished"></translation>
+        <translation>Sürücü bağlantısı kesiliyor</translation>
     </message>
     <message>
         <location filename="../downloadthread.cpp" line="138"/>
         <source>opening drive</source>
-        <translation>sürücü açılıyor</translation>
+        <translation>Sürücü açılıyor</translation>
     </message>
     <message>
         <location filename="../downloadthread.cpp" line="166"/>
@@ -259,15 +259,7 @@
     <message>
         <location filename="../downloadthread.cpp" line="900"/>
         <source>Customizing image</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Error mounting FAT32 partition</source>
-        <translation type="obsolete">FAT32 bölümü bağlanırken hata oluştu</translation>
-    </message>
-    <message>
-        <source>Operating system did not mount FAT32 partition</source>
-        <translation type="obsolete">İşletim sistemi FAT32 bölümünü bağlamadı</translation>
+        <translation>İmaj özelleştiriliyor</translation>
     </message>
 </context>
 <context>
@@ -355,17 +347,17 @@
     <message>
         <location filename="../imagewriter.cpp" line="962"/>
         <source>Error synchronizing time. Trying again in 3 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>Zaman senkronizasyonu sırasında hata oluştu. 3 saniye içinde tekrar denenecek</translation>
     </message>
     <message>
         <location filename="../imagewriter.cpp" line="974"/>
         <source>STP is enabled on your Ethernet switch. Getting IP will take long time.</source>
-        <translation type="unfinished"></translation>
+        <translation>STP Ethernet anahtarınızda etkin. IP almak uzun zaman alacak.</translation>
     </message>
     <message>
         <location filename="../imagewriter.cpp" line="1185"/>
         <source>Would you like to prefill the wifi password from the system keychain?</source>
-        <translation type="unfinished"></translation>
+        <translation>Sistem anahtar zincirinden wifi parolasını doldurmak ister misiniz?</translation>
     </message>
 </context>
 <context>
@@ -401,7 +393,7 @@
     <message>
         <location filename="../MsgPopup.qml" line="124"/>
         <source>QUIT</source>
-        <translation type="unfinished"></translation>
+        <translation>ÇIKIŞ</translation>
     </message>
 </context>
 <context>
@@ -409,98 +401,98 @@
     <message>
         <location filename="../OptionsPopup.qml" line="20"/>
         <source>OS Customization</source>
-        <translation type="unfinished"></translation>
+        <translation>İşletim Sistemi Özelleştirme</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="62"/>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation>Genel</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="70"/>
         <source>Services</source>
-        <translation type="unfinished"></translation>
+        <translation>Hizmetler</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="73"/>
         <source>Options</source>
-        <translation type="unfinished"></translation>
+        <translation>Seçenekler</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="89"/>
         <source>Set hostname:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hostname:</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="112"/>
         <source>Set username and password</source>
-        <translation type="unfinished"></translation>
+        <translation>Kullanıcı adı ve parola</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="134"/>
         <source>Username:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kullanıcı Adı:</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="151"/>
         <location filename="../OptionsPopup.qml" line="220"/>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Parola:</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="187"/>
         <source>Configure wireless LAN</source>
-        <translation type="unfinished"></translation>
+        <translation>Kablosuz LAN Ayarla</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="206"/>
         <source>SSID:</source>
-        <translation type="unfinished"></translation>
+        <translation>SSID:</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="239"/>
         <source>Show password</source>
-        <translation type="unfinished"></translation>
+        <translation>Parolayı göster</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="245"/>
         <source>Hidden SSID</source>
-        <translation type="unfinished"></translation>
+        <translation>Gizli SSID</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="251"/>
         <source>Wireless LAN country:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kablosuz LAN ülkesi:</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="262"/>
         <source>Set locale settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Yerel ayarlar</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="272"/>
         <source>Time zone:</source>
-        <translation type="unfinished"></translation>
+        <translation>Zaman dilimi:</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="282"/>
         <source>Keyboard layout:</source>
-        <translation type="unfinished"></translation>
+        <translation>KLavye düzeni:</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="299"/>
         <source>Enable SSH</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH Etkinleştir</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="318"/>
         <source>Use password authentication</source>
-        <translation type="unfinished"></translation>
+        <translation>Parola doğrulamasını kullan</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="328"/>
         <source>Allow public-key authentication only</source>
-        <translation type="unfinished"></translation>
+        <translation>Sadece açık anahtar doğrulamasına izin ver</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="346"/>
@@ -510,27 +502,27 @@
     <message>
         <location filename="../OptionsPopup.qml" line="358"/>
         <source>RUN SSH-KEYGEN</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH-KEYGEN ÇALIŞTIR</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="376"/>
         <source>Play sound when finished</source>
-        <translation type="unfinished"></translation>
+        <translation>Bittiğinde ses çal</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="380"/>
         <source>Eject media when finished</source>
-        <translation type="unfinished"></translation>
+        <translation>Bittiğinde medyayı çıkar</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="384"/>
         <source>Enable telemetry</source>
-        <translation type="unfinished"></translation>
+        <translation>Telemetriyi Etkinleştir</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="398"/>
         <source>SAVE</source>
-        <translation type="unfinished"></translation>
+        <translation>KAYDET</translation>
     </message>
 </context>
 <context>
@@ -546,12 +538,12 @@
     <message>
         <location filename="../UseSavedSettingsPopup.qml" line="77"/>
         <source>Use OS customization?</source>
-        <translation type="unfinished"></translation>
+        <translation>İşletim sistemi özelleştirme kullanılsın mı?</translation>
     </message>
     <message>
         <location filename="../UseSavedSettingsPopup.qml" line="92"/>
         <source>Would you like to apply OS customization settings?</source>
-        <translation type="unfinished"></translation>
+        <translation>İşletim sistemi özelleştirme ayarlarını uygulamak ister misiniz?</translation>
     </message>
     <message>
         <location filename="../UseSavedSettingsPopup.qml" line="134"/>
@@ -561,17 +553,17 @@
     <message>
         <location filename="../UseSavedSettingsPopup.qml" line="115"/>
         <source>NO, CLEAR SETTINGS</source>
-        <translation type="unfinished"></translation>
+        <translation>HAYIR, AYARLARI TEMİZLE</translation>
     </message>
     <message>
         <location filename="../UseSavedSettingsPopup.qml" line="125"/>
         <source>YES</source>
-        <translation type="unfinished">EVET</translation>
+        <translation>EVET</translation>
     </message>
     <message>
         <location filename="../UseSavedSettingsPopup.qml" line="102"/>
         <source>EDIT SETTINGS</source>
-        <translation type="unfinished"></translation>
+        <translation>AYARLARI DÜZENLE</translation>
     </message>
 </context>
 <context>
@@ -585,17 +577,17 @@
         <location filename="../main.qml" line="119"/>
         <location filename="../main.qml" line="481"/>
         <source>Raspberry Pi Device</source>
-        <translation type="unfinished"></translation>
+        <translation>Raspberry Pi Aygıtı</translation>
     </message>
     <message>
         <location filename="../main.qml" line="131"/>
         <source>CHOOSE DEVICE</source>
-        <translation type="unfinished"></translation>
+        <translation>AYGIT SEÇİN</translation>        
     </message>
     <message>
         <location filename="../main.qml" line="143"/>
         <source>Select this button to choose your target Raspberry Pi</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu düğmeyi seçerek hedef Raspberry Pi'yi seçin</translation>
     </message>
     <message>
         <location filename="../main.qml" line="157"/>
@@ -618,32 +610,32 @@
         <location filename="../main.qml" line="194"/>
         <location filename="../main.qml" line="979"/>
         <source>Storage</source>
-        <translation>SD Kart</translation>
+        <translation>Depolama</translation>
     </message>
     <message>
         <location filename="../main.qml" line="330"/>
         <source>Network not ready yet</source>
-        <translation type="unfinished"></translation>
+        <translation>Ağ henüz hazır değil</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1007"/>
         <source>No storage devices found</source>
-        <translation type="unfinished"></translation>
+        <translation>Depolama cihazı bulunamadı</translation>
     </message>
     <message>
         <location filename="../main.qml" line="205"/>
         <location filename="../main.qml" line="1317"/>
         <source>CHOOSE STORAGE</source>
-        <translation>SD KART SEÇİN</translation>
+        <translation>HEDEF SEÇİN</translation>
     </message>
     <message>
         <source>WRITE</source>
-        <translation type="vanished">YAZ</translation>
+        <translation>YAZ</translation>
     </message>
     <message>
         <location filename="../main.qml" line="219"/>
         <source>Select this button to change the destination storage device</source>
-        <translation type="unfinished"></translation>
+        <translation>Hedef depolama cihazını değiştirmek için bu düğmeyi seçin</translation>
     </message>
     <message>
         <location filename="../main.qml" line="265"/>
@@ -659,7 +651,7 @@
     <message>
         <location filename="../main.qml" line="280"/>
         <source>CANCEL VERIFY</source>
-        <translation>DOĞRULAMA İPTALİ</translation>
+        <translation>DOĞRULAMAYI İPTAL ET</translation>
     </message>
     <message>
         <location filename="../main.qml" line="283"/>
@@ -671,7 +663,7 @@
     <message>
         <location filename="../main.qml" line="292"/>
         <source>Next</source>
-        <translation type="unfinished"></translation>
+        <translation>İleri</translation>
     </message>
     <message>
         <location filename="../main.qml" line="298"/>
@@ -681,22 +673,22 @@
     <message>
         <location filename="../main.qml" line="320"/>
         <source>Using custom repository: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Özelleştirilmiş depo kullanılıyor: %1</translation>
     </message>
     <message>
         <location filename="../main.qml" line="339"/>
         <source>Keyboard navigation: &lt;tab&gt; navigate to next button &lt;space&gt; press button/select item &lt;arrow up/down&gt; go up/down in lists</source>
-        <translation type="unfinished"></translation>
+        <translation>Klavye navigasyonu: &lt;tab&gt; bir sonraki düğmeye git &lt;space&gt; düğmeye bas / öğe seç &lt;arrow up/down&gt; listelerde yukarı/aşağı git</translation>
     </message>
     <message>
         <location filename="../main.qml" line="360"/>
         <source>Language: </source>
-        <translation type="unfinished"></translation>
+        <translation>Dil: </translation>
     </message>
     <message>
         <location filename="../main.qml" line="383"/>
         <source>Keyboard: </source>
-        <translation type="unfinished"></translation>
+        <translation>Klavye: </translation>
     </message>
     <message>
         <location filename="../main.qml" line="500"/>
@@ -780,11 +772,11 @@
     <message>
         <location filename="../main.qml" line="1192"/>
         <source>There is a newer version of Imager available.&lt;br&gt;Would you like to visit the website to download it?</source>
-        <translation>Görüntüleyicinin daha yeni bir sürümü var. &lt;br&gt; İndirmek için web sitesini ziyaret etmek ister misiniz?</translation>
+        <translation>İmager'ın daha yeni bir sürümü var. &lt;br&gt; İndirmek için web sitesini ziyaret etmek ister misiniz?</translation>
     </message>
     <message>
         <source>Error downloading OS list from Internet</source>
-        <translation type="vanished">İnternetten işletim sistemi listesi indirilirken hata oluştu</translation>
+        <translation>İşletim sistemi listesi indirilirken hata oluştu</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1243"/>
@@ -799,7 +791,7 @@
     <message>
         <location filename="../main.qml" line="1273"/>
         <source>Preparing to write... (%1)</source>
-        <translation>Yazdırmaya hazırlanıyor... (%1)</translation>
+        <translation>Yazmaya hazırlanıyor... (%1)</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1293"/>
@@ -809,7 +801,7 @@
     <message>
         <location filename="../main.qml" line="1300"/>
         <source>Write Successful</source>
-        <translation>Başarılı Yazıldı</translation>
+        <translation>Yazma Başarılı</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1301"/>
@@ -859,11 +851,11 @@
     </message>
     <message>
         <source>Select this button to change the destination SD card</source>
-        <translation type="vanished">Hedef SD kartı değiştirmek için bu düğmeyi seçin</translation>
+        <translation>Hedef SD kartı değiştirmek için bu düğmeyi seçin</translation>
     </message>
     <message>
         <source>&lt;b&gt;%1&lt;/b&gt; has been written to &lt;b&gt;%2&lt;/b&gt;</source>
-        <translation type="vanished">&lt;b&gt;%1&lt;/b&gt; &lt;b&gt;%2&lt;/b&gt;&lt;br&gt;&lt;br&gt; üzerine yazıldı</translation>
+        <translation>&lt;b&gt;%1&lt;/b&gt; &lt;b&gt;%2&lt;/b&gt;&lt;br&gt;&lt;br&gt; üzerine yazıldı</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1213"/>
