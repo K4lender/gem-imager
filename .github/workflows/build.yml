@@ -16,7 +16,7 @@ jobs:
           sudo apt update && sudo apt upgrade
       - name: Install dependencies
         run: |
-          sudo apt install --no-install-recommends build-essential cmake git libgnutls28-dev libxcb-cursor-dev
+          sudo apt install --no-install-recommends build-essential cmake git libgnutls28-dev libxcb-cursor-dev libusb-1.0-0-dev pkg-config
           sudo wget -O ${{ runner.temp }}/appimagecraft.AppImage https://github.com/TheAssassin/appimagecraft/releases/download/continuous/appimagecraft-x86_64.AppImage
           sudo chmod +x ${{ runner.temp }}/appimagecraft.AppImage
       - name: Install Qt
