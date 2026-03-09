@@ -986,10 +986,6 @@ Window {
     function openPopup() {
         if (!initialized) {
             initialize()
-            if (imageWriter.hasSavedCustomizationSettings())
-            {
-                applySettings()
-            }
         }
 
         //open()
