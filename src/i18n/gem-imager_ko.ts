@@ -186,7 +186,7 @@
     <message>
         <location filename="../downloadthread.cpp" line="218"/>
         <source>Please verify if &apos;Gemstone Imager&apos; is allowed access to &apos;removable volumes&apos; in privacy settings (under &apos;files and folders&apos; or alternatively give it &apos;full disk access&apos;).</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;Gemstone Imager&apos;가 개인 정보 설정(&apos;파일 및 폴더&apos; 또는 &apos;전체 디스크 액세스&apos; 부여)에서 &apos;이동식 볼륨&apos;에 액세스할 수 있는지 확인하세요.</translation>
     </message>
     <message>
         <location filename="../downloadthread.cpp" line="240"/>
@@ -392,12 +392,12 @@
     <message>
         <location filename="../imagewriter.cpp" line="939"/>
         <source>DFU mode not selected</source>
-        <translation type="unfinished"></translation>
+        <translation>DFU 모드가 선택되지 않았습니다</translation>
     </message>
     <message>
         <location filename="../imagewriter.cpp" line="967"/>
         <source>Authentication failed or was cancelled.&lt;br&gt;DFU operation requires elevated privileges to access the USB device.</source>
-        <translation type="unfinished"></translation>
+        <translation>인증에 실패했거나 취소되었습니다.&lt;br&gt;DFU 작업을 위해 USB 장치에 접근하려면 관리자 권한이 필요합니다.</translation>
     </message>
     <message>
         <location filename="../imagewriter.cpp" line="1047"/>
@@ -508,7 +508,7 @@
     <message>
         <location filename="../OptionsPopup.qml" line="179"/>
         <source>Password is required!</source>
-        <translation type="unfinished"></translation>
+        <translation>비밀번호가 필요합니다!</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="187"/>
@@ -559,17 +559,17 @@
     <message>
         <location filename="../OptionsPopup.qml" line="375"/>
         <source>Set Disk Encryption (Cryptsetup)</source>
-        <translation type="unfinished"></translation>
+        <translation>디스크 암호화 설정 (Cryptsetup)</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="385"/>
         <source>Disk Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>디스크 비밀번호:</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="426"/>
         <source>Write sdcard&apos;s image to eMMC on first boot</source>
-        <translation type="unfinished"></translation>
+        <translation>첫 부팅 시 SD카드 이미지를 eMMC에 쓰기</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="451"/>
@@ -594,7 +594,7 @@
     <message>
         <location filename="../OptionsPopup.qml" line="533"/>
         <source>Delete Key</source>
-        <translation type="unfinished"></translation>
+        <translation>키 삭제</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="552"/>
@@ -604,42 +604,42 @@
     <message>
         <location filename="../OptionsPopup.qml" line="562"/>
         <source>Add SSH Key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH 키 추가</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="578"/>
         <source>Enable VNC</source>
-        <translation type="unfinished"></translation>
+        <translation>VNC 활성화</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="583"/>
         <source>VNC Password is required!</source>
-        <translation type="unfinished"></translation>
+        <translation>VNC 비밀번호가 필요합니다!</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="591"/>
         <source>VNC Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>VNC 비밀번호:</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="610"/>
         <source>Gadgets</source>
-        <translation type="unfinished"></translation>
+        <translation>가젯</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="616"/>
         <source>Enable Storage Gadget</source>
-        <translation type="unfinished"></translation>
+        <translation>스토리지 가젯 활성화</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="622"/>
         <source>Enable Ethernet Gadget</source>
-        <translation type="unfinished"></translation>
+        <translation>이더넷 가젯 활성화</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="628"/>
         <source>Enable Serial Gadgets</source>
-        <translation type="unfinished"></translation>
+        <translation>시리얼 가젯 활성화</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="653"/>
@@ -654,12 +654,12 @@
     <message>
         <location filename="../OptionsPopup.qml" line="676"/>
         <source>Serial Port </source>
-        <translation type="unfinished"></translation>
+        <translation>시리얼 포트 </translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="708"/>
         <source>Ethernet </source>
-        <translation type="unfinished"></translation>
+        <translation>이더넷 </translation>
     </message>
     <message>
         <source>Enable telemetry</source>
@@ -856,18 +856,18 @@
     <message>
         <location filename="../main.qml" line="24"/>
         <source>Gemstone Image Writer %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Gemstone 이미지 기록기 %1</translation>
     </message>
     <message>
         <location filename="../main.qml" line="122"/>
         <location filename="../main.qml" line="453"/>
         <source>Gemstone Board</source>
-        <translation type="unfinished"></translation>
+        <translation>Gemstone 보드</translation>
     </message>
     <message>
         <location filename="../main.qml" line="146"/>
         <source>Select this button to choose your target Gemstone Board</source>
-        <translation type="unfinished"></translation>
+        <translation>이 버튼을 선택하여 대상 Gemstone 보드를 선택하세요</translation>
     </message>
     <message>
         <location filename="../main.qml" line="497"/>
@@ -907,33 +907,33 @@
     <message>
         <location filename="../main.qml" line="1057"/>
         <source>Exclude System Drives</source>
-        <translation type="unfinished"></translation>
+        <translation>시스템 드라이브 제외</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1115"/>
         <source>Internal eMMC - 32 GB</source>
-        <translation type="unfinished"></translation>
+        <translation>내장 eMMC - 32 GB</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1125"/>
         <source>Writes the image to the card&apos;s internal eMMC memory via Uniflash</source>
-        <translation type="unfinished"></translation>
+        <translation>Uniflash를 통해 카드의 내장 eMMC 메모리에 이미지를 씁니다</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1213"/>
         <location filename="../main.qml" line="2140"/>
         <source>DFU Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>DFU 모드</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1223"/>
         <source>Program the device via USB DFU (Device Firmware Update)</source>
-        <translation type="unfinished"></translation>
+        <translation>USB DFU(장치 펌웨어 업데이트)를 통해 장치를 프로그래밍합니다</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1268"/>
         <source>gigabytes</source>
-        <translation type="unfinished"></translation>
+        <translation>기가바이트</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1270"/>
@@ -944,7 +944,7 @@
     <message>
         <location filename="../main.qml" line="1318"/>
         <source>GB</source>
-        <translation type="unfinished"></translation>
+        <translation>GB</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1334"/>
@@ -954,23 +954,23 @@
     <message>
         <location filename="../main.qml" line="1336"/>
         <source>SYSTEM</source>
-        <translation type="unfinished"></translation>
+        <translation>시스템</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1394"/>
         <location filename="../main.qml" line="1401"/>
         <source>Boot Mode Switch</source>
-        <translation type="unfinished"></translation>
+        <translation>부팅 모드 스위치</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1395"/>
         <source>Configure the boot mode switches for DFU Boot as shown in the image.</source>
-        <translation type="unfinished"></translation>
+        <translation>이미지에 표시된 대로 DFU 부팅을 위한 부팅 모드 스위치를 구성하세요.</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1402"/>
-        <source>After powering off the card, set the boot mode switches to eMMC Boot as shown in the image. Upon restoring power, the system will boot automatically.</source>
-        <translation type="unfinished"></translation>
+        <source>DFU programming completed successfully!&lt;br&gt;&lt;br&gt;After powering off the card, set the boot mode switches to eMMC Boot as shown in the image. Upon restoring power, the system will boot automatically.</source>
+        <translation>DFU 프로그래밍이 성공적으로 완료되었습니다!&lt;br&gt;&lt;br&gt;카드 전원을 끈 후 이미지에 표시된 대로 부팅 모드 스위치를 eMMC 부팅으로 설정하세요. 전원을 다시 공급하면 시스템이 자동으로 부팅됩니다.</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1411"/>
@@ -980,7 +980,7 @@
     <message>
         <location filename="../main.qml" line="1412"/>
         <source>Gemstone Imager is still busy.&lt;br&gt;Are you sure you want to quit?</source>
-        <translation type="unfinished"></translation>
+        <translation>Gemstone Imager가 사용 중입니다.&lt;br&gt;정말 그만두시겠습니까?</translation>
     </message>
     <message>
         <source>Raspberry Pi Imager is still busy.&lt;br&gt;Are you sure you want to quit?</source>
@@ -995,7 +995,7 @@
         <location filename="../main.qml" line="1442"/>
         <location filename="../main.qml" line="2152"/>
         <source>Starting DFU operation...</source>
-        <translation type="unfinished"></translation>
+        <translation>DFU 작업 시작 중...</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1448"/>
@@ -1005,7 +1005,7 @@
     <message>
         <location filename="../main.qml" line="1457"/>
         <source>Image will be sent to device via DFU.&lt;br&gt;Are you sure you want to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>이미지가 DFU를 통해 장치로 전송됩니다.&lt;br&gt;계속하시겠습니까?</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1459"/>
@@ -1034,7 +1034,7 @@
     <message>
         <location filename="../main.qml" line="1541"/>
         <source>Sending... %1%</source>
-        <translation type="unfinished"></translation>
+        <translation>전송 중... %1%</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1564"/>
@@ -1049,7 +1049,7 @@
     <message>
         <location filename="../main.qml" line="1582"/>
         <source>Waiting for authentication to access USB device...</source>
-        <translation type="unfinished"></translation>
+        <translation>USB 장치 접근을 위한 인증 대기 중...</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1605"/>
@@ -1073,14 +1073,9 @@
         <translation>&lt;b&gt;%1&lt;/b&gt; 가 지워졌습니다.&lt;br&gt;&lt;br&gt;이제 SD card를 제거할 수 있습니다.</translation>
     </message>
     <message>
-        <location filename="../main.qml" line="1624"/>
-        <source>DFU programming completed successfully!&lt;br&gt;&lt;br&gt;The device has been programmed and should now boot automatically.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../main.qml" line="1629"/>
         <source>&lt;b&gt;%1&lt;/b&gt; has been written to &lt;b&gt;%2&lt;/b&gt;&lt;br&gt;&lt;br&gt;The process is complete. You can connect to the board via the serial port.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;%1&lt;/b&gt;이(가) &lt;b&gt;%2&lt;/b&gt;에 기록되었습니다.&lt;br&gt;&lt;br&gt;프로세스가 완료되었습니다. 시리얼 포트를 통해 보드에 연결할 수 있습니다.</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1633"/>
@@ -1115,7 +1110,7 @@
     <message>
         <location filename="../main.qml" line="2129"/>
         <source>Onboard emmc</source>
-        <translation type="unfinished"></translation>
+        <translation>온보드 eMMC</translation>
     </message>
     <message>
         <location filename="../main.qml" line="2165"/>

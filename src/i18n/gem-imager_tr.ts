@@ -31,12 +31,12 @@
     <message>
         <location filename="../dfuthread.cpp" line="81"/>
         <source>Customizing image...</source>
-        <translation type="unfinished"></translation>
+        <translation>Görüntü özelleştiriliyor...</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="85"/>
         <source>Failed to reopen image for customization: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Özelleştirme için görüntü yeniden açılamadı: %1</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="92"/>
@@ -179,14 +179,11 @@
         <source>Error running authopen to gain access to disk device &apos;%1&apos;</source>
         <translation>&apos;%1&apos; disk aygıtına erişmek için authopen çalıştırılırken hata oluştu</translation>
     </message>
-    <message>
-        <source>Please verify if &apos;Raspberry Pi Imager&apos; is allowed access to &apos;removable volumes&apos; in privacy settings (under &apos;files and folders&apos; or alternatively give it &apos;full disk access&apos;).</source>
-        <translation type="vanished">Lütfen &apos;Raspberry Pi Imager&apos;ın gizlilik ayarlarında (&apos;dosyalar ve klasörler&apos; altında veya alternatif olarak &apos;tam disk erişimi&apos;) &apos;çıkarılabilir birimlere erişim&apos; izin verilip verilmediğini doğrulayın.</translation>
-    </message>
+
     <message>
         <location filename="../downloadthread.cpp" line="218"/>
         <source>Please verify if &apos;Gemstone Imager&apos; is allowed access to &apos;removable volumes&apos; in privacy settings (under &apos;files and folders&apos; or alternatively give it &apos;full disk access&apos;).</source>
-        <translation type="unfinished"></translation>
+        <translation>Lütfen gizlilik ayarlarında &apos;Gemstone Imager&apos;ın &apos;çıkarılabilir birimlere&apos; erişimine (&apos;dosyalar ve klasörler&apos; altında veya alternatif olarak &apos;tam disk erişimi&apos; vererek) izin verilip verilmediğini doğrulayın.</translation>
     </message>
     <message>
         <location filename="../downloadthread.cpp" line="240"/>
@@ -318,7 +315,7 @@
     <message>
         <location filename="../driveformatthread.cpp" line="199"/>
         <source>Partitioning did not create expected FAT partition %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Bölümleme, beklenen FAT bölümünü oluşturmadı: %1</translation>
     </message>
     <message>
         <location filename="../driveformatthread.cpp" line="208"/>
@@ -356,12 +353,12 @@
     <message>
         <location filename="../imagewriter.cpp" line="939"/>
         <source>DFU mode not selected</source>
-        <translation type="unfinished"></translation>
+        <translation>DFU modu seçilmedi</translation>
     </message>
     <message>
         <location filename="../imagewriter.cpp" line="967"/>
         <source>Authentication failed or was cancelled.&lt;br&gt;DFU operation requires elevated privileges to access the USB device.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kimlik doğrulama başarısız veya iptal edildi.&lt;br&gt;DFU işlemi USB cihazına erişmek için yükseltilmiş ayrıcalıklar gerektiriyor.</translation>
     </message>
     <message>
         <location filename="../imagewriter.cpp" line="1047"/>
@@ -460,7 +457,7 @@
     <message>
         <location filename="../OptionsPopup.qml" line="179"/>
         <source>Password is required!</source>
-        <translation type="unfinished"></translation>
+        <translation>Parola gerekli!</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="187"/>
@@ -511,17 +508,17 @@
     <message>
         <location filename="../OptionsPopup.qml" line="375"/>
         <source>Set Disk Encryption (Cryptsetup)</source>
-        <translation type="unfinished"></translation>
+        <translation>Disk Şifrelemesini Ayarla (Cryptsetup)</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="385"/>
         <source>Disk Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Disk Parolası:</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="426"/>
         <source>Write sdcard&apos;s image to eMMC on first boot</source>
-        <translation type="unfinished"></translation>
+        <translation>SD kartın görüntüsünü ilk açılışta eMMC'ye yaz</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="451"/>
@@ -541,12 +538,12 @@
     <message>
         <location filename="../OptionsPopup.qml" line="489"/>
         <source>Set authorized_keys for &apos;%1&apos;:</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;%1&apos; için authorized_keys ayarla:</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="533"/>
         <source>Delete Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Anahtarı Sil</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="552"/>
@@ -556,42 +553,42 @@
     <message>
         <location filename="../OptionsPopup.qml" line="562"/>
         <source>Add SSH Key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH Anahtarı Ekle</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="578"/>
         <source>Enable VNC</source>
-        <translation type="unfinished"></translation>
+        <translation>VNC Etkinleştir</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="583"/>
         <source>VNC Password is required!</source>
-        <translation type="unfinished"></translation>
+        <translation>VNC Parolası gerekli!</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="591"/>
         <source>VNC Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>VNC Parolası:</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="610"/>
         <source>Gadgets</source>
-        <translation type="unfinished"></translation>
+        <translation>Donanım Modülleri</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="616"/>
         <source>Enable Storage Gadget</source>
-        <translation type="unfinished"></translation>
+        <translation>Depolama Modülünü Etkinleştir</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="622"/>
         <source>Enable Ethernet Gadget</source>
-        <translation type="unfinished"></translation>
+        <translation>Ethernet Modülünü Etkinleştir</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="628"/>
         <source>Enable Serial Gadgets</source>
-        <translation type="unfinished"></translation>
+        <translation>Seri Port Modüllerini Etkinleştir</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="653"/>
@@ -606,12 +603,12 @@
     <message>
         <location filename="../OptionsPopup.qml" line="676"/>
         <source>Serial Port </source>
-        <translation type="unfinished"></translation>
+        <translation>Seri Port </translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="708"/>
         <source>Ethernet </source>
-        <translation type="unfinished"></translation>
+        <translation>Ethernet </translation>
     </message>
     <message>
         <source>Enable telemetry</source>
@@ -666,23 +663,13 @@
 </context>
 <context>
     <name>main</name>
-    <message>
-        <source>Raspberry Pi Imager v%1</source>
-        <translation type="vanished">Raspberry Pi Imaj Yöneticisi v%1</translation>
-    </message>
-    <message>
-        <source>Raspberry Pi Device</source>
-        <translation type="vanished">Raspberry Pi Aygıtı</translation>
-    </message>
+
     <message>
         <location filename="../main.qml" line="134"/>
         <source>CHOOSE DEVICE</source>
         <translation>AYGIT SEÇİN</translation>
     </message>
-    <message>
-        <source>Select this button to choose your target Raspberry Pi</source>
-        <translation type="vanished">Bu düğmeyi seçerek hedef Raspberry Pi&apos;yi seçin</translation>
-    </message>
+
     <message>
         <location filename="../main.qml" line="160"/>
         <location filename="../main.qml" line="555"/>
@@ -698,7 +685,7 @@
     <message>
         <location filename="../main.qml" line="183"/>
         <source>Select this button to change the operating system</source>
-        <translation>İşletim sistemini değiştirmek için bu düğmeyi seçin</translation>
+        <translation>İşletim sistemini değiştirmek için bu butonu seçin</translation>
     </message>
     <message>
         <location filename="../main.qml" line="197"/>
@@ -729,23 +716,23 @@
     <message>
         <location filename="../main.qml" line="24"/>
         <source>Gemstone Image Writer %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Gemstone Image Writer %1</translation>
     </message>
     <message>
         <location filename="../main.qml" line="122"/>
         <location filename="../main.qml" line="453"/>
         <source>Gemstone Board</source>
-        <translation type="unfinished"></translation>
+        <translation>Gemstone Kart</translation>
     </message>
     <message>
         <location filename="../main.qml" line="146"/>
         <source>Select this button to choose your target Gemstone Board</source>
-        <translation type="unfinished"></translation>
+        <translation>Hedef Gemstone Kartı seçmek için bu butonu seçin</translation>
     </message>
     <message>
         <location filename="../main.qml" line="222"/>
         <source>Select this button to change the destination storage device</source>
-        <translation>Hedef depolama cihazını değiştirmek için bu düğmeyi seçin</translation>
+        <translation>Hedef depolama cihazını değiştirmek için bu butonu seçin</translation>
     </message>
     <message>
         <location filename="../main.qml" line="267"/>
@@ -779,7 +766,7 @@
     <message>
         <location filename="../main.qml" line="300"/>
         <source>Select this button to start writing the image</source>
-        <translation>Görüntüyü yazmaya başlamak için bu düğmeyi seçin</translation>
+        <translation>Görüntüyü yazmaya başlamak için bu butonu seçin</translation>
     </message>
     <message>
         <location filename="../main.qml" line="320"/>
@@ -789,7 +776,7 @@
     <message>
         <location filename="../main.qml" line="339"/>
         <source>Keyboard navigation: &lt;tab&gt; navigate to next button &lt;space&gt; press button/select item &lt;arrow up/down&gt; go up/down in lists</source>
-        <translation>Klavye navigasyonu: &lt;tab&gt; bir sonraki düğmeye git &lt;space&gt; düğmeye bas / öğe seç &lt;arrow up/down&gt; listelerde yukarı/aşağı git</translation>
+        <translation>Klavye navigasyonu: &lt;tab&gt; bir sonraki butona git &lt;space&gt; butona bas / öğe seç &lt;arrow up/down&gt; listelerde yukarı/aşağı git</translation>
     </message>
     <message>
         <location filename="../main.qml" line="360"/>
@@ -804,7 +791,7 @@
     <message>
         <location filename="../main.qml" line="497"/>
         <source>[ All ]</source>
-        <translation type="unfinished"></translation>
+        <translation>[ Tümü ]</translation>
     </message>
     <message>
         <location filename="../main.qml" line="653"/>
@@ -840,22 +827,22 @@
     <message>
         <location filename="../main.qml" line="1057"/>
         <source>Exclude System Drives</source>
-        <translation type="unfinished"></translation>
+        <translation>Sistem Sürücülerini Hariç Tut</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1115"/>
         <source>Internal eMMC - 32 GB</source>
-        <translation type="unfinished"></translation>
+        <translation>Dahili eMMC - 32 GB</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1125"/>
         <source>Writes the image to the card&apos;s internal eMMC memory via Uniflash</source>
-        <translation type="unfinished"></translation>
+        <translation>Uniflash aracılığıyla görüntüyü kartın dahili eMMC belleğine yazar</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1268"/>
         <source>gigabytes</source>
-        <translation type="unfinished"></translation>
+        <translation>gigabayt</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1270"/>
@@ -866,7 +853,7 @@
     <message>
         <location filename="../main.qml" line="1318"/>
         <source>GB</source>
-        <translation type="unfinished"></translation>
+        <translation>GB</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1334"/>
@@ -876,17 +863,14 @@
     <message>
         <location filename="../main.qml" line="1336"/>
         <source>SYSTEM</source>
-        <translation type="unfinished"></translation>
+        <translation>SİSTEM</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1411"/>
         <source>Are you sure you want to quit?</source>
         <translation>Çıkmak istediğine emin misin?</translation>
     </message>
-    <message>
-        <source>Raspberry Pi Imager is still busy.&lt;br&gt;Are you sure you want to quit?</source>
-        <translation type="vanished">Raspberry Pi Imager hala meşgul.&lt;br&gt;Çıkmak istediğinizden emin misiniz?</translation>
-    </message>
+
     <message>
         <location filename="../main.qml" line="1423"/>
         <source>Warning</source>
@@ -1019,8 +1003,8 @@
     </message>
     <message>
         <location filename="../main.qml" line="1402"/>
-        <source>After powering off the card, set the boot mode switches to eMMC Boot as shown in the image. Upon restoring power, the system will boot automatically.</source>
-        <translation>Kartı kapattıktan sonra, önyükleme modu anahtarlarını görselde gösterildiği gibi eMMC Önyüklemesine ayarlayın. Güç yeniden verildiğinde sistem otomatik olarak başlayacaktır.</translation>
+        <source>DFU programming completed successfully!&lt;br&gt;&lt;br&gt;After powering off the card, set the boot mode switches to eMMC Boot as shown in the image. Upon restoring power, the system will boot automatically.</source>
+        <translation>DFU programlama başarıyla tamamlandı!&lt;br&gt;&lt;br&gt;Kartı kapattıktan sonra, önyükleme modu anahtarlarını görselde gösterildiği gibi eMMC Önyüklemesine ayarlayın. Güç yeniden verildiğinde sistem otomatik olarak başlayacaktır.</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1412"/>
@@ -1047,11 +1031,6 @@
         <location filename="../main.qml" line="1582"/>
         <source>Waiting for authentication to access USB device...</source>
         <translation>USB cihaza erişim için kimlik doğrulama bekleniyor...</translation>
-    </message>
-    <message>
-        <location filename="../main.qml" line="1624"/>
-        <source>DFU programming completed successfully!&lt;br&gt;&lt;br&gt;The device has been programmed and should now boot automatically.</source>
-        <translation>DFU programlama başarıyla tamamlandı!&lt;br&gt;&lt;br&gt;Cihaz programlandı ve artık otomatik olarak başlaması gerekiyor.</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1629"/>

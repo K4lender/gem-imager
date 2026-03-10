@@ -261,7 +261,9 @@
          QFileInfo fi(url.toLocalFile());
          _downloadLen = fi.size();
      }
-     if (_initFormat.isEmpty() && !url.isEmpty())
+     /* Remote URLs: always use geminit (JSON's init_format field is metadata, not imager behavior).
+        Local files: use geminit as default if not explicitly set. */
+     if (!url.isEmpty() && (!url.isLocalFile() || _initFormat.isEmpty()))
      {
          _initFormat = "geminit";
      }

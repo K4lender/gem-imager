@@ -1371,7 +1371,6 @@ ApplicationWindow {
         }
     }
 
-    property bool lastWasDfu: false
     property bool isDfuMode: false
     property bool isUniflashMode: false
 
@@ -1379,12 +1378,6 @@ ApplicationWindow {
         id: msgpopup
         onOpened: {
             forceActiveFocus()
-        }
-        onClosed: {
-            if (lastWasDfu) {
-                lastWasDfu = false
-                emmcBootmodePopup.openPopup()
-            }
         }
     }
 
@@ -1398,7 +1391,7 @@ ApplicationWindow {
     MsgPopup {
         id: emmcBootmodePopup
         title: qsTr("Boot Mode Switch")
-        text: qsTr("After powering off the card, set the boot mode switches to eMMC Boot as shown in the image. Upon restoring power, the system will boot automatically.")
+        text: qsTr("DFU programming completed successfully!<br><br>After powering off the card, set the boot mode switches to eMMC Boot as shown in the image. Upon restoring power, the system will boot automatically.")
         imageSource: "icons/emmc-bootmode.svg"
     }
 
@@ -1596,8 +1589,9 @@ ApplicationWindow {
         writebutton.enabled = imageWriter.readyToWrite()
         cancelwritebutton.visible = false
         cancelverifybutton.visible = false
-        isDfuMode = false
-        isUniflashMode = false
+        // Do NOT reset isDfuMode/isUniflashMode here — those are tied to
+        // destination selection and must survive error retries.
+        // They are reset in selectDstItem(), selectDfu(), selectUniflash().
     }
 
     function onError(msg) {
@@ -1620,8 +1614,12 @@ ApplicationWindow {
         {
             if(isDfuMode)
             {
-                msgpopup.text = qsTr("DFU programming completed successfully!<br><br>The device has been programmed and should now boot automatically.")
-                lastWasDfu = true
+                imageWriter.setDst("")
+                isDfuMode = false
+                isUniflashMode = false
+                resetWriteButton()
+                emmcBootmodePopup.openPopup()
+                return
             }
             else if(isUniflashMode)
             {
@@ -1639,7 +1637,8 @@ ApplicationWindow {
 
         msgpopup.openPopup()
         imageWriter.setDst("")
-        dstbutton.text = qsTr("CHOOSE STORAGE")
+        isDfuMode = false
+        isUniflashMode = false
         resetWriteButton()
     }
 
