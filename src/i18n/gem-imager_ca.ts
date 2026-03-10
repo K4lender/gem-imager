@@ -893,7 +893,7 @@
     </message>
     <message>
         <location filename="../main.qml" line="1402"/>
-        <source>After powering off the card, set the boot mode switches to eMMC Boot as shown in the image. Upon restoring power, the system will boot automatically.</source>
+        <source>DFU programming completed successfully!&lt;br&gt;&lt;br&gt;After powering off the card, set the boot mode switches to eMMC Boot as shown in the image. Upon restoring power, the system will boot automatically.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -991,11 +991,6 @@
         <location filename="../main.qml" line="1614"/>
         <source>&lt;b&gt;%1&lt;/b&gt; has been erased&lt;br&gt;&lt;br&gt;You can now remove the SD card from the reader</source>
         <translation>S&apos;ha esborrat &lt;b&gt;%1&lt;/b&gt;&lt;br&gt;&lt;br&gt;Ja podeu retirar la targeta SD del lector</translation>
-    </message>
-    <message>
-        <location filename="../main.qml" line="1624"/>
-        <source>DFU programming completed successfully!&lt;br&gt;&lt;br&gt;The device has been programmed and should now boot automatically.</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.qml" line="1629"/>
