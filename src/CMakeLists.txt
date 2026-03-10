@@ -282,7 +282,7 @@ set(TRANSLATIONS i18n/gem-imager_en.ts i18n/gem-imager_nl.ts i18n/gem-imager_zh.
     i18n/gem-imager_fr.ts i18n/gem-imager_de.ts i18n/gem-imager_sk.ts i18n/gem-imager_it.ts
     i18n/gem-imager_ca.ts i18n/gem-imager_sl.ts i18n/gem-imager_ko.ts i18n/gem-imager_ja.ts
     i18n/gem-imager_ru.ts i18n/gem-imager_es.ts i18n/gem-imager_uk.ts i18n/gem-imager_zh-TW.ts
-    i18n/gem-imager_pl.ts i18n/gem-imager_he.ts i18n/gem-imager_pt.ts)
+    i18n/gem-imager_pl.ts i18n/gem-imager_pt.ts)
 #qt6_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TRANSLATIONS})
 qt_add_translation(QM_FILES  ${TRANSLATIONS})
 configure_file(i18n/translations.qrc "${CMAKE_CURRENT_BINARY_DIR}" COPYONLY)
