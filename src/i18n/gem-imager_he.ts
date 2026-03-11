@@ -6,117 +6,117 @@
     <message>
         <location filename="../dfuthread.cpp" line="49"/>
         <source>Failed to create temporary file for DFU image</source>
-        <translation type="unfinished"></translation>
+        <translation>נכשל ביצירת קובץ זמני עבור תמונת DFU</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="59"/>
         <source>Failed to open temporary file for DFU image</source>
-        <translation type="unfinished"></translation>
+        <translation>נכשל בפתיחת קובץ זמני עבור תמונת DFU</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="68"/>
         <source>Initializing DFU...</source>
-        <translation type="unfinished"></translation>
+        <translation>מאתחל DFU...</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="71"/>
         <source>DFU mode requires an image URL</source>
-        <translation type="unfinished"></translation>
+        <translation>מצב DFU דורש כתובת URL של תמונה</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="75"/>
         <source>Downloading image...</source>
-        <translation type="unfinished"></translation>
+        <translation>מוריד תמונה...</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="81"/>
         <source>Customizing image...</source>
-        <translation type="unfinished"></translation>
+        <translation>מתאים אישית תמונה...</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="85"/>
         <source>Failed to reopen image for customization: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>נכשל בפתיחה מחדש של התמונה לצורך התאמה אישית: %1</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="92"/>
         <source>Extracting bootloader files from image...</source>
-        <translation type="unfinished"></translation>
+        <translation>מחלץ קבצי מאתחל מהתמונה...</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="95"/>
         <source>Sending bootloader files...</source>
-        <translation type="unfinished"></translation>
+        <translation>שולח קבצי מאתחל...</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="98"/>
         <source>Waiting for device to enter DFU mode...</source>
-        <translation type="unfinished"></translation>
+        <translation>ממתין שהמכשיר יכנס למצב DFU...</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="101"/>
         <source>Sending image to device (this may take several minutes)...</source>
-        <translation type="unfinished"></translation>
+        <translation>שולח תמונה למכשיר (זה עשוי לקחת מספר דקות)...</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="104"/>
         <source>Writing boot binaries to eMMC (do not power off)...</source>
-        <translation type="unfinished"></translation>
+        <translation>כותב קבצי אתחול ל-eMMC (אל תכבה את המתח)...</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="107"/>
         <source>System image sent successfully!</source>
-        <translation type="unfinished"></translation>
+        <translation>תמונת המערכת נשלחה בהצלחה!</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="123"/>
         <source>DFU failed (alt: %1): %2</source>
-        <translation type="unfinished"></translation>
+        <translation>DFU נכשל (alt: %1): %2</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="139"/>
         <source>Sending %1...</source>
-        <translation type="unfinished"></translation>
+        <translation>שולח %1...</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="142"/>
         <source>%1 sent</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 נשלח</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="145"/>
         <source>Waiting for device to reconnect...</source>
-        <translation type="unfinished"></translation>
+        <translation>ממתין שהמכשיר יתחבר מחדש...</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="162"/>
         <source>Failed to reopen image file: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>נכשל בפתיחה מחדש של קובץ התמונה: %1</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="174"/>
         <source>Bootloader file not found in image: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>קובץ המאתחל לא נמצא בתמונה: %1</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="185"/>
         <source>Failed to create temp file for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>נכשל ביצירת קובץ זמני עבור %1</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="190"/>
         <source>Failed to write temp file for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>נכשל בכתיבת קובץ זמני עבור %1</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="199"/>
         <source>Error reading bootloader files from image: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>שגיאה בקריאת קבצי מאתחל מהתמונה: %1</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="209"/>
         <source>Image not found: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>תמונה לא נמצאה: %1</translation>
     </message>
 </context>
 <context>
@@ -182,7 +182,7 @@
     <message>
         <location filename="../downloadthread.cpp" line="218"/>
         <source>Please verify if &apos;Gemstone Imager&apos; is allowed access to &apos;removable volumes&apos; in privacy settings (under &apos;files and folders&apos; or alternatively give it &apos;full disk access&apos;).</source>
-        <translation type="unfinished"></translation>
+        <translation>אנא בדוק אם ל-&apos;Gemstone Imager&apos; מותר לגשת ל-&apos;אמצעי אחסון נשלפים&apos; בהגדרות הפרטיות (תחת &apos;קבצים ותיקייות&apos; או הענק לו &apos;גישה מלאה לדיסק&apos;).</translation>
     </message>
     <message>
         <location filename="../downloadthread.cpp" line="240"/>
@@ -352,12 +352,12 @@
     <message>
         <location filename="../imagewriter.cpp" line="939"/>
         <source>DFU mode not selected</source>
-        <translation type="unfinished"></translation>
+        <translation>מצב DFU לא נבחר</translation>
     </message>
     <message>
         <location filename="../imagewriter.cpp" line="967"/>
         <source>Authentication failed or was cancelled.&lt;br&gt;DFU operation requires elevated privileges to access the USB device.</source>
-        <translation type="unfinished"></translation>
+        <translation>האימות נכשל או בוטל.&lt;br&gt;פעולת DFU דורשת הרשאות מוגברות לפגישה להתקן ה-USB.</translation>
     </message>
     <message>
         <location filename="../imagewriter.cpp" line="1047"/>
@@ -460,7 +460,7 @@
     <message>
         <location filename="../OptionsPopup.qml" line="179"/>
         <source>Password is required!</source>
-        <translation type="unfinished"></translation>
+        <translation>נדרשת סיסמא!</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="187"/>
@@ -511,17 +511,17 @@
     <message>
         <location filename="../OptionsPopup.qml" line="375"/>
         <source>Set Disk Encryption (Cryptsetup)</source>
-        <translation type="unfinished"></translation>
+        <translation>הגדר הצפנת דיסק (Cryptsetup)</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="385"/>
         <source>Disk Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>סיסמת דיסק:</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="426"/>
         <source>Write sdcard&apos;s image to eMMC on first boot</source>
-        <translation type="unfinished"></translation>
+        <translation>כתוב את תמונת כרטיס ה-SD ל-eMMC בהפעלה הראשונה</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="451"/>
@@ -546,7 +546,7 @@
     <message>
         <location filename="../OptionsPopup.qml" line="533"/>
         <source>Delete Key</source>
-        <translation type="unfinished"></translation>
+        <translation>מחק מפתח</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="552"/>
@@ -556,42 +556,42 @@
     <message>
         <location filename="../OptionsPopup.qml" line="562"/>
         <source>Add SSH Key</source>
-        <translation type="unfinished"></translation>
+        <translation>הוסף מפתח SSH</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="578"/>
         <source>Enable VNC</source>
-        <translation type="unfinished"></translation>
+        <translation>אפשר VNC</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="583"/>
         <source>VNC Password is required!</source>
-        <translation type="unfinished"></translation>
+        <translation>נדרשת סיסמת VNC!</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="591"/>
         <source>VNC Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>סיסמת VNC:</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="610"/>
         <source>Gadgets</source>
-        <translation type="unfinished"></translation>
+        <translation>גאדג'טים</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="616"/>
         <source>Enable Storage Gadget</source>
-        <translation type="unfinished"></translation>
+        <translation>אפשר גאדג'ט אחסון</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="622"/>
         <source>Enable Ethernet Gadget</source>
-        <translation type="unfinished"></translation>
+        <translation>אפשר גאדג'ט Ethernet</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="628"/>
         <source>Enable Serial Gadgets</source>
-        <translation type="unfinished"></translation>
+        <translation>אפשר גאדג'טים טוריים</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="653"/>
@@ -606,12 +606,12 @@
     <message>
         <location filename="../OptionsPopup.qml" line="676"/>
         <source>Serial Port </source>
-        <translation type="unfinished"></translation>
+        <translation>יציאה טורית </translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="708"/>
         <source>Ethernet </source>
-        <translation type="unfinished"></translation>
+        <translation>Ethernet </translation>
     </message>
     <message>
         <source>Enable telemetry</source>
@@ -725,18 +725,18 @@
     <message>
         <location filename="../main.qml" line="24"/>
         <source>Gemstone Image Writer %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Gemstone Image Writer %1</translation>
     </message>
     <message>
         <location filename="../main.qml" line="122"/>
         <location filename="../main.qml" line="453"/>
         <source>Gemstone Board</source>
-        <translation type="unfinished"></translation>
+        <translation>לוח Gemstone</translation>
     </message>
     <message>
         <location filename="../main.qml" line="146"/>
         <source>Select this button to choose your target Gemstone Board</source>
-        <translation type="unfinished"></translation>
+        <translation>בחר כפתור זה לבחירת לוח Gemstone היעד שלך</translation>
     </message>
     <message>
         <location filename="../main.qml" line="222"/>
@@ -835,33 +835,33 @@
     <message>
         <location filename="../main.qml" line="1057"/>
         <source>Exclude System Drives</source>
-        <translation type="unfinished"></translation>
+        <translation>הוצא כוננים מערכתיים</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1115"/>
         <source>Internal eMMC - 32 GB</source>
-        <translation type="unfinished"></translation>
+        <translation>eMMC פנימי - 32 GB</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1125"/>
         <source>Writes the image to the card&apos;s internal eMMC memory via Uniflash</source>
-        <translation type="unfinished"></translation>
+        <translation>כותב את התמונה לזיכרון eMMC הפנימי של הכרטיס דרך Uniflash</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1213"/>
         <location filename="../main.qml" line="2140"/>
         <source>DFU Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>מצב DFU</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1223"/>
         <source>Program the device via USB DFU (Device Firmware Update)</source>
-        <translation type="unfinished"></translation>
+        <translation>תכנת את המכשיר דרך USB DFU (עדכון קושחת המכשיר)</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1268"/>
         <source>gigabytes</source>
-        <translation type="unfinished"></translation>
+        <translation>גיגהבייט</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1270"/>
@@ -872,7 +872,7 @@
     <message>
         <location filename="../main.qml" line="1318"/>
         <source>GB</source>
-        <translation type="unfinished"></translation>
+        <translation>GB</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1334"/>
@@ -882,23 +882,23 @@
     <message>
         <location filename="../main.qml" line="1336"/>
         <source>SYSTEM</source>
-        <translation type="unfinished"></translation>
+        <translation>מערכת</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1394"/>
         <location filename="../main.qml" line="1401"/>
         <source>Boot Mode Switch</source>
-        <translation type="unfinished"></translation>
+        <translation>מתג מצב אתחול</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1395"/>
         <source>Configure the boot mode switches for DFU Boot as shown in the image.</source>
-        <translation type="unfinished"></translation>
+        <translation>הגדר את מתגי מצב האתחול לאתחול DFU כפי שמוצג בתמונה.</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1402"/>
         <source>After powering off the card, set the boot mode switches to eMMC Boot as shown in the image. Upon restoring power, the system will boot automatically.</source>
-        <translation type="unfinished"></translation>
+        <translation>לאחר כיבוי הכרטיס, הגדר את מתגי מצב האתחול ל-eMMC Boot כפי שמוצג בתמונה. לאחר שחזור החשמל, המערכת תאתחל אוטומטית.</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1411"/>
@@ -908,7 +908,7 @@
     <message>
         <location filename="../main.qml" line="1412"/>
         <source>Gemstone Imager is still busy.&lt;br&gt;Are you sure you want to quit?</source>
-        <translation type="unfinished"></translation>
+        <translation>Gemstone Imager עדיין עסוק.&lt;br&gt;האם אתה בטוח שברצונך לצאת?</translation>
     </message>
     <message>
         <source>Raspberry Pi Imager is still busy.&lt;br&gt;Are you sure you want to quit?</source>
@@ -923,7 +923,7 @@
         <location filename="../main.qml" line="1442"/>
         <location filename="../main.qml" line="2152"/>
         <source>Starting DFU operation...</source>
-        <translation type="unfinished"></translation>
+        <translation>מתחיל פעולת DFU...</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1448"/>
@@ -933,7 +933,7 @@
     <message>
         <location filename="../main.qml" line="1457"/>
         <source>Image will be sent to device via DFU.&lt;br&gt;Are you sure you want to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>התמונה תישלח למכשיר דרך DFU.&lt;br&gt;האם אתה בטוח שברצונך להמשיך?</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1459"/>
@@ -958,7 +958,7 @@
     <message>
         <location filename="../main.qml" line="1541"/>
         <source>Sending... %1%</source>
-        <translation type="unfinished"></translation>
+        <translation>שולח... %1%</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1564"/>
@@ -973,7 +973,7 @@
     <message>
         <location filename="../main.qml" line="1582"/>
         <source>Waiting for authentication to access USB device...</source>
-        <translation type="unfinished"></translation>
+        <translation>ממתין לאימות לגישה להתקן ה-USB...</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1605"/>
@@ -999,12 +999,12 @@
     <message>
         <location filename="../main.qml" line="1624"/>
         <source>DFU programming completed successfully!&lt;br&gt;&lt;br&gt;The device has been programmed and should now boot automatically.</source>
-        <translation type="unfinished"></translation>
+        <translation>תכנות DFU הושלמה בהצלחה!&lt;br&gt;&lt;br&gt;המכשיר תוכנת ואמור לאתחל אוטומטית.</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1629"/>
         <source>&lt;b&gt;%1&lt;/b&gt; has been written to &lt;b&gt;%2&lt;/b&gt;&lt;br&gt;&lt;br&gt;The process is complete. You can connect to the board via the serial port.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;%1&lt;/b&gt; נכתב ל-&lt;b&gt;%2&lt;/b&gt;.&lt;br&gt;&lt;br&gt;התהליך הושלם. ניתן להתחבר ללוח דרך יציאת הסריאל.</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1633"/>
@@ -1039,7 +1039,7 @@
     <message>
         <location filename="../main.qml" line="2129"/>
         <source>Onboard emmc</source>
-        <translation type="unfinished"></translation>
+        <translation>eMMC מובנה</translation>
     </message>
     <message>
         <location filename="../main.qml" line="2165"/>

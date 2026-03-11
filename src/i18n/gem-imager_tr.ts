@@ -6,12 +6,12 @@
     <message>
         <location filename="../dfuthread.cpp" line="49"/>
         <source>Failed to create temporary file for DFU image</source>
-        <translation>DFU görüntüsü için geçici dosya oluşturulamadı</translation>
+        <translation>DFU imajı için geçici dosya oluşturulamadı</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="59"/>
         <source>Failed to open temporary file for DFU image</source>
-        <translation>DFU görüntüsü için geçici dosya açılamadı</translation>
+        <translation>DFU imajı için geçici dosya açılamadı</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="68"/>
@@ -21,27 +21,27 @@
     <message>
         <location filename="../dfuthread.cpp" line="71"/>
         <source>DFU mode requires an image URL</source>
-        <translation>DFU modu bir görüntü URL&apos;si gerektiriyor</translation>
+        <translation>DFU modu bir imaj URL&apos;si gerektiriyor</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="75"/>
         <source>Downloading image...</source>
-        <translation>Görüntü indiriliyor...</translation>
+        <translation>İmaj indiriliyor...</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="81"/>
         <source>Customizing image...</source>
-        <translation>Görüntü özelleştiriliyor...</translation>
+        <translation>İmaj özelleştiriliyor...</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="85"/>
         <source>Failed to reopen image for customization: %1</source>
-        <translation>Özelleştirme için görüntü yeniden açılamadı: %1</translation>
+        <translation>Özelleştirme için imaj yeniden açılamadı: %1</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="92"/>
         <source>Extracting bootloader files from image...</source>
-        <translation>Görüntüden önyükleyici dosyaları çıkartılıyor...</translation>
+        <translation>İmajdan önyükleyici dosyaları çıkartılıyor...</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="95"/>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../dfuthread.cpp" line="101"/>
         <source>Sending image to device (this may take several minutes)...</source>
-        <translation>Görüntü cihaza gönderiliyor (bu birkaç dakika sürebilir)...</translation>
+        <translation>İmaj cihaza gönderiliyor (bu birkaç dakika sürebilir)...</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="104"/>
@@ -66,7 +66,7 @@
     <message>
         <location filename="../dfuthread.cpp" line="107"/>
         <source>System image sent successfully!</source>
-        <translation>Sistem görüntüsü başarıyla gönderildi!</translation>
+        <translation>Sistem imajı başarıyla gönderildi!</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="123"/>
@@ -91,12 +91,12 @@
     <message>
         <location filename="../dfuthread.cpp" line="162"/>
         <source>Failed to reopen image file: %1</source>
-        <translation>Görüntü dosyası yeniden açılamadı: %1</translation>
+        <translation>İmaj dosyası yeniden açılamadı: %1</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="174"/>
         <source>Bootloader file not found in image: %1</source>
-        <translation>Görüntüde önyükleyici dosyası bulunamadı: %1</translation>
+        <translation>İmajda önyükleyici dosyası bulunamadı: %1</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="185"/>
@@ -111,12 +111,12 @@
     <message>
         <location filename="../dfuthread.cpp" line="199"/>
         <source>Error reading bootloader files from image: %1</source>
-        <translation>Görüntüden önyükleyici dosyaları okunurken hata: %1</translation>
+        <translation>İmajdan önyükleyici dosyaları okunurken hata: %1</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="209"/>
         <source>Image not found: %1</source>
-        <translation>Görüntü bulunamadı: %1</translation>
+        <translation>İmaj bulunamadı: %1</translation>
     </message>
 </context>
 <context>
@@ -343,12 +343,12 @@
     <message>
         <location filename="../imagewriter.cpp" line="319"/>
         <source>Input file is not a valid disk image.&lt;br&gt;File size %1 bytes is not a multiple of 512 bytes.</source>
-        <translation>Giriş dosyası geçerli bir disk görüntüsü değil.&lt;br&gt;%1 bayt dosya boyutu 512 baytın katı değil.</translation>
+        <translation>Giriş dosyası geçerli bir disk imajı değil.&lt;br&gt;%1 bayt dosya boyutu 512 baytın katı değil.</translation>
     </message>
     <message>
         <location filename="../imagewriter.cpp" line="777"/>
         <source>Downloading and writing image</source>
-        <translation>Görüntü indirme ve yazma</translation>
+        <translation>İmaj indirme ve yazma</translation>
     </message>
     <message>
         <location filename="../imagewriter.cpp" line="939"/>
@@ -518,7 +518,7 @@
     <message>
         <location filename="../OptionsPopup.qml" line="426"/>
         <source>Write sdcard&apos;s image to eMMC on first boot</source>
-        <translation>SD kartın görüntüsünü ilk açılışta eMMC'ye yaz</translation>
+        <translation>SD kartın imajını ilk açılışta eMMC'ye yaz</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="451"/>
@@ -766,7 +766,7 @@
     <message>
         <location filename="../main.qml" line="300"/>
         <source>Select this button to start writing the image</source>
-        <translation>Görüntüyü yazmaya başlamak için bu butonu seçin</translation>
+        <translation>İmajı yazmaya başlamak için bu butonu seçin</translation>
     </message>
     <message>
         <location filename="../main.qml" line="320"/>
@@ -837,7 +837,7 @@
     <message>
         <location filename="../main.qml" line="1125"/>
         <source>Writes the image to the card&apos;s internal eMMC memory via Uniflash</source>
-        <translation>Uniflash aracılığıyla görüntüyü kartın dahili eMMC belleğine yazar</translation>
+        <translation>Uniflash aracılığıyla imajı kartın dahili eMMC belleğine yazar</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1268"/>
@@ -964,7 +964,7 @@
     <message>
         <location filename="../main.qml" line="2051"/>
         <source>Connect an USB stick containing images first.&lt;br&gt;The images must be located in the root folder of the USB stick.</source>
-        <translation>Önce görüntüler içeren bir USB bellek bağlayın.&lt;br&gt; Görüntüler USB belleğin kök klasöründe bulunmalıdır.</translation>
+        <translation>Önce imajlar içeren bir USB bellek bağlayın.&lt;br&gt; İmajlar USB belleğin kök klasöründe bulunmalıdır.</translation>
     </message>
     <message>
         <location filename="../main.qml" line="2165"/>
@@ -1020,7 +1020,7 @@
     <message>
         <location filename="../main.qml" line="1457"/>
         <source>Image will be sent to device via DFU.&lt;br&gt;Are you sure you want to continue?</source>
-        <translation>Görüntü, DFU aracılığıyla cihaza gönderilecek.&lt;br&gt;Devam etmek istediğinizden emin misiniz?</translation>
+        <translation>İmaj, DFU aracılığıyla cihaza gönderilecek.&lt;br&gt;Devam etmek istediğinizden emin misiniz?</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1541"/>
