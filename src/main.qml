@@ -1614,11 +1614,11 @@ ApplicationWindow {
         {
             if(isDfuMode)
             {
+                resetWriteButton()
+                emmcBootmodePopup.openPopup()
                 imageWriter.setDst("")
                 isDfuMode = false
                 isUniflashMode = false
-                resetWriteButton()
-                emmcBootmodePopup.openPopup()
                 return
             }
             else if(isUniflashMode)
