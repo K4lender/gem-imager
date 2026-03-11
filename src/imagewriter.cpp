@@ -828,74 +828,10 @@
          _thread->setVerifyEnabled(verify);
  }
  
- /* Relay events from download thread to QML */
  void ImageWriter::onSuccess()
  {
-     stopProgressPolling();
-    
-    // Expand GPT partition table if writing to eMMC/SD card
-    if (!_dst.isEmpty() && _dst.startsWith("/dev/mmcblk"))
-    {
-        qDebug() << "Expanding partition table on" << _dst;
-        
-        try {
-            // Method 1: Try using sfdisk (non-interactive, safer)
-            QProcess sfdisk;
-            QStringList sfdiskArgs;
-            sfdiskArgs << "--part-type" << _dst << "2" << "0FC63DAF-8483-4772-8E79-3D69D8477DE4";
-            
-            sfdisk.start("sfdisk", sfdiskArgs);
-            if (sfdisk.waitForFinished(3000))
-            {
-                qDebug() << "Partition type set";
-            }
-            
-            // Method 2: Use sgdisk to move backup GPT and expand partition
-            QProcess sgdisk;
-            QStringList sgdiskArgs;
-            // -e: move backup GPT data structures to the end of the disk
-            sgdiskArgs << "-e" << _dst;
-            
-            sgdisk.start("sgdisk", sgdiskArgs);
-            if (sgdisk.waitForFinished(5000))
-            {
-                int exitCode = sgdisk.exitCode();
-                qDebug() << "sgdisk exit code:" << exitCode;
-                
-                if (exitCode == 0 || exitCode == 2)  // 2 = warnings but successful
-                {
-                    qDebug() << "GPT backup relocated successfully";
-                    
-                    // Now use sfdisk to expand partition 2
-                    QProcess growpart;
-                    growpart.start("sh", QStringList() << "-c" 
-                        << QString("echo ', +' | sfdisk --no-reread -N 2 %1").arg(_dst));
-                    
-                    if (growpart.waitForFinished(5000))
-                    {
-                        qDebug() << "Partition expansion attempted";
-                        qDebug() << "Output:" << growpart.readAll();
-                        
-                        // Inform kernel about partition table changes
-                        QProcess partprobe;
-                        partprobe.start("partprobe", QStringList() << _dst);
-                        partprobe.waitForFinished(2000);
-                        
-                        qDebug() << "Partition expansion complete";
-                    }
-                }
-                else
-                {
-                    qDebug() << "sgdisk failed:" << sgdisk.readAllStandardError();
-                }
-            }
-        }
-        catch (...)
-        {
-            qDebug() << "Exception during partition expansion - continuing anyway";
-        }
-    }
-    
+    stopProgressPolling();
+       
     emit success();
 
 #ifndef QT_NO_WIDGETS
