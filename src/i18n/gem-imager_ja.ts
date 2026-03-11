@@ -186,7 +186,7 @@
     <message>
         <location filename="../downloadthread.cpp" line="218"/>
         <source>Please verify if &apos;Gemstone Imager&apos; is allowed access to &apos;removable volumes&apos; in privacy settings (under &apos;files and folders&apos; or alternatively give it &apos;full disk access&apos;).</source>
-        <translation type="unfinished"></translation>
+        <translation>プライバシー設定で &apos;Gemstone Imager&apos; が &apos;リムーバブルボリューム&apos; へのアクセスを許可されているか確認してください（&apos;ファイルとフォルダー&apos; または &apos;フルディスクアクセス&apos; を付与してください）。</translation>
     </message>
     <message>
         <location filename="../downloadthread.cpp" line="240"/>
@@ -392,12 +392,12 @@
     <message>
         <location filename="../imagewriter.cpp" line="939"/>
         <source>DFU mode not selected</source>
-        <translation type="unfinished"></translation>
+        <translation>DFUモードが選択されていません</translation>
     </message>
     <message>
         <location filename="../imagewriter.cpp" line="967"/>
         <source>Authentication failed or was cancelled.&lt;br&gt;DFU operation requires elevated privileges to access the USB device.</source>
-        <translation type="unfinished"></translation>
+        <translation>認証に失敗したかキャンセルされました。&lt;br&gt;DFU操作にはUSBデバイスへのアクセスに管理者権限が必要です。</translation>
     </message>
     <message>
         <location filename="../imagewriter.cpp" line="1047"/>
@@ -407,12 +407,12 @@
     <message>
         <location filename="../imagewriter.cpp" line="1222"/>
         <source>Error synchronizing time. Trying again in 3 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>時刻の同期エラー。3秒後に再試行します</translation>
     </message>
     <message>
         <location filename="../imagewriter.cpp" line="1234"/>
         <source>STP is enabled on your Ethernet switch. Getting IP will take long time.</source>
-        <translation type="unfinished"></translation>
+        <translation>EthernetスイッチでSTPが有効になっています。IPアドレスの取得に時間がかかります。</translation>
     </message>
     <message>
         <location filename="../imagewriter.cpp" line="1486"/>
@@ -461,7 +461,7 @@
     <message>
         <location filename="../OptionsPopup.qml" line="27"/>
         <source>OS Customization</source>
-        <translation type="unfinished"></translation>
+        <translation>OSカスタマイズ</translation>
     </message>
     <message>
         <source>for this session only</source>
@@ -504,7 +504,7 @@
     <message>
         <location filename="../OptionsPopup.qml" line="179"/>
         <source>Password is required!</source>
-        <translation type="unfinished"></translation>
+        <translation>パスワードが必要です！</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="187"/>
@@ -555,17 +555,17 @@
     <message>
         <location filename="../OptionsPopup.qml" line="375"/>
         <source>Set Disk Encryption (Cryptsetup)</source>
-        <translation type="unfinished"></translation>
+        <translation>ディスク暗号化を設定 (Cryptsetup)</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="385"/>
         <source>Disk Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>ディスクパスワード：</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="426"/>
         <source>Write sdcard&apos;s image to eMMC on first boot</source>
-        <translation type="unfinished"></translation>
+        <translation>初回起動時にSDカードのイメージをeMMCに書き込む</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="451"/>
@@ -590,7 +590,7 @@
     <message>
         <location filename="../OptionsPopup.qml" line="533"/>
         <source>Delete Key</source>
-        <translation type="unfinished"></translation>
+        <translation>鍵を削除</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="552"/>
@@ -600,42 +600,42 @@
     <message>
         <location filename="../OptionsPopup.qml" line="562"/>
         <source>Add SSH Key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH鍵を追加</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="578"/>
         <source>Enable VNC</source>
-        <translation type="unfinished"></translation>
+        <translation>VNCを有効にする</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="583"/>
         <source>VNC Password is required!</source>
-        <translation type="unfinished"></translation>
+        <translation>VNCパスワードが必要です！</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="591"/>
         <source>VNC Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>VNCパスワード：</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="610"/>
         <source>Gadgets</source>
-        <translation type="unfinished"></translation>
+        <translation>ガジェット</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="616"/>
         <source>Enable Storage Gadget</source>
-        <translation type="unfinished"></translation>
+        <translation>ストレージガジェットを有効にする</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="622"/>
         <source>Enable Ethernet Gadget</source>
-        <translation type="unfinished"></translation>
+        <translation>イーサネットガジェットを有効にする</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="628"/>
         <source>Enable Serial Gadgets</source>
-        <translation type="unfinished"></translation>
+        <translation>シリアルガジェットを有効にする</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="653"/>
@@ -650,12 +650,12 @@
     <message>
         <location filename="../OptionsPopup.qml" line="676"/>
         <source>Serial Port </source>
-        <translation type="unfinished"></translation>
+        <translation>シリアルポート </translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="708"/>
         <source>Ethernet </source>
-        <translation type="unfinished"></translation>
+        <translation>イーサネット </translation>
     </message>
     <message>
         <source>Enable telemetry</source>
@@ -692,12 +692,12 @@
     <message>
         <location filename="../UseSavedSettingsPopup.qml" line="46"/>
         <source>Use OS customization?</source>
-        <translation type="unfinished"></translation>
+        <translation>OSカスタマイズを使用しますか？</translation>
     </message>
     <message>
         <location filename="../UseSavedSettingsPopup.qml" line="98"/>
         <source>Would you like to apply OS customization settings?</source>
-        <translation type="unfinished"></translation>
+        <translation>OSカスタマイズ設定を適用しますか？</translation>
     </message>
     <message>
         <location filename="../UseSavedSettingsPopup.qml" line="139"/>
@@ -765,12 +765,12 @@
     <message>
         <location filename="../main.qml" line="330"/>
         <source>Network not ready yet</source>
-        <translation type="unfinished"></translation>
+        <translation>ネットワークがまだ準備できていません</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1022"/>
         <source>No storage devices found</source>
-        <translation type="unfinished"></translation>
+        <translation>ストレージデバイスが見つかりません</translation>
     </message>
     <message>
         <location filename="../main.qml" line="208"/>
@@ -852,18 +852,18 @@
     <message>
         <location filename="../main.qml" line="24"/>
         <source>Gemstone Image Writer %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Gemstone Image Writer %1</translation>
     </message>
     <message>
         <location filename="../main.qml" line="122"/>
         <location filename="../main.qml" line="453"/>
         <source>Gemstone Board</source>
-        <translation type="unfinished"></translation>
+        <translation>Gemstone Board</translation>
     </message>
     <message>
         <location filename="../main.qml" line="146"/>
         <source>Select this button to choose your target Gemstone Board</source>
-        <translation type="unfinished"></translation>
+        <translation>このボタンをクリックしてターゲットのGemstone Boardを選択します</translation>
     </message>
     <message>
         <location filename="../main.qml" line="497"/>
@@ -903,33 +903,33 @@
     <message>
         <location filename="../main.qml" line="1057"/>
         <source>Exclude System Drives</source>
-        <translation type="unfinished"></translation>
+        <translation>システムドライブを除外</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1115"/>
         <source>Internal eMMC - 32 GB</source>
-        <translation type="unfinished"></translation>
+        <translation>内蔵eMMC - 32 GB</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1125"/>
         <source>Writes the image to the card&apos;s internal eMMC memory via Uniflash</source>
-        <translation type="unfinished"></translation>
+        <translation>Uniflashを使用してカードの内蔵eMMCメモリにイメージを書き込みます</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1213"/>
         <location filename="../main.qml" line="2140"/>
         <source>DFU Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>DFUモード</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1223"/>
         <source>Program the device via USB DFU (Device Firmware Update)</source>
-        <translation type="unfinished"></translation>
+        <translation>USB DFU（デバイスファームウェアアップデート）でデバイスをプログラム</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1268"/>
         <source>gigabytes</source>
-        <translation type="unfinished"></translation>
+        <translation>ギガバイト</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1270"/>
@@ -940,7 +940,7 @@
     <message>
         <location filename="../main.qml" line="1318"/>
         <source>GB</source>
-        <translation type="unfinished"></translation>
+        <translation>GB</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1334"/>
@@ -950,23 +950,23 @@
     <message>
         <location filename="../main.qml" line="1336"/>
         <source>SYSTEM</source>
-        <translation type="unfinished"></translation>
+        <translation>システム</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1394"/>
         <location filename="../main.qml" line="1401"/>
         <source>Boot Mode Switch</source>
-        <translation type="unfinished"></translation>
+        <translation>ブートモードスイッチ</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1395"/>
         <source>Configure the boot mode switches for DFU Boot as shown in the image.</source>
-        <translation type="unfinished"></translation>
+        <translation>画像に示されているようにDFUブートのブートモードスイッチを設定してください。</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1402"/>
         <source>After powering off the card, set the boot mode switches to eMMC Boot as shown in the image. Upon restoring power, the system will boot automatically.</source>
-        <translation type="unfinished"></translation>
+        <translation>カードの電源を切った後、画像に示されているようにブートモードスイッチをeMMCブートに設定してください。電源を入れると、システムは自動的に起動します。</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1411"/>
@@ -976,7 +976,7 @@
     <message>
         <location filename="../main.qml" line="1412"/>
         <source>Gemstone Imager is still busy.&lt;br&gt;Are you sure you want to quit?</source>
-        <translation type="unfinished"></translation>
+        <translation>Gemstone Imagerはまだ処理中です。&lt;br&gt;本当に終了しますか？</translation>
     </message>
     <message>
         <source>Raspberry Pi Imager is still busy.&lt;br&gt;Are you sure you want to quit?</source>
@@ -991,7 +991,7 @@
         <location filename="../main.qml" line="1442"/>
         <location filename="../main.qml" line="2152"/>
         <source>Starting DFU operation...</source>
-        <translation type="unfinished"></translation>
+        <translation>DFU操作を開始しています...</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1448"/>
@@ -1001,7 +1001,7 @@
     <message>
         <location filename="../main.qml" line="1457"/>
         <source>Image will be sent to device via DFU.&lt;br&gt;Are you sure you want to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>イメージがDFUでデバイスに送信されます。&lt;br&gt;続行してもよろしいですか？</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1459"/>
@@ -1030,7 +1030,7 @@
     <message>
         <location filename="../main.qml" line="1541"/>
         <source>Sending... %1%</source>
-        <translation type="unfinished"></translation>
+        <translation>送信中... %1%</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1564"/>
@@ -1045,7 +1045,7 @@
     <message>
         <location filename="../main.qml" line="1582"/>
         <source>Waiting for authentication to access USB device...</source>
-        <translation type="unfinished"></translation>
+        <translation>USBデバイスへのアクセス認証を待っています...</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1605"/>
@@ -1071,12 +1071,12 @@
     <message>
         <location filename="../main.qml" line="1624"/>
         <source>DFU programming completed successfully!&lt;br&gt;&lt;br&gt;The device has been programmed and should now boot automatically.</source>
-        <translation type="unfinished"></translation>
+        <translation>DFUプログラミングが正常に完了しました！&lt;br&gt;&lt;br&gt;デバイスがプログラムされ、自動的に起動するはずです。</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1629"/>
         <source>&lt;b&gt;%1&lt;/b&gt; has been written to &lt;b&gt;%2&lt;/b&gt;&lt;br&gt;&lt;br&gt;The process is complete. You can connect to the board via the serial port.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;%1&lt;/b&gt; が &lt;b&gt;%2&lt;/b&gt; に書き込まれました。&lt;br&gt;&lt;br&gt;プロセスが完了しました。シリアルポートでボードに接続できます。</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1633"/>
@@ -1111,7 +1111,7 @@
     <message>
         <location filename="../main.qml" line="2129"/>
         <source>Onboard emmc</source>
-        <translation type="unfinished"></translation>
+        <translation>オンボードeMMC</translation>
     </message>
     <message>
         <location filename="../main.qml" line="2165"/>

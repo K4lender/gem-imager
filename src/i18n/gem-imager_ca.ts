@@ -182,7 +182,7 @@
     <message>
         <location filename="../downloadthread.cpp" line="218"/>
         <source>Please verify if &apos;Gemstone Imager&apos; is allowed access to &apos;removable volumes&apos; in privacy settings (under &apos;files and folders&apos; or alternatively give it &apos;full disk access&apos;).</source>
-        <translation type="unfinished"></translation>
+        <translation>Verifiqueu si &apos;Gemstone Imager&apos; té permís per accedir als &apos;volums extraïbles&apos; a la configuració de privadesa (a &apos;fitxers i carpetes&apos; o doneu-li alternativament &apos;accés complet al disc&apos;).</translation>
     </message>
     <message>
         <location filename="../downloadthread.cpp" line="240"/>
@@ -352,12 +352,12 @@
     <message>
         <location filename="../imagewriter.cpp" line="939"/>
         <source>DFU mode not selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Mode DFU no seleccionat</translation>
     </message>
     <message>
         <location filename="../imagewriter.cpp" line="967"/>
         <source>Authentication failed or was cancelled.&lt;br&gt;DFU operation requires elevated privileges to access the USB device.</source>
-        <translation type="unfinished"></translation>
+        <translation>L&apos;autenticació ha fallat o s&apos;ha cancel·lat.&lt;br&gt;L&apos;operació DFU requereix privilegis elevats per accedir al dispositiu USB.</translation>
     </message>
     <message>
         <location filename="../imagewriter.cpp" line="1047"/>
@@ -456,7 +456,7 @@
     <message>
         <location filename="../OptionsPopup.qml" line="179"/>
         <source>Password is required!</source>
-        <translation type="unfinished"></translation>
+        <translation>Cal una contrasenya!</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="187"/>
@@ -507,17 +507,17 @@
     <message>
         <location filename="../OptionsPopup.qml" line="375"/>
         <source>Set Disk Encryption (Cryptsetup)</source>
-        <translation type="unfinished"></translation>
+        <translation>Configura el xifratge del disc (Cryptsetup)</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="385"/>
         <source>Disk Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Contrasenya del disc:</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="426"/>
         <source>Write sdcard&apos;s image to eMMC on first boot</source>
-        <translation type="unfinished"></translation>
+        <translation>Escriu la imatge de la targeta SD a l&apos;eMMC en el primer arrencada</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="451"/>
@@ -542,7 +542,7 @@
     <message>
         <location filename="../OptionsPopup.qml" line="533"/>
         <source>Delete Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Elimina la clau</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="552"/>
@@ -552,42 +552,42 @@
     <message>
         <location filename="../OptionsPopup.qml" line="562"/>
         <source>Add SSH Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Afegeix una clau SSH</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="578"/>
         <source>Enable VNC</source>
-        <translation type="unfinished"></translation>
+        <translation>Activa VNC</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="583"/>
         <source>VNC Password is required!</source>
-        <translation type="unfinished"></translation>
+        <translation>Cal una contrasenya VNC!</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="591"/>
         <source>VNC Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Contrasenya VNC:</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="610"/>
         <source>Gadgets</source>
-        <translation type="unfinished"></translation>
+        <translation>Gadgets</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="616"/>
         <source>Enable Storage Gadget</source>
-        <translation type="unfinished"></translation>
+        <translation>Activa el gadget d&apos;emmagatzematge</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="622"/>
         <source>Enable Ethernet Gadget</source>
-        <translation type="unfinished"></translation>
+        <translation>Activa el gadget Ethernet</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="628"/>
         <source>Enable Serial Gadgets</source>
-        <translation type="unfinished"></translation>
+        <translation>Activa els gadgets sèrie</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="653"/>
@@ -602,12 +602,12 @@
     <message>
         <location filename="../OptionsPopup.qml" line="676"/>
         <source>Serial Port </source>
-        <translation type="unfinished"></translation>
+        <translation>Port sèrie </translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="708"/>
         <source>Ethernet </source>
-        <translation type="unfinished"></translation>
+        <translation>Ethernet </translation>
     </message>
     <message>
         <source>Enable telemetry</source>
@@ -721,18 +721,18 @@
     <message>
         <location filename="../main.qml" line="24"/>
         <source>Gemstone Image Writer %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Gemstone Image Writer %1</translation>
     </message>
     <message>
         <location filename="../main.qml" line="122"/>
         <location filename="../main.qml" line="453"/>
         <source>Gemstone Board</source>
-        <translation type="unfinished"></translation>
+        <translation>Gemstone Board</translation>
     </message>
     <message>
         <location filename="../main.qml" line="146"/>
         <source>Select this button to choose your target Gemstone Board</source>
-        <translation type="unfinished"></translation>
+        <translation>Feu clic en aquest botó per triar el vostre Gemstone Board de destinació</translation>
     </message>
     <message>
         <location filename="../main.qml" line="222"/>
@@ -831,33 +831,33 @@
     <message>
         <location filename="../main.qml" line="1057"/>
         <source>Exclude System Drives</source>
-        <translation type="unfinished"></translation>
+        <translation>Exclou les unitats del sistema</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1115"/>
         <source>Internal eMMC - 32 GB</source>
-        <translation type="unfinished"></translation>
+        <translation>eMMC intern - 32 GB</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1125"/>
         <source>Writes the image to the card&apos;s internal eMMC memory via Uniflash</source>
-        <translation type="unfinished"></translation>
+        <translation>Escriu la imatge a la memòria eMMC interna de la targeta via Uniflash</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1213"/>
         <location filename="../main.qml" line="2140"/>
         <source>DFU Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Mode DFU</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1223"/>
         <source>Program the device via USB DFU (Device Firmware Update)</source>
-        <translation type="unfinished"></translation>
+        <translation>Programa el dispositiu via USB DFU (Device Firmware Update)</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1268"/>
         <source>gigabytes</source>
-        <translation type="unfinished"></translation>
+        <translation>gigabytes</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1270"/>
@@ -868,7 +868,7 @@
     <message>
         <location filename="../main.qml" line="1318"/>
         <source>GB</source>
-        <translation type="unfinished"></translation>
+        <translation>GB</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1334"/>
@@ -878,23 +878,23 @@
     <message>
         <location filename="../main.qml" line="1336"/>
         <source>SYSTEM</source>
-        <translation type="unfinished"></translation>
+        <translation>SISTEMA</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1394"/>
         <location filename="../main.qml" line="1401"/>
         <source>Boot Mode Switch</source>
-        <translation type="unfinished"></translation>
+        <translation>Commutador de mode d&apos;arrencada</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1395"/>
         <source>Configure the boot mode switches for DFU Boot as shown in the image.</source>
-        <translation type="unfinished"></translation>
+        <translation>Configureu els commutadors de mode d&apos;arrencada per a DFU Boot tal com es mostra a la imatge.</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1402"/>
         <source>After powering off the card, set the boot mode switches to eMMC Boot as shown in the image. Upon restoring power, the system will boot automatically.</source>
-        <translation type="unfinished"></translation>
+        <translation>Després d&apos;apagar la targeta, configureu els commutadors de mode d&apos;arrencada a eMMC Boot tal com es mostra a la imatge. En restaurar l&apos;alimentació, el sistema s&apos;arrencarà automàticament.</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1411"/>
@@ -904,7 +904,7 @@
     <message>
         <location filename="../main.qml" line="1412"/>
         <source>Gemstone Imager is still busy.&lt;br&gt;Are you sure you want to quit?</source>
-        <translation type="unfinished"></translation>
+        <translation>Gemstone Imager encara està ocupat.&lt;br&gt;Esteu segur que voleu sortir?</translation>
     </message>
     <message>
         <source>Raspberry Pi Imager is still busy.&lt;br&gt;Are you sure you want to quit?</source>
@@ -919,7 +919,7 @@
         <location filename="../main.qml" line="1442"/>
         <location filename="../main.qml" line="2152"/>
         <source>Starting DFU operation...</source>
-        <translation type="unfinished"></translation>
+        <translation>S&apos;inicia l&apos;operació DFU...</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1448"/>
@@ -929,7 +929,7 @@
     <message>
         <location filename="../main.qml" line="1457"/>
         <source>Image will be sent to device via DFU.&lt;br&gt;Are you sure you want to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>La imatge s&apos;enviarà al dispositiu via DFU.&lt;br&gt;Esteu segur que voleu continuar?</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1459"/>
@@ -954,7 +954,7 @@
     <message>
         <location filename="../main.qml" line="1541"/>
         <source>Sending... %1%</source>
-        <translation type="unfinished"></translation>
+        <translation>S&apos;envia... %1%</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1564"/>
@@ -969,7 +969,7 @@
     <message>
         <location filename="../main.qml" line="1582"/>
         <source>Waiting for authentication to access USB device...</source>
-        <translation type="unfinished"></translation>
+        <translation>S&apos;espera l&apos;autenticació per accedir al dispositiu USB...</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1605"/>
@@ -995,12 +995,12 @@
     <message>
         <location filename="../main.qml" line="1624"/>
         <source>DFU programming completed successfully!&lt;br&gt;&lt;br&gt;The device has been programmed and should now boot automatically.</source>
-        <translation type="unfinished"></translation>
+        <translation>La programació DFU s&apos;ha completat correctament!&lt;br&gt;&lt;br&gt;El dispositiu ha estat programat i ara hauria d&apos;arrencar automàticament.</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1629"/>
         <source>&lt;b&gt;%1&lt;/b&gt; has been written to &lt;b&gt;%2&lt;/b&gt;&lt;br&gt;&lt;br&gt;The process is complete. You can connect to the board via the serial port.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;%1&lt;/b&gt; s&apos;ha escrit a &lt;b&gt;%2&lt;/b&gt;&lt;br&gt;&lt;br&gt;El procés s&apos;ha completat. Podeu connectar-vos a la placa mitjançant el port sèrie.</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1633"/>
@@ -1035,7 +1035,7 @@
     <message>
         <location filename="../main.qml" line="2129"/>
         <source>Onboard emmc</source>
-        <translation type="unfinished"></translation>
+        <translation>eMMC integrat</translation>
     </message>
     <message>
         <location filename="../main.qml" line="2165"/>

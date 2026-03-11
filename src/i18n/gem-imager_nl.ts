@@ -186,7 +186,7 @@
     <message>
         <location filename="../downloadthread.cpp" line="218"/>
         <source>Please verify if &apos;Gemstone Imager&apos; is allowed access to &apos;removable volumes&apos; in privacy settings (under &apos;files and folders&apos; or alternatively give it &apos;full disk access&apos;).</source>
-        <translation type="unfinished"></translation>
+        <translation>Controleer of &apos;Gemstone Imager&apos; toegang heeft tot &apos;verwisselbare volumes&apos; in de privacyinstellingen (onder &apos;bestanden en mappen&apos; of geef het alternatief &apos;volledige schijftoegang&apos;).</translation>
     </message>
     <message>
         <location filename="../downloadthread.cpp" line="240"/>
@@ -392,12 +392,12 @@
     <message>
         <location filename="../imagewriter.cpp" line="939"/>
         <source>DFU mode not selected</source>
-        <translation type="unfinished"></translation>
+        <translation>DFU-modus niet geselecteerd</translation>
     </message>
     <message>
         <location filename="../imagewriter.cpp" line="967"/>
         <source>Authentication failed or was cancelled.&lt;br&gt;DFU operation requires elevated privileges to access the USB device.</source>
-        <translation type="unfinished"></translation>
+        <translation>Authenticatie mislukt of geannuleerd.&lt;br&gt;DFU-bewerking vereist verhoogde rechten om toegang te krijgen tot het USB-apparaat.</translation>
     </message>
     <message>
         <location filename="../imagewriter.cpp" line="1047"/>
@@ -407,12 +407,12 @@
     <message>
         <location filename="../imagewriter.cpp" line="1222"/>
         <source>Error synchronizing time. Trying again in 3 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>Fout bij synchroniseren van tijd. Opnieuw proberen in 3 seconden</translation>
     </message>
     <message>
         <location filename="../imagewriter.cpp" line="1234"/>
         <source>STP is enabled on your Ethernet switch. Getting IP will take long time.</source>
-        <translation type="unfinished"></translation>
+        <translation>STP is ingeschakeld op uw Ethernet-switch. Het ophalen van een IP-adres duurt lang.</translation>
     </message>
     <message>
         <location filename="../imagewriter.cpp" line="1486"/>
@@ -508,7 +508,7 @@
     <message>
         <location filename="../OptionsPopup.qml" line="179"/>
         <source>Password is required!</source>
-        <translation type="unfinished"></translation>
+        <translation>Wachtwoord is vereist!</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="187"/>
@@ -559,17 +559,17 @@
     <message>
         <location filename="../OptionsPopup.qml" line="375"/>
         <source>Set Disk Encryption (Cryptsetup)</source>
-        <translation type="unfinished"></translation>
+        <translation>Schijfversleuteling instellen (Cryptsetup)</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="385"/>
         <source>Disk Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Schijfwachtwoord:</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="426"/>
         <source>Write sdcard&apos;s image to eMMC on first boot</source>
-        <translation type="unfinished"></translation>
+        <translation>Schrijf SD-kaartimage naar eMMC bij eerste opstarten</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="451"/>
@@ -594,7 +594,7 @@
     <message>
         <location filename="../OptionsPopup.qml" line="533"/>
         <source>Delete Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Sleutel verwijderen</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="552"/>
@@ -604,42 +604,42 @@
     <message>
         <location filename="../OptionsPopup.qml" line="562"/>
         <source>Add SSH Key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH-sleutel toevoegen</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="578"/>
         <source>Enable VNC</source>
-        <translation type="unfinished"></translation>
+        <translation>VNC inschakelen</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="583"/>
         <source>VNC Password is required!</source>
-        <translation type="unfinished"></translation>
+        <translation>VNC-wachtwoord is vereist!</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="591"/>
         <source>VNC Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>VNC-wachtwoord:</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="610"/>
         <source>Gadgets</source>
-        <translation type="unfinished"></translation>
+        <translation>Gadgets</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="616"/>
         <source>Enable Storage Gadget</source>
-        <translation type="unfinished"></translation>
+        <translation>Opslag-gadget inschakelen</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="622"/>
         <source>Enable Ethernet Gadget</source>
-        <translation type="unfinished"></translation>
+        <translation>Ethernet-gadget inschakelen</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="628"/>
         <source>Enable Serial Gadgets</source>
-        <translation type="unfinished"></translation>
+        <translation>Seriële gadgets inschakelen</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="653"/>
@@ -654,12 +654,12 @@
     <message>
         <location filename="../OptionsPopup.qml" line="676"/>
         <source>Serial Port </source>
-        <translation type="unfinished"></translation>
+        <translation>Seriële poort </translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="708"/>
         <source>Ethernet </source>
-        <translation type="unfinished"></translation>
+        <translation>Ethernet </translation>
     </message>
     <message>
         <source>Enable telemetry</source>
@@ -777,12 +777,12 @@
     <message>
         <location filename="../main.qml" line="330"/>
         <source>Network not ready yet</source>
-        <translation type="unfinished"></translation>
+        <translation>Netwerk nog niet gereed</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1022"/>
         <source>No storage devices found</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen opslagapparaten gevonden</translation>
     </message>
     <message>
         <location filename="../main.qml" line="208"/>
@@ -864,18 +864,18 @@
     <message>
         <location filename="../main.qml" line="24"/>
         <source>Gemstone Image Writer %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Gemstone Image Writer %1</translation>
     </message>
     <message>
         <location filename="../main.qml" line="122"/>
         <location filename="../main.qml" line="453"/>
         <source>Gemstone Board</source>
-        <translation type="unfinished"></translation>
+        <translation>Gemstone Board</translation>
     </message>
     <message>
         <location filename="../main.qml" line="146"/>
         <source>Select this button to choose your target Gemstone Board</source>
-        <translation type="unfinished"></translation>
+        <translation>Klik op deze knop om uw doel Gemstone Board te kiezen</translation>
     </message>
     <message>
         <location filename="../main.qml" line="497"/>
@@ -915,33 +915,33 @@
     <message>
         <location filename="../main.qml" line="1057"/>
         <source>Exclude System Drives</source>
-        <translation type="unfinished"></translation>
+        <translation>Systeemschijven uitsluiten</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1115"/>
         <source>Internal eMMC - 32 GB</source>
-        <translation type="unfinished"></translation>
+        <translation>Interne eMMC - 32 GB</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1125"/>
         <source>Writes the image to the card&apos;s internal eMMC memory via Uniflash</source>
-        <translation type="unfinished"></translation>
+        <translation>Schrijft het image naar het interne eMMC-geheugen van de kaart via Uniflash</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1213"/>
         <location filename="../main.qml" line="2140"/>
         <source>DFU Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>DFU-modus</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1223"/>
         <source>Program the device via USB DFU (Device Firmware Update)</source>
-        <translation type="unfinished"></translation>
+        <translation>Programmeer het apparaat via USB DFU (Device Firmware Update)</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1268"/>
         <source>gigabytes</source>
-        <translation type="unfinished"></translation>
+        <translation>gigabytes</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1270"/>
@@ -952,7 +952,7 @@
     <message>
         <location filename="../main.qml" line="1318"/>
         <source>GB</source>
-        <translation type="unfinished"></translation>
+        <translation>GB</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1334"/>
@@ -962,23 +962,23 @@
     <message>
         <location filename="../main.qml" line="1336"/>
         <source>SYSTEM</source>
-        <translation type="unfinished"></translation>
+        <translation>SYSTEEM</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1394"/>
         <location filename="../main.qml" line="1401"/>
         <source>Boot Mode Switch</source>
-        <translation type="unfinished"></translation>
+        <translation>Opstartmodusschakelaar</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1395"/>
         <source>Configure the boot mode switches for DFU Boot as shown in the image.</source>
-        <translation type="unfinished"></translation>
+        <translation>Configureer de opstartmodusschakelaars voor DFU Boot zoals weergegeven in de afbeelding.</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1402"/>
         <source>After powering off the card, set the boot mode switches to eMMC Boot as shown in the image. Upon restoring power, the system will boot automatically.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zet de kaart uit en stel de opstartmodusschakelaars in op eMMC Boot zoals weergegeven in de afbeelding. Na het herstellen van de voeding start het systeem automatisch op.</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1411"/>
@@ -988,7 +988,7 @@
     <message>
         <location filename="../main.qml" line="1412"/>
         <source>Gemstone Imager is still busy.&lt;br&gt;Are you sure you want to quit?</source>
-        <translation type="unfinished"></translation>
+        <translation>Gemstone Imager is nog bezig.&lt;br&gt;Weet u zeker dat u wilt afsluiten?</translation>
     </message>
     <message>
         <source>Raspberry Pi Imager is still busy.&lt;br&gt;Are you sure you want to quit?</source>
@@ -1003,7 +1003,7 @@
         <location filename="../main.qml" line="1442"/>
         <location filename="../main.qml" line="2152"/>
         <source>Starting DFU operation...</source>
-        <translation type="unfinished"></translation>
+        <translation>DFU-bewerking starten...</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1448"/>
@@ -1013,7 +1013,7 @@
     <message>
         <location filename="../main.qml" line="1457"/>
         <source>Image will be sent to device via DFU.&lt;br&gt;Are you sure you want to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Het image wordt via DFU naar het apparaat gestuurd.&lt;br&gt;Weet u zeker dat u wilt doorgaan?</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1459"/>
@@ -1042,7 +1042,7 @@
     <message>
         <location filename="../main.qml" line="1541"/>
         <source>Sending... %1%</source>
-        <translation type="unfinished"></translation>
+        <translation>Verzenden... %1%</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1564"/>
@@ -1057,7 +1057,7 @@
     <message>
         <location filename="../main.qml" line="1582"/>
         <source>Waiting for authentication to access USB device...</source>
-        <translation type="unfinished"></translation>
+        <translation>Wachten op authenticatie voor toegang tot USB-apparaat...</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1605"/>
@@ -1083,12 +1083,12 @@
     <message>
         <location filename="../main.qml" line="1624"/>
         <source>DFU programming completed successfully!&lt;br&gt;&lt;br&gt;The device has been programmed and should now boot automatically.</source>
-        <translation type="unfinished"></translation>
+        <translation>DFU-programmering succesvol voltooid!&lt;br&gt;&lt;br&gt;Het apparaat is geprogrammeerd en zou nu automatisch moeten opstarten.</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1629"/>
         <source>&lt;b&gt;%1&lt;/b&gt; has been written to &lt;b&gt;%2&lt;/b&gt;&lt;br&gt;&lt;br&gt;The process is complete. You can connect to the board via the serial port.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;%1&lt;/b&gt; is geschreven naar &lt;b&gt;%2&lt;/b&gt;&lt;br&gt;&lt;br&gt;Het proces is voltooid. U kunt via de seriële poort verbinding maken met het bord.</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1633"/>
@@ -1123,7 +1123,7 @@
     <message>
         <location filename="../main.qml" line="2129"/>
         <source>Onboard emmc</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingebouwde eMMC</translation>
     </message>
     <message>
         <location filename="../main.qml" line="2165"/>

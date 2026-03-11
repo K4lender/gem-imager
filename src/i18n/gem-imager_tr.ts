@@ -6,12 +6,12 @@
     <message>
         <location filename="../dfuthread.cpp" line="49"/>
         <source>Failed to create temporary file for DFU image</source>
-        <translation>DFU görüntüsü için geçici dosya oluşturulamadı</translation>
+        <translation>DFU imajı için geçici dosya oluşturulamadı</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="59"/>
         <source>Failed to open temporary file for DFU image</source>
-        <translation>DFU görüntüsü için geçici dosya açılamadı</translation>
+        <translation>DFU imajı için geçici dosya açılamadı</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="68"/>
@@ -21,27 +21,27 @@
     <message>
         <location filename="../dfuthread.cpp" line="71"/>
         <source>DFU mode requires an image URL</source>
-        <translation>DFU modu bir görüntü URL&apos;si gerektiriyor</translation>
+        <translation>DFU modu bir imaj URL&apos;si gerektiriyor</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="75"/>
         <source>Downloading image...</source>
-        <translation>Görüntü indiriliyor...</translation>
+        <translation>İmaj indiriliyor...</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="81"/>
         <source>Customizing image...</source>
-        <translation type="unfinished"></translation>
+        <translation>İmaj özelleştiriliyor...</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="85"/>
         <source>Failed to reopen image for customization: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>İmaj özelleştirme için yeniden açılamadı: %1</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="92"/>
         <source>Extracting bootloader files from image...</source>
-        <translation>Görüntüden önyükleyici dosyaları çıkartılıyor...</translation>
+        <translation>İmajdan önyükleyici dosyaları çıkartılıyor...</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="95"/>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../dfuthread.cpp" line="101"/>
         <source>Sending image to device (this may take several minutes)...</source>
-        <translation>Görüntü cihaza gönderiliyor (bu birkaç dakika sürebilir)...</translation>
+        <translation>İmaj cihaza gönderiliyor (bu birkaç dakika sürebilir)...</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="104"/>
@@ -66,7 +66,7 @@
     <message>
         <location filename="../dfuthread.cpp" line="107"/>
         <source>System image sent successfully!</source>
-        <translation>Sistem görüntüsü başarıyla gönderildi!</translation>
+        <translation>Sistem imajı başarıyla gönderildi!</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="123"/>
@@ -91,12 +91,12 @@
     <message>
         <location filename="../dfuthread.cpp" line="162"/>
         <source>Failed to reopen image file: %1</source>
-        <translation>Görüntü dosyası yeniden açılamadı: %1</translation>
+        <translation>İmaj dosyası yeniden açılamadı: %1</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="174"/>
         <source>Bootloader file not found in image: %1</source>
-        <translation>Görüntüde önyükleyici dosyası bulunamadı: %1</translation>
+        <translation>İmajda önyükleyici dosyası bulunamadı: %1</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="185"/>
@@ -111,12 +111,12 @@
     <message>
         <location filename="../dfuthread.cpp" line="199"/>
         <source>Error reading bootloader files from image: %1</source>
-        <translation>Görüntüden önyükleyici dosyaları okunurken hata: %1</translation>
+        <translation>İmajdan önyükleyici dosyaları okunurken hata: %1</translation>
     </message>
     <message>
         <location filename="../dfuthread.cpp" line="209"/>
         <source>Image not found: %1</source>
-        <translation>Görüntü bulunamadı: %1</translation>
+        <translation>İmaj bulunamadı: %1</translation>
     </message>
 </context>
 <context>
@@ -186,7 +186,7 @@
     <message>
         <location filename="../downloadthread.cpp" line="218"/>
         <source>Please verify if &apos;Gemstone Imager&apos; is allowed access to &apos;removable volumes&apos; in privacy settings (under &apos;files and folders&apos; or alternatively give it &apos;full disk access&apos;).</source>
-        <translation type="unfinished"></translation>
+        <translation>Lütfen &apos;Gemstone Imager&apos;ın gizlilik ayarlarında (&apos;dosyalar ve klasörler&apos; altında veya alternatif olarak &apos;tam disk erişimi&apos;) &apos;çıkarılabilir birimlere erişim&apos; iznine sahip olup olmadığını doğrulayın.</translation>
     </message>
     <message>
         <location filename="../downloadthread.cpp" line="240"/>
@@ -318,7 +318,7 @@
     <message>
         <location filename="../driveformatthread.cpp" line="199"/>
         <source>Partitioning did not create expected FAT partition %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Bölümleme, beklenen FAT bölümünü oluşturmadı: %1</translation>
     </message>
     <message>
         <location filename="../driveformatthread.cpp" line="208"/>
@@ -346,27 +346,27 @@
     <message>
         <location filename="../imagewriter.cpp" line="319"/>
         <source>Input file is not a valid disk image.&lt;br&gt;File size %1 bytes is not a multiple of 512 bytes.</source>
-        <translation>Giriş dosyası geçerli bir disk görüntüsü değil.&lt;br&gt;%1 bayt dosya boyutu 512 baytın katı değil.</translation>
+        <translation>Giriş dosyası geçerli bir disk imajı değil.&lt;br&gt;%1 bayt dosya boyutu 512 baytın katı değil.</translation>
     </message>
     <message>
         <location filename="../imagewriter.cpp" line="777"/>
         <source>Downloading and writing image</source>
-        <translation>Görüntü indirme ve yazma</translation>
+        <translation>İmaj indiriliyor ve yazılıyor</translation>
     </message>
     <message>
         <location filename="../imagewriter.cpp" line="939"/>
         <source>DFU mode not selected</source>
-        <translation type="unfinished"></translation>
+        <translation>DFU modu seçilmedi</translation>
     </message>
     <message>
         <location filename="../imagewriter.cpp" line="967"/>
         <source>Authentication failed or was cancelled.&lt;br&gt;DFU operation requires elevated privileges to access the USB device.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kimlik doğrulama başarısız oldu veya iptal edildi.&lt;br&gt;DFU işlemi USB cihaza erişmek için yükseltilmiş ayrıcalıklar gerektiriyor.</translation>
     </message>
     <message>
         <location filename="../imagewriter.cpp" line="1047"/>
         <source>Select image</source>
-        <translation>Imaj seç</translation>
+        <translation>İmaj seç</translation>
     </message>
     <message>
         <location filename="../imagewriter.cpp" line="1222"/>
@@ -394,7 +394,7 @@
     <message>
         <location filename="../localfileextractthread.cpp" line="39"/>
         <source>Error opening image file</source>
-        <translation>Imaj dosyası açılırken hata oluştu</translation>
+        <translation>İmaj dosyası açılırken hata oluştu</translation>
     </message>
 </context>
 <context>
@@ -460,7 +460,7 @@
     <message>
         <location filename="../OptionsPopup.qml" line="179"/>
         <source>Password is required!</source>
-        <translation type="unfinished"></translation>
+        <translation>Parola gerekli!</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="187"/>
@@ -506,22 +506,22 @@
     <message>
         <location filename="../OptionsPopup.qml" line="356"/>
         <source>Keyboard layout:</source>
-        <translation>KLavye düzeni:</translation>
+        <translation>Klavye düzeni:</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="375"/>
         <source>Set Disk Encryption (Cryptsetup)</source>
-        <translation type="unfinished"></translation>
+        <translation>Disk Şifreleme Ayarla (Cryptsetup)</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="385"/>
         <source>Disk Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Disk Parolası:</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="426"/>
         <source>Write sdcard&apos;s image to eMMC on first boot</source>
-        <translation type="unfinished"></translation>
+        <translation>İlk önyüklemede SD kartın imajını eMMC&apos;ye yaz</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="451"/>
@@ -541,12 +541,12 @@
     <message>
         <location filename="../OptionsPopup.qml" line="489"/>
         <source>Set authorized_keys for &apos;%1&apos;:</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;%1&apos; için authorized_keys ayarla:</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="533"/>
         <source>Delete Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Anahtarı Sil</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="552"/>
@@ -556,42 +556,42 @@
     <message>
         <location filename="../OptionsPopup.qml" line="562"/>
         <source>Add SSH Key</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH Anahtarı Ekle</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="578"/>
         <source>Enable VNC</source>
-        <translation type="unfinished"></translation>
+        <translation>VNC&apos;yi Etkinleştir</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="583"/>
         <source>VNC Password is required!</source>
-        <translation type="unfinished"></translation>
+        <translation>VNC Parolası gerekli!</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="591"/>
         <source>VNC Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>VNC Parolası:</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="610"/>
         <source>Gadgets</source>
-        <translation type="unfinished"></translation>
+        <translation>Gadget&apos;lar</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="616"/>
         <source>Enable Storage Gadget</source>
-        <translation type="unfinished"></translation>
+        <translation>Depolama Gadget&apos;ını Etkinleştir</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="622"/>
         <source>Enable Ethernet Gadget</source>
-        <translation type="unfinished"></translation>
+        <translation>Ethernet Gadget&apos;ını Etkinleştir</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="628"/>
         <source>Enable Serial Gadgets</source>
-        <translation type="unfinished"></translation>
+        <translation>Seri Gadget&apos;ları Etkinleştir</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="653"/>
@@ -606,12 +606,12 @@
     <message>
         <location filename="../OptionsPopup.qml" line="676"/>
         <source>Serial Port </source>
-        <translation type="unfinished"></translation>
+        <translation>Seri Port </translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="708"/>
         <source>Ethernet </source>
-        <translation type="unfinished"></translation>
+        <translation>Ethernet </translation>
     </message>
     <message>
         <source>Enable telemetry</source>
@@ -681,7 +681,7 @@
     </message>
     <message>
         <source>Select this button to choose your target Raspberry Pi</source>
-        <translation type="vanished">Bu düğmeyi seçerek hedef Raspberry Pi&apos;yi seçin</translation>
+        <translation type="vanished">Bu butonu seçerek hedef Raspberry Pi&apos;yi seçin</translation>
     </message>
     <message>
         <location filename="../main.qml" line="160"/>
@@ -698,7 +698,7 @@
     <message>
         <location filename="../main.qml" line="183"/>
         <source>Select this button to change the operating system</source>
-        <translation>İşletim sistemini değiştirmek için bu düğmeyi seçin</translation>
+        <translation>İşletim sistemini değiştirmek için bu butonu seçin</translation>
     </message>
     <message>
         <location filename="../main.qml" line="197"/>
@@ -729,23 +729,23 @@
     <message>
         <location filename="../main.qml" line="24"/>
         <source>Gemstone Image Writer %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Gemstone İmaj Yazıcı %1</translation>
     </message>
     <message>
         <location filename="../main.qml" line="122"/>
         <location filename="../main.qml" line="453"/>
         <source>Gemstone Board</source>
-        <translation type="unfinished"></translation>
+        <translation>Gemstone Kartı</translation>
     </message>
     <message>
         <location filename="../main.qml" line="146"/>
         <source>Select this button to choose your target Gemstone Board</source>
-        <translation type="unfinished"></translation>
+        <translation>Hedef Gemstone Kartınızı seçmek için bu butonu seçin</translation>
     </message>
     <message>
         <location filename="../main.qml" line="222"/>
         <source>Select this button to change the destination storage device</source>
-        <translation>Hedef depolama cihazını değiştirmek için bu düğmeyi seçin</translation>
+        <translation>Hedef depolama cihazını değiştirmek için bu butonu seçin</translation>
     </message>
     <message>
         <location filename="../main.qml" line="267"/>
@@ -779,7 +779,7 @@
     <message>
         <location filename="../main.qml" line="300"/>
         <source>Select this button to start writing the image</source>
-        <translation>Görüntüyü yazmaya başlamak için bu düğmeyi seçin</translation>
+        <translation>İmajı yazmaya başlamak için bu butonu seçin</translation>
     </message>
     <message>
         <location filename="../main.qml" line="320"/>
@@ -789,7 +789,7 @@
     <message>
         <location filename="../main.qml" line="339"/>
         <source>Keyboard navigation: &lt;tab&gt; navigate to next button &lt;space&gt; press button/select item &lt;arrow up/down&gt; go up/down in lists</source>
-        <translation>Klavye navigasyonu: &lt;tab&gt; bir sonraki düğmeye git &lt;space&gt; düğmeye bas / öğe seç &lt;arrow up/down&gt; listelerde yukarı/aşağı git</translation>
+        <translation>Klavye navigasyonu: &lt;tab&gt; bir sonraki butona git &lt;space&gt; butona bas / öğe seç &lt;arrow up/down&gt; listelerde yukarı/aşağı git</translation>
     </message>
     <message>
         <location filename="../main.qml" line="360"/>
@@ -804,7 +804,7 @@
     <message>
         <location filename="../main.qml" line="497"/>
         <source>[ All ]</source>
-        <translation type="unfinished"></translation>
+        <translation>[ Tümü ]</translation>
     </message>
     <message>
         <location filename="../main.qml" line="653"/>
@@ -840,22 +840,33 @@
     <message>
         <location filename="../main.qml" line="1057"/>
         <source>Exclude System Drives</source>
-        <translation type="unfinished"></translation>
+        <translation>Sistem Sürücülerini Hariç Tut</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1115"/>
         <source>Internal eMMC - 32 GB</source>
-        <translation type="unfinished"></translation>
+        <translation>Dahili eMMC - 32 GB</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1125"/>
         <source>Writes the image to the card&apos;s internal eMMC memory via Uniflash</source>
-        <translation type="unfinished"></translation>
+        <translation>Uniflash aracılığıyla imajı kartın dahili eMMC belleğine yazar</translation>
+    </message>
+    <message>
+        <location filename="../main.qml" line="1213"/>
+        <location filename="../main.qml" line="2140"/>
+        <source>DFU Mode</source>
+        <translation>DFU Modu</translation>
+    </message>
+    <message>
+        <location filename="../main.qml" line="1223"/>
+        <source>Program the device via USB DFU (Device Firmware Update)</source>
+        <translation>Cihazı USB DFU (Aygıt Yazılımı Güncelleme) üzerinden programla</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1268"/>
         <source>gigabytes</source>
-        <translation type="unfinished"></translation>
+        <translation>gigabayt</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1270"/>
@@ -866,7 +877,7 @@
     <message>
         <location filename="../main.qml" line="1318"/>
         <source>GB</source>
-        <translation type="unfinished"></translation>
+        <translation>GB</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1334"/>
@@ -876,7 +887,23 @@
     <message>
         <location filename="../main.qml" line="1336"/>
         <source>SYSTEM</source>
-        <translation type="unfinished"></translation>
+        <translation>SİSTEM</translation>
+    </message>
+    <message>
+        <location filename="../main.qml" line="1394"/>
+        <location filename="../main.qml" line="1401"/>
+        <source>Boot Mode Switch</source>
+        <translation>Önyükleme Modu Anahtarı</translation>
+    </message>
+    <message>
+        <location filename="../main.qml" line="1395"/>
+        <source>Configure the boot mode switches for DFU Boot as shown in the image.</source>
+        <translation>Önyükleme modu anahtarlarını görselde gösterildiği gibi DFU Önyükleme için yapılandırın.</translation>
+    </message>
+    <message>
+        <location filename="../main.qml" line="1402"/>
+        <source>After powering off the card, set the boot mode switches to eMMC Boot as shown in the image. Upon restoring power, the system will boot automatically.</source>
+        <translation>Kartı kapattıktan sonra, önyükleme modu anahtarlarını görselde gösterildiği gibi eMMC Önyüklemesine ayarlayın. Güç yeniden verildiğinde sistem otomatik olarak başlayacaktır.</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1411"/>
@@ -896,6 +923,11 @@
         <location filename="../main.qml" line="1448"/>
         <source>Preparing to write...</source>
         <translation>Yazmaya hazırlanıyor...</translation>
+    </message>
+    <message>
+        <location filename="../main.qml" line="1457"/>
+        <source>Image will be sent to device via DFU.&lt;br&gt;Are you sure you want to continue?</source>
+        <translation>İmaj, DFU aracılığıyla cihaza gönderilecek.&lt;br&gt;Devam etmek istediğinizden emin misiniz?</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1459"/>
@@ -922,6 +954,11 @@
         <translation>Yazılıyor... %1%</translation>
     </message>
     <message>
+        <location filename="../main.qml" line="1541"/>
+        <source>Sending... %1%</source>
+        <translation>Gönderiliyor... %1%</translation>
+    </message>
+    <message>
         <location filename="../main.qml" line="1564"/>
         <source>Verifying... %1%</source>
         <translation>Doğrulanıyor... %1%</translation>
@@ -930,6 +967,11 @@
         <location filename="../main.qml" line="1571"/>
         <source>Preparing to write... (%1)</source>
         <translation>Yazmaya hazırlanıyor... (%1)</translation>
+    </message>
+    <message>
+        <location filename="../main.qml" line="1582"/>
+        <source>Waiting for authentication to access USB device...</source>
+        <translation>USB cihaza erişim için kimlik doğrulama bekleniyor...</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1605"/>
@@ -951,6 +993,16 @@
         <location filename="../main.qml" line="1614"/>
         <source>&lt;b&gt;%1&lt;/b&gt; has been erased&lt;br&gt;&lt;br&gt;You can now remove the SD card from the reader</source>
         <translation>&lt;b&gt;%1&lt;/b&gt; silindi &lt;br&gt;&lt;br&gt; Artık SD kartı okuyucudan çıkarabilirsiniz</translation>
+    </message>
+    <message>
+        <location filename="../main.qml" line="1624"/>
+        <source>DFU programming completed successfully!&lt;br&gt;&lt;br&gt;The device has been programmed and should now boot automatically.</source>
+        <translation>DFU programlama başarıyla tamamlandı!&lt;br&gt;&lt;br&gt;Cihaz programlandı ve artık otomatik olarak başlaması gerekiyor.</translation>
+    </message>
+    <message>
+        <location filename="../main.qml" line="1629"/>
+        <source>&lt;b&gt;%1&lt;/b&gt; has been written to &lt;b&gt;%2&lt;/b&gt;&lt;br&gt;&lt;br&gt;The process is complete. You can connect to the board via the serial port.</source>
+        <translation>&lt;b&gt;%1&lt;/b&gt;, &lt;b&gt;%2&lt;/b&gt; üzerine yazıldı.&lt;br&gt;&lt;br&gt;İşlem tamamlandı. Karta seri port üzerinden bağlanabilirsiniz.</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1633"/>
@@ -980,7 +1032,12 @@
     <message>
         <location filename="../main.qml" line="2051"/>
         <source>Connect an USB stick containing images first.&lt;br&gt;The images must be located in the root folder of the USB stick.</source>
-        <translation>Önce görüntüler içeren bir USB bellek bağlayın.&lt;br&gt; Görüntüler USB belleğin kök klasöründe bulunmalıdır.</translation>
+        <translation>Önce imaj içeren bir USB bellek bağlayın.&lt;br&gt; İmajlar USB belleğin kök klasöründe bulunmalıdır.</translation>
+    </message>
+    <message>
+        <location filename="../main.qml" line="2129"/>
+        <source>Onboard emmc</source>
+        <translation>Dahili eMMC</translation>
     </message>
     <message>
         <location filename="../main.qml" line="2165"/>
@@ -989,79 +1046,11 @@
     </message>
     <message>
         <source>Select this button to change the destination SD card</source>
-        <translation type="vanished">Hedef SD kartı değiştirmek için bu düğmeyi seçin</translation>
+        <translation type="vanished">Hedef SD kartı değiştirmek için bu butonu seçin</translation>
     </message>
     <message>
         <source>&lt;b&gt;%1&lt;/b&gt; has been written to &lt;b&gt;%2&lt;/b&gt;</source>
         <translation type="vanished">&lt;b&gt;%1&lt;/b&gt; &lt;b&gt;%2&lt;/b&gt;&lt;br&gt;&lt;br&gt; üzerine yazıldı</translation>
-    </message>
-    <message>
-        <location filename="../main.qml" line="1213"/>
-        <location filename="../main.qml" line="2140"/>
-        <source>DFU Mode</source>
-        <translation>DFU Modu</translation>
-    </message>
-    <message>
-        <location filename="../main.qml" line="1223"/>
-        <source>Program the device via USB DFU (Device Firmware Update)</source>
-        <translation>Cihazı USB DFU (Aygıt Yazılımı Güncelleme) üzerinden programla</translation>
-    </message>
-    <message>
-        <location filename="../main.qml" line="1394"/>
-        <location filename="../main.qml" line="1401"/>
-        <source>Boot Mode Switch</source>
-        <translation>Önyükleme Modu Anahtarı</translation>
-    </message>
-    <message>
-        <location filename="../main.qml" line="1395"/>
-        <source>Configure the boot mode switches for DFU Boot as shown in the image.</source>
-        <translation>Önyükleme modu anahtarlarını görselde gösterildiği gibi DFU Önyükleme için yapılandırın.</translation>
-    </message>
-    <message>
-        <location filename="../main.qml" line="1402"/>
-        <source>After powering off the card, set the boot mode switches to eMMC Boot as shown in the image. Upon restoring power, the system will boot automatically.</source>
-        <translation>Kartı kapattıktan sonra, önyükleme modu anahtarlarını görselde gösterildiği gibi eMMC Önyüklemesine ayarlayın. Güç yeniden verildiğinde sistem otomatik olarak başlayacaktır.</translation>
-    </message>
-    <message>
-        <location filename="../main.qml" line="1412"/>
-        <source>Gemstone Imager is still busy.&lt;br&gt;Are you sure you want to quit?</source>
-        <translation>Gemstone Imager hâlâ meşgul.&lt;br&gt;Çıkmak istediğinizden emin misiniz?</translation>
-    </message>
-    <message>
-        <location filename="../main.qml" line="1442"/>
-        <location filename="../main.qml" line="2152"/>
-        <source>Starting DFU operation...</source>
-        <translation>DFU işlemi başlatılıyor...</translation>
-    </message>
-    <message>
-        <location filename="../main.qml" line="1457"/>
-        <source>Image will be sent to device via DFU.&lt;br&gt;Are you sure you want to continue?</source>
-        <translation>Görüntü, DFU aracılığıyla cihaza gönderilecek.&lt;br&gt;Devam etmek istediğinizden emin misiniz?</translation>
-    </message>
-    <message>
-        <location filename="../main.qml" line="1541"/>
-        <source>Sending... %1%</source>
-        <translation>Gönderiliyor... %1%</translation>
-    </message>
-    <message>
-        <location filename="../main.qml" line="1582"/>
-        <source>Waiting for authentication to access USB device...</source>
-        <translation>USB cihaza erişim için kimlik doğrulama bekleniyor...</translation>
-    </message>
-    <message>
-        <location filename="../main.qml" line="1624"/>
-        <source>DFU programming completed successfully!&lt;br&gt;&lt;br&gt;The device has been programmed and should now boot automatically.</source>
-        <translation>DFU programlama başarıyla tamamlandı!&lt;br&gt;&lt;br&gt;Cihaz programlandı ve artık otomatik olarak başlaması gerekiyor.</translation>
-    </message>
-    <message>
-        <location filename="../main.qml" line="1629"/>
-        <source>&lt;b&gt;%1&lt;/b&gt; has been written to &lt;b&gt;%2&lt;/b&gt;&lt;br&gt;&lt;br&gt;The process is complete. You can connect to the board via the serial port.</source>
-        <translation>&lt;b&gt;%1&lt;/b&gt;, &lt;b&gt;%2&lt;/b&gt; üzerine yazıldı.&lt;br&gt;&lt;br&gt;İşlem tamamlandı. Karta seri port üzerinden bağlanabilirsiniz.</translation>
-    </message>
-    <message>
-        <location filename="../main.qml" line="2129"/>
-        <source>Onboard emmc</source>
-        <translation>Dahili eMMC</translation>
     </message>
 </context>
 </TS>

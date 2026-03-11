@@ -182,7 +182,7 @@
     <message>
         <location filename="../downloadthread.cpp" line="218"/>
         <source>Please verify if &apos;Gemstone Imager&apos; is allowed access to &apos;removable volumes&apos; in privacy settings (under &apos;files and folders&apos; or alternatively give it &apos;full disk access&apos;).</source>
-        <translation type="unfinished"></translation>
+        <translation>请在隐私设置中确认 &apos;Gemstone Imager&apos; 是否被允许访问 &apos;可移动卷&apos;（在 &apos;文件和文件夹&apos; 下，或者授予其 &apos;完全磁盘访问权限&apos;）。</translation>
     </message>
     <message>
         <location filename="../downloadthread.cpp" line="240"/>
@@ -352,12 +352,12 @@
     <message>
         <location filename="../imagewriter.cpp" line="939"/>
         <source>DFU mode not selected</source>
-        <translation type="unfinished"></translation>
+        <translation>未选择DFU模式</translation>
     </message>
     <message>
         <location filename="../imagewriter.cpp" line="967"/>
         <source>Authentication failed or was cancelled.&lt;br&gt;DFU operation requires elevated privileges to access the USB device.</source>
-        <translation type="unfinished"></translation>
+        <translation>验证失败或已取消。&lt;br&gt;DFU操作需要较高权限才能访问USB设备。</translation>
     </message>
     <message>
         <location filename="../imagewriter.cpp" line="1047"/>
@@ -456,7 +456,7 @@
     <message>
         <location filename="../OptionsPopup.qml" line="179"/>
         <source>Password is required!</source>
-        <translation type="unfinished"></translation>
+        <translation>密码不能为空！</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="187"/>
@@ -507,17 +507,17 @@
     <message>
         <location filename="../OptionsPopup.qml" line="375"/>
         <source>Set Disk Encryption (Cryptsetup)</source>
-        <translation type="unfinished"></translation>
+        <translation>设置磁盘加密（Cryptsetup）</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="385"/>
         <source>Disk Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>磁盘密码：</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="426"/>
         <source>Write sdcard&apos;s image to eMMC on first boot</source>
-        <translation type="unfinished"></translation>
+        <translation>在首次启动时将SD卡镜像写入eMMC</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="451"/>
@@ -542,7 +542,7 @@
     <message>
         <location filename="../OptionsPopup.qml" line="533"/>
         <source>Delete Key</source>
-        <translation type="unfinished"></translation>
+        <translation>删除密钥</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="552"/>
@@ -552,42 +552,42 @@
     <message>
         <location filename="../OptionsPopup.qml" line="562"/>
         <source>Add SSH Key</source>
-        <translation type="unfinished"></translation>
+        <translation>添加SSH密钥</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="578"/>
         <source>Enable VNC</source>
-        <translation type="unfinished"></translation>
+        <translation>启用VNC</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="583"/>
         <source>VNC Password is required!</source>
-        <translation type="unfinished"></translation>
+        <translation>VNC密码不能为空！</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="591"/>
         <source>VNC Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>VNC密码：</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="610"/>
         <source>Gadgets</source>
-        <translation type="unfinished"></translation>
+        <translation>外设</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="616"/>
         <source>Enable Storage Gadget</source>
-        <translation type="unfinished"></translation>
+        <translation>启用存储外设</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="622"/>
         <source>Enable Ethernet Gadget</source>
-        <translation type="unfinished"></translation>
+        <translation>启用以太网外设</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="628"/>
         <source>Enable Serial Gadgets</source>
-        <translation type="unfinished"></translation>
+        <translation>启用串口外设</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="653"/>
@@ -602,12 +602,12 @@
     <message>
         <location filename="../OptionsPopup.qml" line="676"/>
         <source>Serial Port </source>
-        <translation type="unfinished"></translation>
+        <translation>串口 </translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="708"/>
         <source>Ethernet </source>
-        <translation type="unfinished"></translation>
+        <translation>以太网 </translation>
     </message>
     <message>
         <source>Enable telemetry</source>
@@ -721,18 +721,18 @@
     <message>
         <location filename="../main.qml" line="24"/>
         <source>Gemstone Image Writer %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Gemstone Image Writer %1</translation>
     </message>
     <message>
         <location filename="../main.qml" line="122"/>
         <location filename="../main.qml" line="453"/>
         <source>Gemstone Board</source>
-        <translation type="unfinished"></translation>
+        <translation>Gemstone Board</translation>
     </message>
     <message>
         <location filename="../main.qml" line="146"/>
         <source>Select this button to choose your target Gemstone Board</source>
-        <translation type="unfinished"></translation>
+        <translation>点击此按钮选择目标Gemstone Board</translation>
     </message>
     <message>
         <location filename="../main.qml" line="222"/>
@@ -831,33 +831,33 @@
     <message>
         <location filename="../main.qml" line="1057"/>
         <source>Exclude System Drives</source>
-        <translation type="unfinished"></translation>
+        <translation>排除系统驱动器</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1115"/>
         <source>Internal eMMC - 32 GB</source>
-        <translation type="unfinished"></translation>
+        <translation>内置eMMC - 32 GB</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1125"/>
         <source>Writes the image to the card&apos;s internal eMMC memory via Uniflash</source>
-        <translation type="unfinished"></translation>
+        <translation>通过Uniflash将镜像写入卡的内置eMMC存储器</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1213"/>
         <location filename="../main.qml" line="2140"/>
         <source>DFU Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>DFU模式</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1223"/>
         <source>Program the device via USB DFU (Device Firmware Update)</source>
-        <translation type="unfinished"></translation>
+        <translation>通过USB DFU（设备固件更新）对设备进行编程</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1268"/>
         <source>gigabytes</source>
-        <translation type="unfinished"></translation>
+        <translation>吉字节</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1270"/>
@@ -868,7 +868,7 @@
     <message>
         <location filename="../main.qml" line="1318"/>
         <source>GB</source>
-        <translation type="unfinished"></translation>
+        <translation>GB</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1334"/>
@@ -878,23 +878,23 @@
     <message>
         <location filename="../main.qml" line="1336"/>
         <source>SYSTEM</source>
-        <translation type="unfinished"></translation>
+        <translation>系统</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1394"/>
         <location filename="../main.qml" line="1401"/>
         <source>Boot Mode Switch</source>
-        <translation type="unfinished"></translation>
+        <translation>启动模式开关</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1395"/>
         <source>Configure the boot mode switches for DFU Boot as shown in the image.</source>
-        <translation type="unfinished"></translation>
+        <translation>按照图示配置DFU启动的启动模式开关。</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1402"/>
         <source>After powering off the card, set the boot mode switches to eMMC Boot as shown in the image. Upon restoring power, the system will boot automatically.</source>
-        <translation type="unfinished"></translation>
+        <translation>关闭卡的电源后，按照图示将启动模式开关设置为eMMC启动。恢复电源后，系统将自动启动。</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1411"/>
@@ -904,7 +904,7 @@
     <message>
         <location filename="../main.qml" line="1412"/>
         <source>Gemstone Imager is still busy.&lt;br&gt;Are you sure you want to quit?</source>
-        <translation type="unfinished"></translation>
+        <translation>Gemstone Imager仍在运行。&lt;br&gt;您确定要退出吗？</translation>
     </message>
     <message>
         <source>Raspberry Pi Imager is still busy.&lt;br&gt;Are you sure you want to quit?</source>
@@ -919,7 +919,7 @@
         <location filename="../main.qml" line="1442"/>
         <location filename="../main.qml" line="2152"/>
         <source>Starting DFU operation...</source>
-        <translation type="unfinished"></translation>
+        <translation>正在启动DFU操作...</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1448"/>
@@ -929,7 +929,7 @@
     <message>
         <location filename="../main.qml" line="1457"/>
         <source>Image will be sent to device via DFU.&lt;br&gt;Are you sure you want to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>镜像将通过DFU发送到设备。&lt;br&gt;您确定要继续吗？</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1459"/>
@@ -954,7 +954,7 @@
     <message>
         <location filename="../main.qml" line="1541"/>
         <source>Sending... %1%</source>
-        <translation type="unfinished"></translation>
+        <translation>发送中... %1%</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1564"/>
@@ -969,7 +969,7 @@
     <message>
         <location filename="../main.qml" line="1582"/>
         <source>Waiting for authentication to access USB device...</source>
-        <translation type="unfinished"></translation>
+        <translation>正在等待访问USB设备的验证...</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1605"/>
@@ -995,12 +995,12 @@
     <message>
         <location filename="../main.qml" line="1624"/>
         <source>DFU programming completed successfully!&lt;br&gt;&lt;br&gt;The device has been programmed and should now boot automatically.</source>
-        <translation type="unfinished"></translation>
+        <translation>DFU编程成功完成！&lt;br&gt;&lt;br&gt;设备已编程，现在应该会自动启动。</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1629"/>
         <source>&lt;b&gt;%1&lt;/b&gt; has been written to &lt;b&gt;%2&lt;/b&gt;&lt;br&gt;&lt;br&gt;The process is complete. You can connect to the board via the serial port.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;%1&lt;/b&gt; 已写入 &lt;b&gt;%2&lt;/b&gt;&lt;br&gt;&lt;br&gt;过程完成。您可以通过串口连接到板子。</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1633"/>
@@ -1035,7 +1035,7 @@
     <message>
         <location filename="../main.qml" line="2129"/>
         <source>Onboard emmc</source>
-        <translation type="unfinished"></translation>
+        <translation>板载eMMC</translation>
     </message>
     <message>
         <location filename="../main.qml" line="2165"/>
