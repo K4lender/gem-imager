@@ -186,7 +186,7 @@
     <message>
         <location filename="../downloadthread.cpp" line="218"/>
         <source>Please verify if &apos;Gemstone Imager&apos; is allowed access to &apos;removable volumes&apos; in privacy settings (under &apos;files and folders&apos; or alternatively give it &apos;full disk access&apos;).</source>
-        <translation type="unfinished"></translation>
+        <translation>Убедитесь, что &apos;Gemstone Imager&apos; имеет доступ к &apos;съёмным томам&apos; в настройках конфиденциальности (в разделе &apos;файлы и папки&apos; или предоставьте &apos;полный доступ к диску&apos;).</translation>
     </message>
     <message>
         <location filename="../downloadthread.cpp" line="240"/>
@@ -392,12 +392,12 @@
     <message>
         <location filename="../imagewriter.cpp" line="939"/>
         <source>DFU mode not selected</source>
-        <translation type="unfinished"></translation>
+        <translation>Режим DFU не выбран</translation>
     </message>
     <message>
         <location filename="../imagewriter.cpp" line="967"/>
         <source>Authentication failed or was cancelled.&lt;br&gt;DFU operation requires elevated privileges to access the USB device.</source>
-        <translation type="unfinished"></translation>
+        <translation>Аутентификация не удалась или была отменена.&lt;br&gt;Операция DFU требует повышенных привилегий для доступа к USB-устройству.</translation>
     </message>
     <message>
         <location filename="../imagewriter.cpp" line="1047"/>
@@ -407,12 +407,12 @@
     <message>
         <location filename="../imagewriter.cpp" line="1222"/>
         <source>Error synchronizing time. Trying again in 3 seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка синхронизации времени. Повторная попытка через 3 секунды</translation>
     </message>
     <message>
         <location filename="../imagewriter.cpp" line="1234"/>
         <source>STP is enabled on your Ethernet switch. Getting IP will take long time.</source>
-        <translation type="unfinished"></translation>
+        <translation>STP включён на вашем Ethernet-коммутаторе. Получение IP займёт много времени.</translation>
     </message>
     <message>
         <location filename="../imagewriter.cpp" line="1486"/>
@@ -461,7 +461,7 @@
     <message>
         <location filename="../OptionsPopup.qml" line="27"/>
         <source>OS Customization</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройка ОС</translation>
     </message>
     <message>
         <source>for this session only</source>
@@ -504,7 +504,7 @@
     <message>
         <location filename="../OptionsPopup.qml" line="179"/>
         <source>Password is required!</source>
-        <translation type="unfinished"></translation>
+        <translation>Требуется пароль!</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="187"/>
@@ -555,17 +555,17 @@
     <message>
         <location filename="../OptionsPopup.qml" line="375"/>
         <source>Set Disk Encryption (Cryptsetup)</source>
-        <translation type="unfinished"></translation>
+        <translation>Настроить шифрование диска (Cryptsetup)</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="385"/>
         <source>Disk Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Пароль диска:</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="426"/>
         <source>Write sdcard&apos;s image to eMMC on first boot</source>
-        <translation type="unfinished"></translation>
+        <translation>Записать образ SD-карты на eMMC при первой загрузке</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="451"/>
@@ -590,7 +590,7 @@
     <message>
         <location filename="../OptionsPopup.qml" line="533"/>
         <source>Delete Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить ключ</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="552"/>
@@ -600,42 +600,42 @@
     <message>
         <location filename="../OptionsPopup.qml" line="562"/>
         <source>Add SSH Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить ключ SSH</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="578"/>
         <source>Enable VNC</source>
-        <translation type="unfinished"></translation>
+        <translation>Включить VNC</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="583"/>
         <source>VNC Password is required!</source>
-        <translation type="unfinished"></translation>
+        <translation>Требуется пароль VNC!</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="591"/>
         <source>VNC Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Пароль VNC:</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="610"/>
         <source>Gadgets</source>
-        <translation type="unfinished"></translation>
+        <translation>Гаджеты</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="616"/>
         <source>Enable Storage Gadget</source>
-        <translation type="unfinished"></translation>
+        <translation>Включить гаджет хранилища</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="622"/>
         <source>Enable Ethernet Gadget</source>
-        <translation type="unfinished"></translation>
+        <translation>Включить гаджет Ethernet</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="628"/>
         <source>Enable Serial Gadgets</source>
-        <translation type="unfinished"></translation>
+        <translation>Включить последовательные гаджеты</translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="653"/>
@@ -650,12 +650,12 @@
     <message>
         <location filename="../OptionsPopup.qml" line="676"/>
         <source>Serial Port </source>
-        <translation type="unfinished"></translation>
+        <translation>Последовательный порт </translation>
     </message>
     <message>
         <location filename="../OptionsPopup.qml" line="708"/>
         <source>Ethernet </source>
-        <translation type="unfinished"></translation>
+        <translation>Ethernet </translation>
     </message>
     <message>
         <source>Enable telemetry</source>
@@ -684,12 +684,12 @@
     <message>
         <location filename="../UseSavedSettingsPopup.qml" line="46"/>
         <source>Use OS customization?</source>
-        <translation type="unfinished"></translation>
+        <translation>Использовать настройку ОС?</translation>
     </message>
     <message>
         <location filename="../UseSavedSettingsPopup.qml" line="98"/>
         <source>Would you like to apply OS customization settings?</source>
-        <translation type="unfinished"></translation>
+        <translation>Хотите применить настройки ОС?</translation>
     </message>
     <message>
         <location filename="../UseSavedSettingsPopup.qml" line="139"/>
@@ -757,12 +757,12 @@
     <message>
         <location filename="../main.qml" line="330"/>
         <source>Network not ready yet</source>
-        <translation type="unfinished"></translation>
+        <translation>Сеть ещё не готова</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1022"/>
         <source>No storage devices found</source>
-        <translation type="unfinished"></translation>
+        <translation>Устройства хранения не найдены</translation>
     </message>
     <message>
         <location filename="../main.qml" line="208"/>
@@ -844,18 +844,18 @@
     <message>
         <location filename="../main.qml" line="24"/>
         <source>Gemstone Image Writer %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Gemstone Image Writer %1</translation>
     </message>
     <message>
         <location filename="../main.qml" line="122"/>
         <location filename="../main.qml" line="453"/>
         <source>Gemstone Board</source>
-        <translation type="unfinished"></translation>
+        <translation>Плата Gemstone</translation>
     </message>
     <message>
         <location filename="../main.qml" line="146"/>
         <source>Select this button to choose your target Gemstone Board</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите эту кнопку, чтобы выбрать целевую плату Gemstone</translation>
     </message>
     <message>
         <location filename="../main.qml" line="497"/>
@@ -895,33 +895,33 @@
     <message>
         <location filename="../main.qml" line="1057"/>
         <source>Exclude System Drives</source>
-        <translation type="unfinished"></translation>
+        <translation>Исключить системные диски</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1115"/>
         <source>Internal eMMC - 32 GB</source>
-        <translation type="unfinished"></translation>
+        <translation>Встроенный eMMC - 32 ГБ</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1125"/>
         <source>Writes the image to the card&apos;s internal eMMC memory via Uniflash</source>
-        <translation type="unfinished"></translation>
+        <translation>Записывает образ во встроенную память eMMC карты через Uniflash</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1213"/>
         <location filename="../main.qml" line="2140"/>
         <source>DFU Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Режим DFU</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1223"/>
         <source>Program the device via USB DFU (Device Firmware Update)</source>
-        <translation type="unfinished"></translation>
+        <translation>Программировать устройство через USB DFU (обновление прошивки)</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1268"/>
         <source>gigabytes</source>
-        <translation type="unfinished"></translation>
+        <translation>гигабайты</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1270"/>
@@ -932,7 +932,7 @@
     <message>
         <location filename="../main.qml" line="1318"/>
         <source>GB</source>
-        <translation type="unfinished"></translation>
+        <translation>ГБ</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1334"/>
@@ -942,23 +942,23 @@
     <message>
         <location filename="../main.qml" line="1336"/>
         <source>SYSTEM</source>
-        <translation type="unfinished"></translation>
+        <translation>СИСТЕМА</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1394"/>
         <location filename="../main.qml" line="1401"/>
         <source>Boot Mode Switch</source>
-        <translation type="unfinished"></translation>
+        <translation>Переключатель режима загрузки</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1395"/>
         <source>Configure the boot mode switches for DFU Boot as shown in the image.</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройте переключатели режима загрузки для загрузки DFU, как показано на изображении.</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1402"/>
         <source>DFU programming completed successfully!&lt;br&gt;&lt;br&gt;After powering off the card, set the boot mode switches to eMMC Boot as shown in the image. Upon restoring power, the system will boot automatically.</source>
-        <translation type="unfinished"></translation>
+        <translation>Программирование DFU успешно завершено!&lt;br&gt;&lt;br&gt;После выключения карты установите переключатели режима загрузки в положение eMMC Boot, как показано на изображении. После включения питания система загрузится автоматически.</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1411"/>
@@ -968,7 +968,7 @@
     <message>
         <location filename="../main.qml" line="1412"/>
         <source>Gemstone Imager is still busy.&lt;br&gt;Are you sure you want to quit?</source>
-        <translation type="unfinished"></translation>
+        <translation>Gemstone Imager всё ещё занят.&lt;br&gt;Вы уверены, что хотите выйти?</translation>
     </message>
     <message>
         <source>Raspberry Pi Imager is still busy.&lt;br&gt;Are you sure you want to quit?</source>
@@ -983,7 +983,7 @@
         <location filename="../main.qml" line="1442"/>
         <location filename="../main.qml" line="2152"/>
         <source>Starting DFU operation...</source>
-        <translation type="unfinished"></translation>
+        <translation>Запуск операции DFU...</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1448"/>
@@ -993,7 +993,7 @@
     <message>
         <location filename="../main.qml" line="1457"/>
         <source>Image will be sent to device via DFU.&lt;br&gt;Are you sure you want to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Образ будет отправлен на устройство через DFU.&lt;br&gt;Вы уверены, что хотите продолжить?</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1459"/>
@@ -1022,7 +1022,7 @@
     <message>
         <location filename="../main.qml" line="1541"/>
         <source>Sending... %1%</source>
-        <translation type="unfinished"></translation>
+        <translation>Отправка... %1%</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1564"/>
@@ -1037,7 +1037,7 @@
     <message>
         <location filename="../main.qml" line="1582"/>
         <source>Waiting for authentication to access USB device...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ожидание аутентификации для доступа к USB-устройству...</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1605"/>
@@ -1063,7 +1063,7 @@
     <message>
         <location filename="../main.qml" line="1629"/>
         <source>&lt;b&gt;%1&lt;/b&gt; has been written to &lt;b&gt;%2&lt;/b&gt;&lt;br&gt;&lt;br&gt;The process is complete. You can connect to the board via the serial port.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;%1&lt;/b&gt; записан на &lt;b&gt;%2&lt;/b&gt;.&lt;br&gt;&lt;br&gt;Процесс завершён. Вы можете подключиться к плате через последовательный порт.</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1633"/>
@@ -1098,7 +1098,7 @@
     <message>
         <location filename="../main.qml" line="2129"/>
         <source>Onboard emmc</source>
-        <translation type="unfinished"></translation>
+        <translation>Встроенная eMMC</translation>
     </message>
     <message>
         <location filename="../main.qml" line="2165"/>
