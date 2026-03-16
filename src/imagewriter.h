@@ -44,6 +44,9 @@ public:
     /* Set URL to download from, and if known download length and uncompressed length */
     Q_INVOKABLE void setSrc(const QUrl &url, quint64 downloadLen = 0, quint64 extrLen = 0, QByteArray expectedHash = "", bool multifilesinzip = false, QString parentcategory = "", QString osname = "", QByteArray initFormat = "");
 
+    /* Set bootloader hashes from os_list.json */
+    Q_INVOKABLE void setBootloaderHashes(const QByteArray &tiboot3Hash, const QByteArray &tisplHash, const QByteArray &ubootHash);
+
     /* Set device to write to */
     Q_INVOKABLE void setDst(const QString &device, quint64 deviceSize = 0);
 
@@ -211,7 +214,7 @@ protected:
     QString _dst, _cacheFileName, _parentCategory, _osName, _currentLang, _currentLangcode, _currentKeyboard;
     QString _selSerPort, _selEthPort;
     QString _imageTargetBoard;
-    QByteArray _expectedHash, _cachedFileHash, _cmdline, _config, _firstrun, _cloudinit, _cloudinitNetwork, _geminit, _initFormat;
+    QByteArray _expectedHash, _expectedTiboot3Hash, _expectedTisplHash, _expectedUbootHash, _cachedFileHash, _cmdline, _config, _firstrun, _cloudinit, _cloudinitNetwork, _geminit, _initFormat;
     quint64 _downloadLen, _extrLen, _devLen, _dlnow, _verifynow;
     DriveListModel _drivelist;
     QQmlApplicationEngine *_engine;

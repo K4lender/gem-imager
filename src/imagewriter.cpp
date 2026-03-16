@@ -282,6 +282,14 @@
      return !_src.isEmpty() && !_dst.isEmpty();
  }
  
+void ImageWriter::setBootloaderHashes(const QByteArray &tiboot3Hash, const QByteArray &tisplHash, const QByteArray &ubootHash)
+{
+    _expectedTiboot3Hash = tiboot3Hash;
+    _expectedTisplHash = tisplHash;
+    _expectedUbootHash = ubootHash;
+}
+
+
  /* Start writing */
  void ImageWriter::startWrite()
  {
@@ -919,7 +927,7 @@ void ImageWriter::_startDfuThread()
 {
     QByteArray urlstr = _src.toString(_src.FullyEncoded).toLatin1();
 
-    DfuThread *dfuThread = new DfuThread(urlstr, _dst.toLatin1(), _expectedHash, this);
+    DfuThread *dfuThread = new DfuThread(urlstr, _dst.toLatin1(), _expectedHash, _expectedTiboot3Hash, _expectedTisplHash, _expectedUbootHash, this);
     _thread = dfuThread;
 
     connect(_thread, SIGNAL(success()), SLOT(onSuccess()));

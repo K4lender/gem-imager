@@ -6,18 +6,33 @@
 #include "dfuthread.h"
 #include "dfuwrapper.h"
 #include "config.h"
-#include "devicewrapper.h"
-#include "devicewrapperfatpartition.h"
 #include "downloadextractthread.h"
 #include <QFile>
 #include <QDebug>
 #include <QThread>
+#include <QCryptographicHash>
 #include <QCoreApplication>
+#include <QStandardPaths>
+#include <QDir>
+#include <QFileInfo>
+#include <QUrl>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonArray>
+
+#include <QEventLoop>
+#include <QNetworkAccessManager>
+#include <QNetworkRequest>
+#include <QNetworkReply>
 
 DfuThread::DfuThread(const QByteArray &url, const QByteArray &localfilename,
-                     const QByteArray &expectedHash, QObject *parent)
+                     const QByteArray &expectedHash, const QByteArray &tiboot3Hash,
+                     const QByteArray &tisplHash, const QByteArray &ubootHash, QObject *parent)
     : DownloadExtractThread(url, localfilename, expectedHash, parent)
     , _tempImageFile(nullptr)
+    , _expectedTiboot3Hash(tiboot3Hash)
+    , _expectedTisplHash(tisplHash)
+    , _expectedUbootHash(ubootHash)
 {
     _suppressSuccessSignal = true;
     _ejectEnabled = false;
@@ -89,8 +104,8 @@ void DfuThread::run()
         _file.close();
     }
 
-    emit dfuProgress(38, tr("Extracting bootloader files from image..."));
-    if (!extractBootloaderFromImage()) return;
+    emit dfuProgress(38, tr("Fetching bootloader files..."));
+    if (!fetchBootloaderFiles()) return;
 
     emit dfuProgress(45, tr("Sending bootloader files..."));
     if (!sendBootloaderFiles()) return;
@@ -150,54 +165,113 @@ bool DfuThread::sendBootloaderFiles()
     return true;
 }
 
-bool DfuThread::extractBootloaderFromImage()
+bool DfuThread::fetchBootloaderFiles()
 {
-    QStringList fileNames = {"tiboot3.bin", "tispl.bin", "u-boot.img"};
+    QString listUrlStr = QString(BOOTIMG_URL).arg("t3-gem-o1").arg("list.json");
+    
+    emit dfuProgress(40, tr("Fetching bootloader list..."));
 
-    if (_file.isOpen())
-        _file.close();
+    QNetworkAccessManager manager;
+    QNetworkRequest request((QUrl(listUrlStr)));
+    request.setAttribute(QNetworkRequest::RedirectPolicyAttribute, QNetworkRequest::NoLessSafeRedirectPolicy);
+    
+    QNetworkReply *reply = manager.get(request);
+    QEventLoop loop;
+    connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
+    loop.exec();
 
-    _file.setFileName(_tempImagePath.replace("\\", "/"));
-    if (!_file.open(QIODevice::ReadOnly)) {
-        emit error(tr("Failed to reopen image file: %1").arg(_file.errorString()));
-        return false;
-    }
-
-    try {
-        _file.seek(0);
-        DeviceWrapper dw(&_file);
-        DeviceWrapperFatPartition *fat = dw.fatPartition(1);
-
-        for (int i = 0; i < 3; i++) {
-            QByteArray data = fat->readFile(fileNames[i]);
-            if (data.isEmpty()) {
-                emit error(tr("Bootloader file not found in image: %1").arg(fileNames[i]));
-                return false;
-            }
-
-#ifdef Q_OS_WIN
-            QTemporaryFile tmp(QCoreApplication::applicationDirPath() + "/dfu_XXXXXX");
-#else
-            QTemporaryFile tmp;
-#endif
-            tmp.setAutoRemove(false);
-            if (!tmp.open()) {
-                emit error(tr("Failed to create temp file for %1").arg(fileNames[i]));
-                return false;
-            }
-
-            if (tmp.write(data) != data.size()) {
-                emit error(tr("Failed to write temp file for %1").arg(fileNames[i]));
-                return false;
-            }
-            tmp.close();
-            _bootloaderFiles[i] = tmp.fileName();
-            qDebug() << "Extracted" << fileNames[i] << ":" << data.size() << "bytes";
+    if (reply->error() == QNetworkReply::NoError) {
+        QByteArray jsonData = reply->readAll();
+        QJsonDocument doc = QJsonDocument::fromJson(jsonData);
+        QJsonObject root = doc.object();
+        QJsonArray filesArr = root["files"].toArray();
+        
+        for (int j = 0; j < filesArr.size(); ++j) {
+            QJsonObject fileObj = filesArr[j].toObject();
+            QString name = fileObj["name"].toString();
+            QByteArray hash = fileObj["sha256"].toString().toUtf8();
+            
+            if (name == "tiboot3.bin") _expectedTiboot3Hash = hash;
+            else if (name == "tispl.bin") _expectedTisplHash = hash;
+            else if (name == "u-boot.img") _expectedUbootHash = hash;
         }
+        qDebug() << "Updated bootloader hashes from list.json successfully.";
+    } else {
+        qDebug() << "Failed to fetch list.json from" << listUrlStr << ". Error:" << reply->errorString();
     }
-    catch (std::exception &e) {
-        emit error(tr("Error reading bootloader files from image: %1").arg(e.what()));
-        return false;
+    reply->deleteLater();
+
+    QStringList fileNames = {"tiboot3.bin", "tispl.bin", "u-boot.img"};
+    QList<QByteArray> expectedHashes = {_expectedTiboot3Hash, _expectedTisplHash, _expectedUbootHash};
+
+    QString cacheDir = QStandardPaths::writableLocation(QStandardPaths::CacheLocation) + QDir::separator() + "bootloaders" + QDir::separator() + "t3-gem-o1";
+    QDir().mkpath(cacheDir);
+
+    for (int i = 0; i < 3; i++) {
+        QString fileName = fileNames[i];
+        QByteArray expectedHash = expectedHashes[i];
+#ifdef Q_OS_WIN
+        QTemporaryFile tmp(QCoreApplication::applicationDirPath() + "/dfu_XXXXXX");
+#else
+        QTemporaryFile tmp;
+#endif
+        tmp.setAutoRemove(false);
+        if (!tmp.open()) {
+            emit error(tr("Failed to create temp file for %1").arg(fileName));
+            return false;
+        }
+        tmp.close();
+
+        QString localCachePath = cacheDir + QDir::separator() + fileName;
+        QFileInfo fi(localCachePath);
+
+        QString urlstr;
+        bool useCache = false;
+
+        if (fi.exists() && fi.size() > 0) {
+            if (!expectedHash.isEmpty()) {
+                QFile f(localCachePath);
+                if (f.open(QIODevice::ReadOnly)) {
+                    QCryptographicHash hash(QCryptographicHash::Sha256);
+                    if (hash.addData(&f)) {
+                        if (hash.result().toHex() == expectedHash) {
+                            useCache = true;
+                        } else {
+                            qDebug() << "Cache hash mismatch for" << fileName << "expected:" << expectedHash << "got:" << hash.result().toHex();
+                        }
+                    }
+                    f.close();
+                }
+            } else {
+                useCache = true;
+            }
+        }
+
+        if (useCache) {
+            urlstr = QUrl::fromLocalFile(localCachePath).toString(QUrl::FullyEncoded);
+        } else {
+            urlstr = QString(BOOTIMG_URL).arg("t3-gem-o1").arg(fileName);
+            if (fi.exists()) {
+                QFile::remove(localCachePath);
+            }
+        }
+
+        DownloadThread dt(urlstr.toUtf8(), tmp.fileName().toUtf8(), expectedHash, true);
+        if (urlstr.startsWith("http")) {
+            dt.setCacheFile(localCachePath);
+        }
+
+        dt.start();
+        dt.wait();
+
+        if (!dt.successfull()) {
+            emit error(tr("Failed to download bootloader file: %1").arg(fileName));
+            QFile::remove(localCachePath); // clean up failed cache
+            return false;
+        }
+
+        _bootloaderFiles[i] = tmp.fileName();
+        qDebug() << "Ready" << fileName << "from" << urlstr;
     }
 
     return true;

@@ -2109,6 +2109,7 @@ ApplicationWindow {
             console.log("FINAL: board=", board, "imageType=", imageType, "distro=", distro, "variant=", variant)
 
             // DFU parameters are now handled through setSrc - URL contains all needed info
+            imageWriter.setBootloaderHashes(typeof(d.tiboot3_sha256) != "undefined" ? d.tiboot3_sha256 : "", typeof(d.tispl_sha256) != "undefined" ? d.tispl_sha256 : "", typeof(d.uboot_sha256) != "undefined" ? d.uboot_sha256 : "")
             imageWriter.setSrc(d.url, d.image_download_size, d.extract_size, typeof(d.extract_sha256) != "undefined" ? d.extract_sha256 : "", typeof(d.contains_multiple_files) != "undefined" ? d.contains_multiple_files : false, ospopup.categorySelected, d.name, typeof(d.init_format) != "undefined" ? d.init_format : "")
             osbutton.text = d.name
             ospopup.close()
