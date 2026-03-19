@@ -977,8 +977,8 @@ Aggiungi sia &apos;gem-imager.exe&apos; che &apos;fat32format.exe&apos; all&apos
     </message>
     <message>
         <location filename="../main.qml" line="1530"/>
-        <source>Writing... %1%</source>
-        <translation>Scrittura...%1</translation>
+        <source>Downloading... %1%</source>
+        <translation>Scaricamento...%1</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1541"/>

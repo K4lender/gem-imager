@@ -1024,8 +1024,8 @@
     </message>
     <message>
         <location filename="../main.qml" line="1530"/>
-        <source>Writing... %1%</source>
-        <translation>書き込み中... %1%</translation>
+        <source>Downloading... %1%</source>
+        <translation>ダウンロード中... %1%</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1541"/>

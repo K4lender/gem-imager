@@ -1519,7 +1519,7 @@ ApplicationWindow {
             if (progressText.text === qsTr("Cancelling..."))
                 return
 
-            progressText.text = qsTr("Writing... %1%").arg(Math.floor(newPos*100))
+            progressText.text = qsTr("Downloading... %1%").arg(Math.floor(newPos*100))
             progressBar.indeterminate = false
             progressBar.value = newPos
         }

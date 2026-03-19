@@ -1036,8 +1036,8 @@
     </message>
     <message>
         <location filename="../main.qml" line="1530"/>
-        <source>Writing... %1%</source>
-        <translation>Schrijven... %1%</translation>
+        <source>Downloading... %1%</source>
+        <translation>Downloaden... %1%</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1541"/>
